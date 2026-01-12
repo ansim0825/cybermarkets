@@ -1,10 +1,22 @@
 "use client";
 
 import React, { useState } from 'react';
-import { Logo } from './Logo';
+import { Logo } from '@/components/Logo';
 
 const EmailSecurityPage = () => {
   const [activeSection, setActiveSection] = useState('overview');
+
+  // Network & Edge sub-segments
+  const subSegments = [
+    { id: 'email-security', name: 'Email Security', active: true, href: '/pillars/network-edge/email-security' },
+    { id: 'sase', name: 'SASE/SSE', active: false, href: '#' },
+    { id: 'ngfw', name: 'Next-Gen Firewall', active: false, href: '#' },
+    { id: 'ndr', name: 'NDR', active: false, href: '#' },
+    { id: 'ddos', name: 'DDoS Protection', active: false, href: '#' },
+    { id: 'waf', name: 'WAF', active: false, href: '#' },
+    { id: 'dns', name: 'DNS Security', active: false, href: '#' },
+    { id: 'sdwan', name: 'SD-WAN', active: false, href: '#' },
+  ];
 
   const srpSections = [
     { id: 'overview', name: 'Overview', icon: '📋' },
@@ -16,8 +28,8 @@ const EmailSecurityPage = () => {
     { id: 'theses', name: 'Strategic Theses', icon: '🔮' },
   ];
 
-  const pillarTags = [
-    { name: 'Network & Edge', primary: true },
+  // Related pillars (for cross-reference)
+  const relatedPillars = [
     { name: 'Data & Application', primary: false },
     { name: 'Identity', primary: false },
     { name: 'SecOps', primary: false },
@@ -35,7 +47,7 @@ const EmailSecurityPage = () => {
     { source: 'Mordor Intelligence', val2024: '$4.56B', val2025: '$5.23B', projection: '$9.55B (2030)', cagr: '12.78%' },
   ];
 
-  const subSegments = [
+  const marketSubSegments = [
     'Secure Email Gateway (SEG)',
     'Integrated Cloud Email Security (ICES)',
     'Email Data Loss Prevention',
@@ -177,11 +189,11 @@ const EmailSecurityPage = () => {
                 <Logo size="default" />
               </a>
               <span className="text-gray-600 hidden sm:inline">/</span>
-              <span className="text-gray-400 hidden sm:inline">Email Security</span>
+              <span className="text-gray-400 hidden sm:inline">Network & Edge</span>
             </div>
             <div className="flex items-center gap-6 text-sm">
               <a href="/#pillars" className="text-gray-300 hover:text-white">Pillars</a>
-              <a href="/#theses" className="text-gray-300 hover:text-white">Theses</a>
+              <a href="#theses" className="text-gray-300 hover:text-white">Theses</a>
               <a href="/#about" className="text-gray-400 hover:text-white text-xs">About</a>
             </div>
           </div>
@@ -190,24 +202,41 @@ const EmailSecurityPage = () => {
 
       <div className="max-w-6xl mx-auto px-6 py-8">
         
-        {/* Header */}
-        <div className="mb-8">
-          <div className="flex items-center gap-2 mb-4 flex-wrap">
-            {pillarTags.map((tag, idx) => (
-              <span 
-                key={idx} 
-                className={`text-xs px-3 py-1 rounded-full ${
-                  tag.primary 
-                    ? 'bg-green-900 text-green-400 border border-green-700' 
-                    : 'bg-gray-800 text-gray-400 border border-gray-700'
+        {/* Sub-segment Navigation */}
+        <div className="mb-6">
+          <div className="flex items-center gap-2 flex-wrap">
+            {subSegments.map((seg) => (
+              <a
+                key={seg.id}
+                href={seg.href}
+                className={`text-xs px-3 py-1.5 rounded-full border transition-all ${
+                  seg.active 
+                    ? 'bg-green-900/50 text-green-400 border-green-700' 
+                    : 'bg-gray-800/50 text-gray-500 border-gray-700 hover:text-gray-400 hover:border-gray-600'
                 }`}
               >
-                {tag.primary && <span className="mr-1">●</span>}
-                {tag.name}
-              </span>
+                {seg.active && <span className="mr-1">●</span>}
+                {seg.name}
+              </a>
             ))}
           </div>
           
+          {/* Related pillars */}
+          <div className="flex items-center gap-2 mt-3">
+            <span className="text-xs text-gray-600">Also touches:</span>
+            {relatedPillars.map((pillar, idx) => (
+              <span 
+                key={idx}
+                className="text-xs px-2 py-0.5 rounded bg-gray-800/50 text-gray-500 border border-gray-800"
+              >
+                {pillar.name}
+              </span>
+            ))}
+          </div>
+        </div>
+        
+        {/* Header */}
+        <div className="mb-8">
           <h1 className="text-4xl font-bold mb-3">Email Security</h1>
           <p className="text-xl text-gray-400 mb-4">
             The $6B+ market where behavioral AI is disrupting 20 years of gateway architecture
@@ -345,9 +374,9 @@ const EmailSecurityPage = () => {
 
               {/* Sub-segments */}
               <div className="mb-6">
-                <h3 className="text-sm font-semibold text-gray-400 mb-3">Sub-Segments</h3>
+                <h3 className="text-sm font-semibold text-gray-400 mb-3">Email Security Sub-Segments</h3>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                  {subSegments.map((seg, idx) => (
+                  {marketSubSegments.map((seg, idx) => (
                     <div key={idx} className="px-3 py-2 bg-gray-800 rounded-lg text-sm text-gray-300">
                       {seg}
                     </div>
