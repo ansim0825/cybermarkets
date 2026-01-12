@@ -1,4 +1,7 @@
+"use client";
+
 import React, { useState } from 'react';
+import { Logo } from './Logo';
 
 const EmailSecurityPage = () => {
   const [activeSection, setActiveSection] = useState('overview');
@@ -170,19 +173,16 @@ const EmailSecurityPage = () => {
         <div className="max-w-6xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <a href="/" className="flex items-center gap-3">
-                <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center font-bold text-sm">
-                  CM
-                </div>
-                <span className="font-semibold text-lg">CyberMarkets</span>
+              <a href="/" className="flex items-center">
+                <Logo size="default" />
               </a>
               <span className="text-gray-600 hidden sm:inline">/</span>
               <span className="text-gray-400 hidden sm:inline">Email Security</span>
             </div>
             <div className="flex items-center gap-6 text-sm">
-              <a href="#" className="text-gray-300 hover:text-white">Pillars</a>
-              <a href="#" className="text-gray-300 hover:text-white">Theses</a>
-              <a href="#" className="text-gray-400 hover:text-white text-xs">About</a>
+              <a href="/#pillars" className="text-gray-300 hover:text-white">Pillars</a>
+              <a href="/#theses" className="text-gray-300 hover:text-white">Theses</a>
+              <a href="/#about" className="text-gray-400 hover:text-white text-xs">About</a>
             </div>
           </div>
         </div>
@@ -472,7 +472,7 @@ const EmailSecurityPage = () => {
                 <h4 className="text-sm font-semibold text-red-400 mb-2">The Core Pain</h4>
                 <p className="text-sm text-gray-300">
                   88% of CISOs report experiencing a successful email attack in the last quarter. 
-                  Despite this, investment and innovation levels aren't matching the threat evolution.
+                  Despite this, investment and innovation levels are not matching the threat evolution.
                   SOC teams are overwhelmed: 51% report alert fatigue, 62% of alerts go entirely ignored.
                 </p>
               </div>
@@ -569,7 +569,7 @@ const EmailSecurityPage = () => {
               {/* If I'm a PM Here Box */}
               <div className="bg-gradient-to-br from-blue-900/30 to-purple-900/30 rounded-xl p-6 border border-blue-800">
                 <h3 className="font-semibold text-white mb-4 flex items-center gap-2">
-                  <span>💡</span> If I'm a PM Here, I Need to Know...
+                  <span>💡</span> If I am a PM Here, I Need to Know...
                 </h3>
                 <div className="space-y-3 text-sm">
                   <div className="flex gap-3">

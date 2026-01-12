@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
+import { Logo } from './Logo';
 
 const Homepage = () => {
   const [hoveredPillar, setHoveredPillar] = useState(null);
@@ -34,13 +35,9 @@ const Homepage = () => {
       <nav className="border-b border-gray-800 bg-gray-950/80 backdrop-blur-sm sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center font-bold text-sm">
-                WD
-              </div>
-              <span className="font-semibold text-lg">Won With Data</span>
-              <span className="text-xs text-gray-500 hidden sm:inline">Independent Market Intelligence</span>
-            </div>
+            <a href="/" className="flex items-center">
+              <Logo size="default" />
+            </a>
             <div className="flex items-center gap-6 text-sm">
               <a href="#pillars" className="text-gray-300 hover:text-white">Pillars</a>
               <a href="#theses" className="text-gray-300 hover:text-white">Theses</a>
