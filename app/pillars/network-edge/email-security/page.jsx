@@ -296,7 +296,7 @@ const EmailSecurityPage = () => {
                   Interactive prototype showing the convergence of email security, identity, and employee risk.
                 </p>
                 <a 
-                  href="#" 
+                  href="/platform-vision" 
                   className="block w-full text-center px-4 py-2 bg-purple-600 hover:bg-purple-500 rounded-lg text-sm font-medium transition-colors"
                 >
                   View Platform Vision →
