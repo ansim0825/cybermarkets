@@ -56,14 +56,135 @@ const EmailSecurityPage = () => {
     'Email Archive & Compliance',
   ];
 
+  // Updated competitors list - Top 15 Vendors by Consensus (2025)
+  // Research status: 'complete' | 'in-progress' | 'pending'
   const competitors = [
-    { name: 'Proofpoint', position: 'Execution Leader', focus: 'Highest MQ execution. PE-owned, 45K+ customers. Acquired Tessian.' },
-    { name: 'Microsoft', position: 'Platform Incumbent', focus: 'Defender for O365 is the baseline. Bundled with E3/E5.' },
-    { name: 'Abnormal', position: 'Vision Leader', focus: 'Furthest on MQ vision axis. API-first, behavioral AI. $4B+ valuation.' },
-    { name: 'Mimecast', position: 'Full-Stack Defender', focus: 'Gateway + API hybrid. HRM platform pivot. 42K+ customers.' },
-    { name: 'Check Point', position: 'Cloud-Native Challenger', focus: 'Post-Avanan acquisition. API-first architecture.' },
-    { name: 'Darktrace', position: 'AI Innovator', focus: 'Self-learning AI, behavioral detection. Strong EMEA.' },
+    { 
+      name: 'Proofpoint', 
+      product: 'Proofpoint Email Protection',
+      position: 'Execution Leader', 
+      focus: 'Highest in Ability to Execute in 2025 Gartner MQ. PE-owned (Thoma Bravo), dominant in enterprise. 45K+ customers. Acquired Tessian for AI capabilities.',
+      status: 'pending',
+      href: '/pillars/network-edge/email-security/companies/proofpoint'
+    },
+    { 
+      name: 'Microsoft', 
+      product: 'Defender for Office 365',
+      position: 'Platform Incumbent', 
+      focus: 'Named 2025 MQ Leader. The "good enough" baseline every third-party must justify displacing. Bundled with E3/E5.',
+      status: 'pending',
+      href: '/pillars/network-edge/email-security/companies/microsoft'
+    },
+    { 
+      name: 'Abnormal', 
+      product: 'Abnormal Email Security',
+      position: 'Vision Leader', 
+      focus: 'Furthest on Completeness of Vision axis in 2025 MQ. API-first, behavioral AI architecture. Series D, $5.1B+ valuation.',
+      status: 'in-progress',
+      href: '/pillars/network-edge/email-security/companies/abnormal'
+    },
+    { 
+      name: 'Mimecast', 
+      product: 'Advanced Email Security',
+      position: 'Full-Stack Defender', 
+      focus: '2025 MQ Leader. Gateway + API hybrid. Strong in archiving and compliance. 42K+ customers. Human Risk Management pivot.',
+      status: 'pending',
+      href: '/pillars/network-edge/email-security/companies/mimecast'
+    },
+    { 
+      name: 'Check Point', 
+      product: 'Harmony Email & Collaboration',
+      position: 'Cloud-Native Challenger', 
+      focus: 'Named 2025 MQ Leader post-Avanan acquisition. API-first architecture with broader platform integration.',
+      status: 'pending',
+      href: '/pillars/network-edge/email-security/companies/checkpoint'
+    },
+    { 
+      name: 'Cisco', 
+      product: 'Cisco Secure Email',
+      position: 'Platform Player', 
+      focus: 'Armorblox acquisition (2023) added AI/ML. Integration with broader Cisco security stack (XDR, Talos TI).',
+      status: 'pending',
+      href: '/pillars/network-edge/email-security/companies/cisco'
+    },
+    { 
+      name: 'Darktrace', 
+      product: 'Darktrace/Email',
+      position: 'AI Innovator', 
+      focus: 'Named 2025 MQ Leader. Self-learning AI, behavioral detection. Strong EMEA presence.',
+      status: 'pending',
+      href: '/pillars/network-edge/email-security/companies/darktrace'
+    },
+    { 
+      name: 'Trend Micro', 
+      product: 'Cloud App Security',
+      position: 'Enterprise Incumbent', 
+      focus: '2024 MQ Leader. Part of Vision One platform. Strong in APJ markets.',
+      status: 'pending',
+      href: '/pillars/network-edge/email-security/companies/trendmicro'
+    },
+    { 
+      name: 'Fortinet', 
+      product: 'FortiMail',
+      position: 'Challenger', 
+      focus: 'Named Challenger in 2025 MQ. SEG + ICES hybrid. Network security ecosystem integration.',
+      status: 'pending',
+      href: '/pillars/network-edge/email-security/companies/fortinet'
+    },
+    { 
+      name: 'IRONSCALES', 
+      product: 'IRONSCALES Platform',
+      position: 'Mid-Market Specialist', 
+      focus: 'Named Visionary in 2025 MQ. API-based, strong SAT integration. Agentic AI focus.',
+      status: 'pending',
+      href: '/pillars/network-edge/email-security/companies/ironscales'
+    },
+    { 
+      name: 'Barracuda', 
+      product: 'Barracuda Email Protection',
+      position: 'SMB Champion', 
+      focus: 'Named Visionary in 2025 MQ (2nd consecutive year). 200K+ customers. AI-powered, multilayered defense. Strong MSP/channel presence. Price-competitive.',
+      status: 'pending',
+      href: '/pillars/network-edge/email-security/companies/barracuda'
+    },
+    { 
+      name: 'Sophos', 
+      product: 'Sophos Email',
+      position: 'Platform Security Player', 
+      focus: '4.8★ Gartner Peer Insights. Part of Sophos Central ecosystem. 600K+ orgs globally. Acquired Secureworks (Feb 2025). Strong SMB/mid-market focus.',
+      status: 'pending',
+      href: '/pillars/network-edge/email-security/companies/sophos'
+    },
+    { 
+      name: 'KnowBe4', 
+      product: 'Egress Intelligent Email Security',
+      position: 'Human Risk Integrator', 
+      focus: 'Named 2024 MQ Leader. Acquired by KnowBe4 (2024). Unique inbound + outbound DLP focus. SAT integration play. Adaptive AI-enabled platform.',
+      status: 'pending',
+      href: '/pillars/network-edge/email-security/companies/knowbe4'
+    },
+    { 
+      name: 'Material Security', 
+      product: 'Material Security Platform',
+      position: 'Post-Delivery Innovator', 
+      focus: '$1.1B unicorn valuation. $166M raised. Zero-trust approach to email. Protects data even after delivery. Focus on M365 + Google Workspace. Founded by ex-Dropbox engineers.',
+      status: 'pending',
+      href: '/pillars/network-edge/email-security/companies/material'
+    },
   ];
+
+  // Helper function for research status styling
+  const getStatusStyle = (status) => {
+    switch (status) {
+      case 'complete':
+        return { bg: 'bg-green-900/50', text: 'text-green-400', dot: 'bg-green-400', label: 'Complete' };
+      case 'in-progress':
+        return { bg: 'bg-yellow-900/50', text: 'text-yellow-400', dot: 'bg-yellow-400', label: 'In Progress' };
+      case 'pending':
+      default:
+        return { bg: 'bg-gray-800', text: 'text-gray-500', dot: 'bg-gray-500', label: 'Pending' };
+    }
+  };
 
   const trends = [
     { name: 'SEG Sunset, ICES Sunrise', description: '80% consolidating around Microsoft + ICES. API-first wins.' },
@@ -296,7 +417,9 @@ const EmailSecurityPage = () => {
                   Interactive prototype showing the convergence of email security, identity, and employee risk.
                 </p>
                 <a 
-                  href="/platform-vision" 
+                  href="https://hologramai.tech/platform" 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="block w-full text-center px-4 py-2 bg-purple-600 hover:bg-purple-500 rounded-lg text-sm font-medium transition-colors"
                 >
                   View Platform Vision →
@@ -384,21 +507,57 @@ const EmailSecurityPage = () => {
                 </div>
               </div>
 
-              {/* Competitive Landscape */}
+              {/* Competitive Landscape - Updated with 15 vendors */}
               <div>
-                <h3 className="text-sm font-semibold text-gray-400 mb-3">Competitive Landscape (2025 Gartner MQ)</h3>
-                <div className="space-y-3">
-                  {competitors.map((comp, idx) => (
-                    <div key={idx} className="flex items-center justify-between p-3 bg-gray-800 rounded-lg">
-                      <div className="flex-1">
-                        <div className="font-medium text-white">{comp.name}</div>
-                        <div className="text-xs text-gray-500">{comp.focus}</div>
-                      </div>
-                      <span className="text-xs px-2 py-1 bg-gray-700 rounded text-gray-400 ml-3 whitespace-nowrap">
-                        {comp.position}
-                      </span>
+                <div className="flex items-center justify-between mb-3">
+                  <h3 className="text-sm font-semibold text-gray-400">Top 15 Vendors by Consensus (2025)</h3>
+                  <div className="flex items-center gap-4 text-xs">
+                    <div className="flex items-center gap-1">
+                      <span className="w-2 h-2 rounded-full bg-green-400"></span>
+                      <span className="text-gray-500">Complete</span>
                     </div>
-                  ))}
+                    <div className="flex items-center gap-1">
+                      <span className="w-2 h-2 rounded-full bg-yellow-400"></span>
+                      <span className="text-gray-500">In Progress</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <span className="w-2 h-2 rounded-full bg-gray-500"></span>
+                      <span className="text-gray-500">Pending</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="space-y-3">
+                  {competitors.map((comp, idx) => {
+                    const statusStyle = getStatusStyle(comp.status);
+                    return (
+                      <a 
+                        key={idx} 
+                        href={comp.href}
+                        className="flex items-center justify-between p-3 bg-gray-800 rounded-lg hover:bg-gray-750 hover:border-gray-600 border border-transparent transition-all group"
+                      >
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center gap-2">
+                            <span className="font-medium text-white group-hover:text-blue-400 transition-colors">{comp.name}</span>
+                            <span className="text-xs text-gray-600">•</span>
+                            <span className="text-xs text-gray-500 truncate">{comp.product}</span>
+                          </div>
+                          <div className="text-xs text-gray-500 mt-1 line-clamp-2">{comp.focus}</div>
+                        </div>
+                        <div className="flex items-center gap-3 ml-4">
+                          <span className="text-xs px-2 py-1 bg-gray-700 rounded text-gray-400 whitespace-nowrap">
+                            {comp.position}
+                          </span>
+                          <div className={`flex items-center gap-1.5 px-2 py-1 rounded text-xs ${statusStyle.bg}`}>
+                            <span className={`w-2 h-2 rounded-full ${statusStyle.dot}`}></span>
+                            <span className={statusStyle.text}>{statusStyle.label}</span>
+                          </div>
+                          <svg className="w-4 h-4 text-gray-600 group-hover:text-blue-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                          </svg>
+                        </div>
+                      </a>
+                    );
+                  })}
                 </div>
               </div>
             </section>
@@ -695,7 +854,12 @@ const EmailSecurityPage = () => {
                     <div className="text-xs text-gray-500">Complete SRP analysis (PDF)</div>
                   </div>
                 </a>
-                <a href="#" className="flex items-center gap-3 p-4 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors">
+                <a 
+                  href="https://hologramai.tech/platform" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 p-4 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors"
+                >
                   <span className="text-2xl">🚀</span>
                   <div>
                     <div className="font-medium">Platform Vision Prototype</div>
@@ -710,8 +874,8 @@ const EmailSecurityPage = () => {
 
         {/* Footer */}
         <footer className="mt-12 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
-          <p>Analysis by Andy Simko • CISSP, GPEN, OSIR, OSTH</p>
-          <p className="mt-1 text-gray-600">10+ years in cybersecurity • Methodology: Systematic Research Process (SRP)</p>
+          <p>Analysis by Andy Simko • CISSP • GPEN • CISA • GSNA • HCSFP • PMC-Level III</p>
+          <p className="mt-1 text-gray-600">15+ years in cybersecurity • Methodology: Systematic Research Process (SRP)</p>
         </footer>
       </div>
     </div>
