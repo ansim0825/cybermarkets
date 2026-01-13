@@ -1,31 +1,44 @@
-"use client";
-
-import dynamic from 'next/dynamic';
 import { notFound } from 'next/navigation';
 
-// Dynamic imports for each company page
+// Import all company pages directly
+import AbnormalPage from '../abnormal';
+import BarracudaPage from '../barracuda';
+import CheckpointPage from '../checkpoint';
+import CiscoPage from '../cisco';
+import CloudflarePage from '../cloudflare';
+import DarktracePage from '../darktrace';
+import FortinetPage from '../fortinet';
+import IronscalesPage from '../ironscales';
+import Knowbe4Page from '../knowbe4';
+import MaterialsecurityPage from '../materialsecurity';
+import MicrosoftPage from '../microsoft';
+import MimecastPage from '../mimecast';
+import ProofpointPage from '../proofpoint';
+import SophosPage from '../sophos';
+import TrendmicroPage from '../trendmicro';
+
 const companyPages = {
-  abnormal: dynamic(() => import('../abnormal')),
-  barracuda: dynamic(() => import('../barracuda')),
-  checkpoint: dynamic(() => import('../checkpoint')),
-  cisco: dynamic(() => import('../cisco')),
-  cloudflare: dynamic(() => import('../cloudflare')),
-  darktrace: dynamic(() => import('../darktrace')),
-  fortinet: dynamic(() => import('../fortinet')),
-  ironscales: dynamic(() => import('../ironscales')),
-  knowbe4: dynamic(() => import('../knowbe4')),
-  materialsecurity: dynamic(() => import('../materialsecurity')),
-  microsoft: dynamic(() => import('../microsoft')),
-  mimecast: dynamic(() => import('../mimecast')),
-  proofpoint: dynamic(() => import('../proofpoint')),
-  sophos: dynamic(() => import('../sophos')),
-  trendmicro: dynamic(() => import('../trendmicro')),
+  abnormal: AbnormalPage,
+  barracuda: BarracudaPage,
+  checkpoint: CheckpointPage,
+  cisco: CiscoPage,
+  cloudflare: CloudflarePage,
+  darktrace: DarktracePage,
+  fortinet: FortinetPage,
+  ironscales: IronscalesPage,
+  knowbe4: Knowbe4Page,
+  materialsecurity: MaterialsecurityPage,
+  microsoft: MicrosoftPage,
+  mimecast: MimecastPage,
+  proofpoint: ProofpointPage,
+  sophos: SophosPage,
+  trendmicro: TrendmicroPage,
 };
 
 export default function CompanyPage({ params }) {
-  const { company } = params;
+  const company = params?.company?.toLowerCase();
   
-  const PageComponent = companyPages[company?.toLowerCase()];
+  const PageComponent = companyPages[company];
   
   if (!PageComponent) {
     notFound();

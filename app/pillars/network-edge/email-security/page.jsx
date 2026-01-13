@@ -64,7 +64,7 @@ const EmailSecurityPage = () => {
       product: 'Proofpoint Email Protection',
       position: 'Execution Leader', 
       focus: 'Highest in Ability to Execute in 2025 Gartner MQ. PE-owned (Thoma Bravo), dominant in enterprise. 45K+ customers. Acquired Tessian for AI capabilities.',
-      status: 'pending',
+      status: 'in-progress',
       href: '/pillars/network-edge/email-security/companies/proofpoint'
     },
     { 
@@ -72,7 +72,7 @@ const EmailSecurityPage = () => {
       product: 'Defender for Office 365',
       position: 'Platform Incumbent', 
       focus: 'Named 2025 MQ Leader. The "good enough" baseline every third-party must justify displacing. Bundled with E3/E5.',
-      status: 'pending',
+      status: 'in-progress',
       href: '/pillars/network-edge/email-security/companies/microsoft'
     },
     { 
@@ -88,7 +88,7 @@ const EmailSecurityPage = () => {
       product: 'Advanced Email Security',
       position: 'Full-Stack Defender', 
       focus: '2025 MQ Leader. Gateway + API hybrid. Strong in archiving and compliance. 42K+ customers. Human Risk Management pivot.',
-      status: 'pending',
+      status: 'in-progress',
       href: '/pillars/network-edge/email-security/companies/mimecast'
     },
     { 
@@ -144,7 +144,7 @@ const EmailSecurityPage = () => {
       product: 'Barracuda Email Protection',
       position: 'SMB Champion', 
       focus: 'Named Visionary in 2025 MQ (2nd consecutive year). 200K+ customers. AI-powered, multilayered defense. Strong MSP/channel presence. Price-competitive.',
-      status: 'pending',
+      status: 'in-progress',
       href: '/pillars/network-edge/email-security/companies/barracuda'
     },
     { 
@@ -169,7 +169,15 @@ const EmailSecurityPage = () => {
       position: 'Post-Delivery Innovator', 
       focus: '$1.1B unicorn valuation. $166M raised. Zero-trust approach to email. Protects data even after delivery. Focus on M365 + Google Workspace. Founded by ex-Dropbox engineers.',
       status: 'pending',
-      href: '/pillars/network-edge/email-security/companies/material'
+      href: '/pillars/network-edge/email-security/companies/materialsecurity'
+    },
+    { 
+      name: 'Cloudflare', 
+      product: 'Area 1 Email Security',
+      position: 'Infrastructure Challenger', 
+      focus: 'Acquired Area 1 ($162M, 2022). Preemptive threat detection via DNS/network-level signals. Part of broader SASE/Zero Trust platform. Unique infrastructure vantage point.',
+      status: 'pending',
+      href: '/pillars/network-edge/email-security/companies/cloudflare'
     },
   ];
 
