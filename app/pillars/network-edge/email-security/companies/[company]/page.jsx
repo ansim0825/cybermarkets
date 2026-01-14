@@ -1,7 +1,6 @@
 import { notFound } from 'next/navigation';
 import { use } from 'react';
 
-// Import all company pages directly
 import AbnormalPage from '../abnormal';
 import BarracudaPage from '../barracuda';
 import CheckpointPage from '../checkpoint';
@@ -46,3 +45,4 @@ export default function CompanyPage({ params }) {
   }
   
   return <PageComponent />;
+}
