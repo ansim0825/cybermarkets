@@ -246,14 +246,12 @@ const BarracudaProfile = () => {
               <p className="text-xl text-gray-400 mb-2">{company.tagline}</p>
               <p className="text-sm text-gray-500">{company.product}</p>
             </div>
-            <a href={company.website} target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg text-sm transition-colors">Visit Website →</a>
+
           </div>
           <div className="flex items-center gap-4 text-sm text-gray-500">
             <span>Research Status: <span className="text-yellow-400">In Progress</span></span>
             <span>•</span>
             <span>Last updated: January 2026</span>
-            <span>•</span>
-            <span className="text-cyan-400">⚠️ Insider perspective - Andy works at Barracuda</span>
           </div>
         </div>
 
@@ -492,7 +490,7 @@ const BarracudaProfile = () => {
 
         <footer className="mt-12 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
           <p>Research compiled January 2026 • Andy Simko • Email Security Market Analysis</p>
-          <p className="mt-1 text-gray-600">⚠️ Andy works at Barracuda - this profile reflects insider perspective</p>
+          <p className="mt-1 text-gray-600">Independent research • Not affiliated with {company.name}</p>
         </footer>
       </div>
     </div>
