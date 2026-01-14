@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import { Logo } from './Logo';
+import { Logo } from '@/components/Logo';
 
 const EmailSecurityPage = () => {
   const [activeSection, setActiveSection] = useState('overview');
@@ -21,7 +21,6 @@ const EmailSecurityPage = () => {
   const srpSections = [
     { id: 'overview', name: 'Overview', icon: '📋' },
     { id: 'structure', name: 'Market Structure', icon: '🏗️' },
-    { id: 'vendors', name: 'Vendor Profiles', icon: '🏢' },
     { id: 'motion', name: 'Market Dynamics', icon: '📈' },
     { id: 'stakeholders', name: 'Stakeholders', icon: '👥' },
     { id: 'economics', name: 'Economics & ROI', icon: '💰' },
@@ -57,158 +56,141 @@ const EmailSecurityPage = () => {
     'Email Archive & Compliance',
   ];
 
-  // Updated vendor profiles with links and status
-  const vendorProfiles = [
-    // Leaders
-    { 
-      name: 'Abnormal Security', 
-      position: 'Vision Leader', 
-      gartnerQuadrant: 'Leader',
-      focus: 'Furthest on MQ vision axis. API-first, behavioral AI. $4B+ valuation.',
-      status: 'complete',
-      href: '/pillars/network-edge/email-security/abnormal',
-      color: 'purple'
-    },
+  // Updated competitors list - Top 15 Vendors by Consensus (2025)
+  // Research status: 'complete' | 'in-progress' | 'pending'
+  const competitors = [
     { 
       name: 'Proofpoint', 
+      product: 'Proofpoint Email Protection',
       position: 'Execution Leader', 
-      gartnerQuadrant: 'Leader',
-      focus: 'Highest MQ execution. PE-owned (Thoma Bravo), 45K+ customers. Acquired Tessian.',
-      status: 'planned',
-      href: '#',
-      color: 'blue'
+      focus: 'Highest in Ability to Execute in 2025 Gartner MQ. PE-owned (Thoma Bravo), dominant in enterprise. 45K+ customers. Acquired Tessian for AI capabilities.',
+      status: 'in-progress',
+      href: '/pillars/network-edge/email-security/companies/proofpoint'
     },
     { 
       name: 'Microsoft', 
+      product: 'Defender for Office 365',
       position: 'Platform Incumbent', 
-      gartnerQuadrant: 'Leader',
-      focus: 'Defender for O365 is the baseline. Bundled with E3/E5. 88% BEC miss rate.',
-      status: 'complete',
-      href: '/pillars/network-edge/email-security/microsoft',
-      color: 'blue'
+      focus: 'Named 2025 MQ Leader. The "good enough" baseline every third-party must justify displacing. Bundled with E3/E5.',
+      status: 'in-progress',
+      href: '/pillars/network-edge/email-security/companies/microsoft'
+    },
+    { 
+      name: 'Abnormal', 
+      product: 'Abnormal Email Security',
+      position: 'Vision Leader', 
+      focus: 'Furthest on Completeness of Vision axis in 2025 MQ. API-first, behavioral AI architecture. Series D, $5.1B+ valuation.',
+      status: 'in-progress',
+      href: '/pillars/network-edge/email-security/companies/abnormal'
     },
     { 
       name: 'Mimecast', 
+      product: 'Advanced Email Security',
       position: 'Full-Stack Defender', 
-      gartnerQuadrant: 'Leader',
-      focus: 'Gateway + API hybrid. HRM platform pivot. 42K+ customers.',
-      status: 'planned',
-      href: '#',
-      color: 'blue'
+      focus: '2025 MQ Leader. Gateway + API hybrid. Strong in archiving and compliance. 42K+ customers. Human Risk Management pivot.',
+      status: 'in-progress',
+      href: '/pillars/network-edge/email-security/companies/mimecast'
     },
-    // Challengers
-    { 
-      name: 'Trend Micro', 
-      position: 'Platform Leader', 
-      gartnerQuadrant: 'Leader',
-      focus: 'Vision One platform integration. Email + endpoint + cloud correlation. $1.87B revenue.',
-      status: 'complete',
-      href: '/pillars/network-edge/email-security/trend-micro',
-      color: 'red'
-    },
-    { 
-      name: 'Fortinet', 
-      position: 'Security Fabric Challenger', 
-      gartnerQuadrant: 'Challenger',
-      focus: 'FortiMail Workspace Security. Perception Point acquisition. Most deployment flexibility.',
-      status: 'complete',
-      href: '/pillars/network-edge/email-security/fortinet',
-      color: 'orange'
-    },
-    { 
-      name: 'Barracuda', 
-      position: 'SMB/MSP Leader', 
-      gartnerQuadrant: 'Challenger',
-      focus: 'Complete email protection for SMB. MSP-first (280% growth). KKR-owned.',
-      status: 'complete',
-      href: '/pillars/network-edge/email-security/barracuda',
-      color: 'cyan'
-    },
-    // Visionaries
     { 
       name: 'Check Point', 
+      product: 'Harmony Email & Collaboration',
       position: 'Cloud-Native Challenger', 
-      gartnerQuadrant: 'Visionary',
-      focus: 'Post-Avanan acquisition. API-first architecture. Harmony Email.',
-      status: 'complete',
-      href: '/pillars/network-edge/email-security/check-point',
-      color: 'purple'
+      focus: 'Named 2025 MQ Leader post-Avanan acquisition. API-first architecture with broader platform integration.',
+      status: 'in-progress',
+      href: '/pillars/network-edge/email-security/companies/checkpoint'
+    },
+    { 
+      name: 'Cisco', 
+      product: 'Cisco Secure Email',
+      position: 'Platform Player', 
+      focus: 'Armorblox acquisition (2023) added AI/ML. Integration with broader Cisco security stack (XDR, Talos TI).',
+      status: 'in-progress',
+      href: '/pillars/network-edge/email-security/companies/cisco'
     },
     { 
       name: 'Darktrace', 
+      product: 'Darktrace/Email',
       position: 'AI Innovator', 
-      gartnerQuadrant: 'Visionary',
-      focus: 'Self-learning AI, behavioral detection. $5.3B Thoma Bravo take-private.',
-      status: 'complete',
-      href: '/pillars/network-edge/email-security/darktrace',
-      color: 'purple'
+      focus: 'Named 2025 MQ Leader. Self-learning AI, behavioral detection. Strong EMEA presence.',
+      status: 'in-progress',
+      href: '/pillars/network-edge/email-security/companies/darktrace'
+    },
+    { 
+      name: 'Trend Micro', 
+      product: 'Vision One - Email & Collaboration Security',
+      position: 'Platform Leader', 
+      focus: '2024/2025 MQ Leader. Vision One XDR/ASRM platform integration. $1.87B revenue. 19 consecutive years Gartner EPP Leader.',
+      status: 'in-progress',
+      href: '/pillars/network-edge/email-security/companies/trendmicro'
+    },
+    { 
+      name: 'Fortinet', 
+      product: 'FortiMail + Workspace Security',
+      position: 'Security Fabric Challenger', 
+      focus: '2025 MQ Challenger. Perception Point acquisition (Dec 2024). Most deployment flexibility. $5.96B revenue, Security Fabric integration.',
+      status: 'in-progress',
+      href: '/pillars/network-edge/email-security/companies/fortinet'
     },
     { 
       name: 'IRONSCALES', 
-      position: 'AI + Human Insights', 
-      gartnerQuadrant: 'Visionary',
-      focus: '30K+ analyst federation network. Native SAT integration. Price leader.',
-      status: 'complete',
-      href: '/pillars/network-edge/email-security/ironscales',
-      color: 'blue'
+      product: 'IRONSCALES Platform',
+      position: 'Mid-Market Specialist', 
+      focus: 'Named Visionary in 2025 MQ. API-based, strong SAT integration. Agentic AI focus.',
+      status: 'in-progress',
+      href: '/pillars/network-edge/email-security/companies/ironscales'
+    },
+    { 
+      name: 'Barracuda', 
+      product: 'Barracuda Email Protection',
+      position: 'SMB Champion', 
+      focus: 'Named Visionary in 2025 MQ (2nd consecutive year). 200K+ customers. AI-powered, multilayered defense. Strong MSP/channel presence. Price-competitive.',
+      status: 'in-progress',
+      href: '/pillars/network-edge/email-security/companies/barracuda'
+    },
+    { 
+      name: 'Sophos', 
+      product: 'Sophos Email',
+      position: 'Platform Security Player', 
+      focus: '4.8★ Gartner Peer Insights. Part of Sophos Central ecosystem. 600K+ orgs globally. Acquired Secureworks (Feb 2025). Strong SMB/mid-market focus.',
+      status: 'in-progress',
+      href: '/pillars/network-edge/email-security/companies/sophos'
     },
     { 
       name: 'KnowBe4', 
-      position: 'Human Risk Management', 
-      gartnerQuadrant: 'Visionary',
-      focus: 'SAT leader transformed to HRM. Egress acquisition. 70K+ SAT customers for cross-sell.',
-      status: 'complete',
-      href: '/pillars/network-edge/email-security/knowbe4',
-      color: 'green'
+      product: 'Egress Intelligent Email Security',
+      position: 'Human Risk Integrator', 
+      focus: 'Named 2024 MQ Leader. Acquired by KnowBe4 (2024). Unique inbound + outbound DLP focus. SAT integration play. Adaptive AI-enabled platform.',
+      status: 'in-progress',
+      href: '/pillars/network-edge/email-security/companies/knowbe4'
     },
-    // Niche Players / Other
-    { 
-      name: 'Cisco', 
-      position: 'Legacy SEG Transitioning', 
-      gartnerQuadrant: 'Niche Player',
-      focus: 'Three-product fragmentation. Talos intelligence. Hardware EOL forcing migrations.',
-      status: 'complete',
-      href: '/pillars/network-edge/email-security/cisco',
-      color: 'cyan'
-    },
-    { 
-      name: 'Google', 
-      position: 'Platform Incumbent', 
-      gartnerQuadrant: 'Niche Player',
-      focus: 'The other half of email platforms. 3B+ Gmail users. Education dominance.',
-      status: 'complete',
-      href: '/pillars/network-edge/email-security/google',
-      color: 'green'
-    },
-    // Emerging / Specialist
     { 
       name: 'Material Security', 
-      position: 'Data-Centric Security', 
-      gartnerQuadrant: 'Emerging',
-      focus: 'Zero trust for email. Post-compromise protection. $1.1B unicorn valuation.',
-      status: 'complete',
-      href: '/pillars/network-edge/email-security/material-security',
-      color: 'blue'
+      product: 'Material Security Platform',
+      position: 'Post-Delivery Innovator', 
+      focus: '$1.1B unicorn valuation. $166M raised. Zero-trust approach to email. Protects data even after delivery. Focus on M365 + Google Workspace. Founded by ex-Dropbox engineers.',
+      status: 'in-progress',
+      href: '/pillars/network-edge/email-security/companies/materialsecurity'
+    },
+    { 
+      name: 'Cloudflare', 
+      product: 'Area 1 Email Security',
+      position: 'Infrastructure Challenger', 
+      focus: 'Acquired Area 1 ($162M, 2022). Preemptive threat detection via DNS/network-level signals. Part of broader SASE/Zero Trust platform. Unique infrastructure vantage point.',
+      status: 'in-progress',
+      href: '/pillars/network-edge/email-security/companies/cloudflare'
     },
   ];
 
+  // Helper function for research status styling
   const getStatusStyle = (status) => {
     switch (status) {
-      case 'complete': return { bg: 'bg-green-900/50', text: 'text-green-400', border: 'border-green-700', label: 'Complete' };
-      case 'in-progress': return { bg: 'bg-yellow-900/50', text: 'text-yellow-400', border: 'border-yellow-700', label: 'In Progress' };
-      case 'planned': return { bg: 'bg-gray-800', text: 'text-gray-400', border: 'border-gray-700', label: 'Planned' };
-      default: return { bg: 'bg-gray-800', text: 'text-gray-500', border: 'border-gray-700', label: 'TBD' };
-    }
-  };
-
-  const getQuadrantStyle = (quadrant) => {
-    switch (quadrant) {
-      case 'Leader': return 'bg-green-900/50 text-green-400 border-green-700';
-      case 'Challenger': return 'bg-blue-900/50 text-blue-400 border-blue-700';
-      case 'Visionary': return 'bg-purple-900/50 text-purple-400 border-purple-700';
-      case 'Niche Player': return 'bg-gray-800 text-gray-400 border-gray-700';
-      case 'Emerging': return 'bg-cyan-900/50 text-cyan-400 border-cyan-700';
-      default: return 'bg-gray-800 text-gray-400 border-gray-700';
+      case 'complete':
+        return { bg: 'bg-green-900/50', text: 'text-green-400', dot: 'bg-green-400', label: 'Complete' };
+      case 'in-progress':
+        return { bg: 'bg-yellow-900/50', text: 'text-yellow-400', dot: 'bg-yellow-400', label: 'In Progress' };
+      case 'pending':
+      default:
+        return { bg: 'bg-gray-800', text: 'text-gray-500', dot: 'bg-gray-500', label: 'Pending' };
     }
   };
 
@@ -325,10 +307,6 @@ const EmailSecurityPage = () => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  // Calculate research stats
-  const completeCount = vendorProfiles.filter(v => v.status === 'complete').length;
-  const totalCount = vendorProfiles.length;
-
   return (
     <div className="min-h-screen bg-gray-950 text-gray-100">
       {/* Navigation */}
@@ -398,7 +376,7 @@ const EmailSecurityPage = () => {
             <span>•</span>
             <span>Methodology: SRP Framework</span>
             <span>•</span>
-            <span className="text-green-500">● {completeCount}/{totalCount} profiles complete</span>
+            <span className="text-green-500">● Active research</span>
           </div>
         </div>
 
@@ -447,7 +425,9 @@ const EmailSecurityPage = () => {
                   Interactive prototype showing the convergence of email security, identity, and employee risk.
                 </p>
                 <a 
-                  href="#" 
+                  href="https://hologramai.tech/platform" 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="block w-full text-center px-4 py-2 bg-purple-600 hover:bg-purple-500 rounded-lg text-sm font-medium transition-colors"
                 >
                   View Platform Vision →
@@ -524,7 +504,7 @@ const EmailSecurityPage = () => {
               </div>
 
               {/* Sub-segments */}
-              <div>
+              <div className="mb-6">
                 <h3 className="text-sm font-semibold text-gray-400 mb-3">Email Security Sub-Segments</h3>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                   {marketSubSegments.map((seg, idx) => (
@@ -534,97 +514,58 @@ const EmailSecurityPage = () => {
                   ))}
                 </div>
               </div>
-            </section>
 
-            {/* NEW: Vendor Profiles Section */}
-            <section id="vendors" className="bg-gray-900 rounded-xl border border-gray-800 p-6">
-              <h2 className="text-xl font-semibold mb-2 flex items-center gap-2">
-                <span>🏢</span> Vendor Profiles
-              </h2>
-              <p className="text-gray-400 text-sm mb-4">
-                Deep-dive research on {totalCount} email security vendors. Click to view full analysis.
-              </p>
-              
-              {/* Progress indicator */}
-              <div className="mb-6 p-4 bg-gray-800 rounded-lg">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm text-gray-400">Research Progress</span>
-                  <span className="text-sm text-green-400">{completeCount}/{totalCount} complete</span>
+              {/* Competitive Landscape - Updated with 15 vendors */}
+              <div>
+                <div className="flex items-center justify-between mb-3">
+                  <h3 className="text-sm font-semibold text-gray-400">Top 15 Vendors by Consensus (2025)</h3>
+                  <div className="flex items-center gap-4 text-xs">
+                    <div className="flex items-center gap-1">
+                      <span className="w-2 h-2 rounded-full bg-green-400"></span>
+                      <span className="text-gray-500">Complete</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <span className="w-2 h-2 rounded-full bg-yellow-400"></span>
+                      <span className="text-gray-500">In Progress</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <span className="w-2 h-2 rounded-full bg-gray-500"></span>
+                      <span className="text-gray-500">Pending</span>
+                    </div>
+                  </div>
                 </div>
-                <div className="w-full bg-gray-700 rounded-full h-2">
-                  <div 
-                    className="bg-green-500 h-2 rounded-full transition-all"
-                    style={{ width: `${(completeCount / totalCount) * 100}%` }}
-                  ></div>
-                </div>
-              </div>
-
-              {/* Vendor Grid */}
-              <div className="space-y-3">
-                {vendorProfiles.map((vendor, idx) => {
-                  const statusStyle = getStatusStyle(vendor.status);
-                  const isClickable = vendor.status === 'complete';
-                  
-                  const CardContent = (
-                    <div className={`flex items-center justify-between p-4 bg-gray-800 rounded-lg border-l-4 ${
-                      vendor.color === 'purple' ? 'border-l-purple-500' :
-                      vendor.color === 'blue' ? 'border-l-blue-500' :
-                      vendor.color === 'green' ? 'border-l-green-500' :
-                      vendor.color === 'orange' ? 'border-l-orange-500' :
-                      vendor.color === 'red' ? 'border-l-red-500' :
-                      vendor.color === 'cyan' ? 'border-l-cyan-500' :
-                      'border-l-gray-500'
-                    } ${isClickable ? 'hover:bg-gray-700 cursor-pointer' : ''} transition-colors`}>
-                      <div className="flex-1">
-                        <div className="flex items-center gap-3 mb-1">
-                          <span className="font-medium text-white">{vendor.name}</span>
-                          <span className={`text-xs px-2 py-0.5 rounded border ${getQuadrantStyle(vendor.gartnerQuadrant)}`}>
-                            {vendor.gartnerQuadrant}
-                          </span>
-                          <span className={`text-xs px-2 py-0.5 rounded border ${statusStyle.bg} ${statusStyle.text} ${statusStyle.border}`}>
-                            {statusStyle.label}
-                          </span>
+                <div className="space-y-3">
+                  {competitors.map((comp, idx) => {
+                    const statusStyle = getStatusStyle(comp.status);
+                    return (
+                      <a 
+                        key={idx} 
+                        href={comp.href}
+                        className="flex items-center justify-between p-3 bg-gray-800 rounded-lg hover:bg-gray-750 hover:border-gray-600 border border-transparent transition-all group"
+                      >
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center gap-2">
+                            <span className="font-medium text-white group-hover:text-blue-400 transition-colors">{comp.name}</span>
+                            <span className="text-xs text-gray-600">•</span>
+                            <span className="text-xs text-gray-500 truncate">{comp.product}</span>
+                          </div>
+                          <div className="text-xs text-gray-500 mt-1 line-clamp-2">{comp.focus}</div>
                         </div>
-                        <div className="text-xs text-gray-400">{vendor.position}</div>
-                        <div className="text-xs text-gray-500 mt-1">{vendor.focus}</div>
-                      </div>
-                      {isClickable && (
-                        <div className="ml-4 text-gray-500">
-                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div className="flex items-center gap-3 ml-4">
+                          <span className="text-xs px-2 py-1 bg-gray-700 rounded text-gray-400 whitespace-nowrap">
+                            {comp.position}
+                          </span>
+                          <div className={`flex items-center gap-1.5 px-2 py-1 rounded text-xs ${statusStyle.bg}`}>
+                            <span className={`w-2 h-2 rounded-full ${statusStyle.dot}`}></span>
+                            <span className={statusStyle.text}>{statusStyle.label}</span>
+                          </div>
+                          <svg className="w-4 h-4 text-gray-600 group-hover:text-blue-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                           </svg>
                         </div>
-                      )}
-                    </div>
-                  );
-
-                  return isClickable ? (
-                    <a key={idx} href={vendor.href} className="block">
-                      {CardContent}
-                    </a>
-                  ) : (
-                    <div key={idx}>
-                      {CardContent}
-                    </div>
-                  );
-                })}
-              </div>
-
-              {/* Legend */}
-              <div className="mt-6 pt-4 border-t border-gray-700">
-                <div className="flex flex-wrap gap-4 text-xs">
-                  <div className="flex items-center gap-2">
-                    <span className="w-3 h-3 rounded bg-green-900/50 border border-green-700"></span>
-                    <span className="text-gray-400">Complete - Click to view</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="w-3 h-3 rounded bg-yellow-900/50 border border-yellow-700"></span>
-                    <span className="text-gray-400">In Progress</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="w-3 h-3 rounded bg-gray-800 border border-gray-700"></span>
-                    <span className="text-gray-400">Planned</span>
-                  </div>
+                      </a>
+                    );
+                  })}
                 </div>
               </div>
             </section>
@@ -724,11 +665,11 @@ const EmailSecurityPage = () => {
 
               {/* Key Pain Point */}
               <div className="bg-red-900/20 border border-red-800/50 rounded-lg p-4">
-                <h4 className="font-medium text-red-400 mb-2">⚠️ Critical Pain Point: Alert Fatigue</h4>
+                <h4 className="text-sm font-semibold text-red-400 mb-2">The Core Pain</h4>
                 <p className="text-sm text-gray-300">
-                  51% of SOC teams report alert fatigue. Security tools that increase alerts without 
-                  improving signal quality create organizational resistance to adoption. The bar for 
-                  new tools is demonstrably better SNR, not just "more detection."
+                  88% of CISOs report experiencing a successful email attack in the last quarter. 
+                  Despite this, investment and innovation levels are not matching the threat evolution.
+                  SOC teams are overwhelmed: 51% report alert fatigue, 62% of alerts go entirely ignored.
                 </p>
               </div>
             </section>
@@ -739,21 +680,49 @@ const EmailSecurityPage = () => {
                 <span>💰</span> Economics & ROI
               </h2>
 
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-                {roiMetrics.map((item, idx) => (
-                  <div key={idx} className="p-4 bg-gray-800 rounded-lg text-center">
-                    <div className="text-lg font-bold text-green-400">{item.value}</div>
-                    <div className="text-xs text-gray-400 mt-1">{item.metric}</div>
-                  </div>
-                ))}
+              {/* ROI Metrics */}
+              <div className="mb-6">
+                <h3 className="text-sm font-semibold text-gray-400 mb-3">The Cost of Getting It Wrong</h3>
+                <div className="grid grid-cols-2 gap-4">
+                  {roiMetrics.map((item, idx) => (
+                    <div key={idx} className="bg-gray-800 rounded-lg p-4">
+                      <div className="text-lg font-bold text-white">{item.value}</div>
+                      <div className="text-xs text-gray-400">{item.metric}</div>
+                    </div>
+                  ))}
+                </div>
               </div>
 
-              <div className="bg-blue-900/20 border border-blue-800/50 rounded-lg p-4">
-                <h4 className="font-medium text-blue-400 mb-2">💡 ROI Positioning for PMs</h4>
-                <p className="text-sm text-gray-300">
-                  Don't sell detection rates. Sell operational leverage. The winning pitch is: 
-                  "Same team size, 10x more coverage" or "Reduce SOC headcount needs by 40%." 
-                  CISOs are measured on risk reduction per dollar spent, not threat detection volume.
+              {/* Pricing Model */}
+              <div className="mb-6">
+                <h3 className="text-sm font-semibold text-gray-400 mb-3">Dominant Pricing Model</h3>
+                <div className="bg-gray-800 rounded-lg p-4">
+                  <p className="text-sm text-gray-300 mb-3">
+                    <strong className="text-white">Per-user/per-seat</strong> pricing dominates (90%+ of market). 
+                    Enterprise ranges from $25-70/user/year for full-suite protection.
+                  </p>
+                  <p className="text-xs text-gray-400">
+                    List prices are starting points. Enterprise buyers routinely achieve 15-40% discounts 
+                    through competitive bake-offs, multi-year commitments, and bundle negotiation.
+                  </p>
+                </div>
+              </div>
+
+              {/* ROI Calculation */}
+              <div className="bg-green-900/20 border border-green-800/50 rounded-lg p-4">
+                <h4 className="text-sm font-semibold text-green-400 mb-2">Sample ROI (1,000 Users)</h4>
+                <div className="grid grid-cols-2 gap-4 text-sm">
+                  <div>
+                    <div className="text-gray-400">Investment</div>
+                    <div className="text-white font-medium">$35,000/year</div>
+                  </div>
+                  <div>
+                    <div className="text-gray-400">Value Protected</div>
+                    <div className="text-green-400 font-medium">$384,000+/year</div>
+                  </div>
+                </div>
+                <p className="text-xs text-gray-400 mt-3">
+                  Based on: BEC attempts blocked, analyst time saved, breach probability reduction, insurance premium reduction.
                 </p>
               </div>
             </section>
@@ -761,9 +730,9 @@ const EmailSecurityPage = () => {
             {/* PM Strategy Section */}
             <section id="product" className="bg-gray-900 rounded-xl border border-gray-800 p-6">
               <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                <span>🎯</span> PM Strategy
+                <span>🎯</span> PM Strategic Elements
               </h2>
-
+              
               {/* Table Stakes */}
               <div className="mb-6">
                 <h3 className="text-sm font-semibold text-gray-400 mb-3">Table Stakes (Minimum Viable Feature Set)</h3>
@@ -893,7 +862,12 @@ const EmailSecurityPage = () => {
                     <div className="text-xs text-gray-500">Complete SRP analysis (PDF)</div>
                   </div>
                 </a>
-                <a href="#" className="flex items-center gap-3 p-4 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors">
+                <a 
+                  href="https://hologramai.tech/platform" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 p-4 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors"
+                >
                   <span className="text-2xl">🚀</span>
                   <div>
                     <div className="font-medium">Platform Vision Prototype</div>
@@ -908,8 +882,8 @@ const EmailSecurityPage = () => {
 
         {/* Footer */}
         <footer className="mt-12 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
-          <p>Analysis by Andy Simko • CISSP, GPEN, OSIR, OSTH</p>
-          <p className="mt-1 text-gray-600">10+ years in cybersecurity • Methodology: Systematic Research Process (SRP)</p>
+          <p>Analysis by Andy Simko • CISSP • GPEN • CISA • GSNA • HCSFP • PMC-Level III</p>
+          <p className="mt-1 text-gray-600">15+ years in cybersecurity • Methodology: Systematic Research Process (SRP)</p>
         </footer>
       </div>
     </div>
