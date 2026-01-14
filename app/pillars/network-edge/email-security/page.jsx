@@ -38,88 +38,79 @@ const EmailSecurityPage = () => {
     { source: 'Mordor Intelligence', val2024: '$4.56B', val2025: '$5.23B', projection: '$9.55B (2030)', cagr: '12.78%' },
   ];
 
-  // Updated competitors - status reflects actual research completion
+  // Updated competitors - all with profiles are "in-progress"
   const competitors = [
     { 
       name: 'Abnormal Security', 
       product: 'Behavioral AI Email Security',
       position: 'Vision Leader', 
       focus: 'Furthest on Completeness of Vision in 2024/2025 MQ. API-native behavioral AI. $5.1B valuation, $200M+ ARR.',
-      status: 'complete',
-      href: '/pillars/network-edge/email-security/companies/abnormal',
-      fileName: 'abnormal-research-profile.jsx'
+      status: 'in-progress',
+      href: '/pillars/network-edge/email-security/companies/abnormal'
     },
     { 
       name: 'Barracuda Networks', 
       product: 'Email Protection + BarracudaONE',
       position: 'SMB Champion', 
       focus: 'Gartner Visionary 2024/2025. 200K+ customers. KKR-owned (~$4B). Strong MSP ecosystem.',
-      status: 'complete',
-      href: '/pillars/network-edge/email-security/companies/barracuda',
-      fileName: 'barracuda-research-profile.jsx'
+      status: 'in-progress',
+      href: '/pillars/network-edge/email-security/companies/barracuda'
     },
     { 
       name: 'Check Point / Avanan', 
       product: 'Harmony Email & Collaboration',
       position: 'Inline API Pioneer', 
       focus: 'Gartner Leader 2024. Acquired Avanan 2021 ($227-300M). Inline API architecture. ThreatCloud integration.',
-      status: 'complete',
-      href: '/pillars/network-edge/email-security/companies/checkpoint',
-      fileName: 'checkpoint-avanan-profile.jsx'
+      status: 'in-progress',
+      href: '/pillars/network-edge/email-security/companies/checkpoint'
     },
     { 
       name: 'Cisco Secure Email', 
       product: 'Email Threat Defense',
       position: 'Legacy SEG Transitioning', 
       focus: 'IronPort heritage ($830M, 2007). Talos intel (800B events/day). Declining mindshare 8.1%→5.8%.',
-      status: 'complete',
-      href: '/pillars/network-edge/email-security/companies/cisco',
-      fileName: 'cisco-secure-email-profile.jsx'
+      status: 'in-progress',
+      href: '/pillars/network-edge/email-security/companies/cisco'
     },
     { 
       name: 'Darktrace', 
       product: 'Darktrace / EMAIL',
       position: 'Self-Learning AI Platform', 
       focus: 'Gartner Leader 2025. Thoma Bravo $5.3B acquisition. Cross-domain correlation advantage.',
-      status: 'complete',
-      href: '/pillars/network-edge/email-security/companies/darktrace',
-      fileName: 'darktrace-email-profile.jsx'
+      status: 'in-progress',
+      href: '/pillars/network-edge/email-security/companies/darktrace'
     },
     { 
       name: 'Google Workspace', 
       product: 'Gmail Security',
       position: 'Platform Incumbent', 
       focus: '3B+ users. 58% K-12, 80%+ higher ed. 99.9% spam block but BEC gap persists.',
-      status: 'complete',
-      href: '/pillars/network-edge/email-security/companies/google',
-      fileName: 'google-workspace-security-profile.jsx'
+      status: 'in-progress',
+      href: '/pillars/network-edge/email-security/companies/google'
     },
     { 
       name: 'IRONSCALES', 
       product: 'Email Security + SAT',
       position: 'AI + Human Insights', 
       focus: 'Gartner Visionary 2024. 17K+ customers, 30K+ analyst community. Native SAT integration. First deepfake protection.',
-      status: 'complete',
-      href: '/pillars/network-edge/email-security/companies/ironscales',
-      fileName: 'ironscales-profile.jsx'
+      status: 'in-progress',
+      href: '/pillars/network-edge/email-security/companies/ironscales'
     },
     { 
       name: 'KnowBe4', 
       product: 'Defend (Egress) + KSAT',
       position: 'Human Risk Management', 
       focus: 'Gartner Leader 2024/2025. Vista $4.6B. 70K+ SAT customers. Egress acquisition transformed to HRM platform.',
-      status: 'complete',
-      href: '/pillars/network-edge/email-security/companies/knowbe4',
-      fileName: 'knowbe4-profile.jsx'
+      status: 'in-progress',
+      href: '/pillars/network-edge/email-security/companies/knowbe4'
     },
     { 
       name: 'Microsoft', 
       product: 'Defender for Office 365',
       position: 'Platform Incumbent', 
       focus: 'Gartner Leader 2025. 3.7M+ M365 companies. 84T daily signals. 88% BEC miss rate creates ICES opportunity.',
-      status: 'complete',
-      href: '/pillars/network-edge/email-security/companies/microsoft',
-      fileName: 'microsoft-defender-profile.jsx'
+      status: 'in-progress',
+      href: '/pillars/network-edge/email-security/companies/microsoft'
     },
     { 
       name: 'Proofpoint', 
@@ -165,8 +156,6 @@ const EmailSecurityPage = () => {
 
   const getStatusStyle = (status) => {
     switch (status) {
-      case 'complete':
-        return { bg: 'bg-green-900/50', text: 'text-green-400', border: 'border-green-500/30', dot: 'bg-green-400', label: 'Complete' };
       case 'in-progress':
         return { bg: 'bg-yellow-900/50', text: 'text-yellow-400', border: 'border-yellow-500/30', dot: 'bg-yellow-400', label: 'In Progress' };
       case 'pending':
@@ -247,12 +236,8 @@ const EmailSecurityPage = () => {
           <h3 className="text-xl font-semibold text-white">Vendor Research Profiles</h3>
           <div className="flex gap-4 text-xs">
             <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-green-400"></div>
-              <span className="text-slate-400">Complete (9)</span>
-            </div>
-            <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-yellow-400"></div>
-              <span className="text-slate-400">In Progress (2)</span>
+              <span className="text-slate-400">In Progress (11)</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-gray-500"></div>
@@ -264,22 +249,26 @@ const EmailSecurityPage = () => {
           {competitors.map((vendor, i) => {
             const style = getStatusStyle(vendor.status);
             return (
-              <div key={i} className={`${style.bg} rounded-lg p-4 border ${style.border} ${vendor.status === 'complete' ? 'cursor-pointer hover:border-green-400/50 transition-colors' : ''}`}>
+              <div key={i} className={`${style.bg} rounded-lg p-4 border ${style.border}`}>
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
                     <div className="flex items-center gap-3">
-                      <h4 className="font-semibold text-white">{vendor.name}</h4>
+                      {vendor.status === 'in-progress' ? (
+                        <a href={vendor.href} className="font-semibold text-white hover:text-yellow-400 transition-colors">
+                          {vendor.name}
+                        </a>
+                      ) : (
+                        <h4 className="font-semibold text-white">{vendor.name}</h4>
+                      )}
                       <span className={`text-xs px-2 py-0.5 rounded ${style.bg} ${style.text}`}>{vendor.position}</span>
-                      <div className={`w-2 h-2 rounded-full ${style.dot}`}></div>
                     </div>
                     <p className="text-slate-500 text-xs mt-1">{vendor.product}</p>
                     <p className="text-slate-400 text-sm mt-2">{vendor.focus}</p>
                   </div>
-                  {vendor.status === 'complete' && (
-                    <a href={vendor.href} className="px-3 py-1.5 bg-green-500/20 text-green-400 text-xs rounded-lg hover:bg-green-500/30 transition-colors">
-                      View Profile →
-                    </a>
-                  )}
+                  <div className="flex items-center gap-2 text-xs">
+                    <div className={`w-2 h-2 rounded-full ${style.dot}`}></div>
+                    <span className={style.text}>{style.label}</span>
+                  </div>
                 </div>
               </div>
             );
@@ -303,7 +292,7 @@ const EmailSecurityPage = () => {
               <span className="text-white font-medium">Email Security</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="px-3 py-1 bg-cyan-500/20 text-cyan-400 text-xs rounded-full">9 Profiles Complete</span>
+              <span className="px-3 py-1 bg-yellow-500/20 text-yellow-400 text-xs rounded-full">11 Profiles In Progress</span>
             </div>
           </div>
         </div>
