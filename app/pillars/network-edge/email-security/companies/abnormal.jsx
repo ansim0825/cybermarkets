@@ -18,7 +18,7 @@ const AbnormalCompanyPage = () => {
     snapshot: {
       founded: '2018',
       founders: 'Evan Reiser (CEO) & Sanjay Jeyakumar',
-      hq: 'San Francisco, CA',
+      hq: 'Las Vegas, NV',
       funding: '$546M raised',
       valuation: '$5.1B (Series D, Aug 2024)',
       arr: '$200M+ (100% YoY growth)',
@@ -432,14 +432,7 @@ const AbnormalCompanyPage = () => {
               <p className="text-xl text-gray-400 mb-2">{company.tagline}</p>
               <p className="text-sm text-gray-500">{company.product}</p>
             </div>
-            <a 
-              href={company.website}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg text-sm transition-colors"
-            >
-              Visit Website →
-            </a>
+           
           </div>
           
           <div className="flex items-center gap-4 text-sm text-gray-500">
