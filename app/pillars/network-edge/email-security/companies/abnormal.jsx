@@ -587,7 +587,7 @@ const AbnormalCompanyPage = () => {
 
         {/* Footer */}
         <footer className="mt-12 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
-          <p>Analysis by Andy Simko • CISSP • GPEN • CISA • GSNA • HCSFP • PMC-Level III
+          <p>Analysis by Andy Simko • CISSP • GPEN • CISA • GSNA • HCSFP • PMC-Level III</p>
           <p className="mt-1 text-gray-600">Independent research • Not affiliated with {company.name}</p>
         </footer>
       </div>
