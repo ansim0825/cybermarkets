@@ -19,7 +19,7 @@ const AbnormalCompanyPage = () => {
     snapshot: {
       founded: '2018',
       founders: 'Evan Reiser (CEO) & Sanjay Jeyakumar',
-      hq: 'San Francisco, CA',
+      hq: 'Las Vegas, NV',
       funding: '$546M raised',
       valuation: '$5.1B (Series D, Aug 2024)',
       arr: '$200M+ (100% YoY growth)',
