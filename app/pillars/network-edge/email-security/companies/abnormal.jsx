@@ -230,15 +230,7 @@ const AbnormalCompanyPage = () => {
               <p className="text-xl text-gray-400 mb-2">{company.tagline}</p>
               <p className="text-sm text-gray-500">{company.product}</p>
             </div>
-            <a 
-              href={company.website}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg text-sm transition-colors"
-            >
-              Visit Website →
-            </a>
-          </div>
+        </div>
           
           <div className="flex items-center gap-4 text-sm text-gray-500">
             <span>Research Status: <span className="text-yellow-400">In Progress</span></span>
