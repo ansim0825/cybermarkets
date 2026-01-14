@@ -3,170 +3,134 @@
 import React, { useState } from 'react';
 import { Logo } from '@/components/Logo';
 
-const AbnormalCompanyPage = () => {
+const CloudflareCompanyPage = () => {
   const [activeSection, setActiveSection] = useState('overview');
 
-  // Company data - this would be the template structure for all vendors
+  // Company data - placeholder for research
   const company = {
-    name: 'Abnormal Security',
-    product: 'Abnormal Email Security',
-    tagline: 'AI-native email security that stops attacks humans can\'t detect',
-    position: 'Vision Leader',
-    positionColor: 'purple',
-    website: 'https://abnormal.ai',
+    name: 'Cloudflare',
+    product: 'Area 1 Email Security',
+    tagline: 'Preemptive email security powered by global network intelligence',
+    position: 'Infrastructure Challenger',
+    positionColor: 'cyan',
+    website: 'https://www.cloudflare.com/products/zero-trust/email-security/',
     
     // Snapshot
     snapshot: {
-      founded: '2018',
-      founders: 'Evan Reiser (CEO) & Sanjay Jeyakumar',
+      founded: '2009 (Area 1 acquired 2022)',
+      founders: 'Matthew Prince, Lee Holloway, Michelle Zatlyn',
       hq: 'San Francisco, CA',
-      funding: '$546M raised',
-      valuation: '$5.1B (Series D, Aug 2024)',
-      arr: '$200M+ (100% YoY growth)',
-      customers: '3,000+ across 35 countries',
-      employees: '1,000+ (70% growth in 2024)',
-      investors: 'Greylock, Wellington, CrowdStrike Ventures',
+      funding: 'Public (NYSE: NET)',
+      valuation: '~$30B market cap',
+      acquisition: 'Area 1 acquired for $162M (2022)',
+      customers: 'Part of Cloudflare Zero Trust platform',
+      employees: '4,000+ (Cloudflare overall)',
     },
 
     // Market Position
     marketPosition: {
-      gartnerPosition: 'Leader - Furthest on Completeness of Vision (2024, 2025)',
+      gartnerPosition: 'Not separately rated - part of broader Cloudflare SASE/SSE',
       category: 'Integrated Cloud Email Security (ICES)',
-      subCategory: 'AI-Native Human Behavior Security',
-      fortune500: '17% of Fortune 500',
+      subCategory: 'Infrastructure-First Email Security',
       keyRecognition: [
-        'Gartner Magic Quadrant Leader 2024, 2025',
-        'CNBC Disruptor 50',
-        'Forbes Cloud 100',
+        'Cloudflare named to Gartner SSE MQ',
+        'Area 1 was Gartner Cool Vendor pre-acquisition',
       ]
     },
 
     // Core Product
     coreProduct: {
-      architecture: 'API-native (post-delivery)',
-      deployment: '60-second setup via M365/Google Workspace API',
+      architecture: 'DNS/Network-level preemptive detection',
+      deployment: 'API + MX routing options, integrates with Cloudflare Zero Trust',
       primaryUseCases: [
+        'Phishing Prevention (preemptive)',
         'Business Email Compromise (BEC)',
-        'Account Takeover Detection',
-        'Vendor Email Compromise (VEC)',
-        'Credential Phishing',
+        'Malware & Ransomware via Email',
         'Supply Chain Attacks',
       ],
       keyCapabilities: [
-        'Behavioral AI Engine (PeopleBase, VendorBase, TenantBase)',
-        'AI Security Mailbox (autonomous triage)',
-        'Multi-channel protection (Slack, Teams, Zoom)',
-        'Zero-touch remediation',
-        'Human Risk Scoring',
+        'Preemptive crawling of attacker infrastructure',
+        'DNS-level threat intelligence',
+        'Integration with Cloudflare Gateway & Access',
+        'Global network vantage point (300+ cities)',
       ],
-      integrations: ['Microsoft 365', 'Google Workspace', 'Slack', 'Microsoft Teams', 'Zoom', 'SIEM/SOAR'],
+      integrations: ['Microsoft 365', 'Google Workspace', 'Cloudflare Zero Trust', 'Cloudflare Gateway'],
     },
 
     // Differentiation
     differentiation: [
       {
-        title: 'Behavioral AI ≠ Traditional AI/ML',
-        description: 'Creates unique baseline for each organization. Not just LLMs or threat intelligence.',
-        icon: '🧠'
+        title: 'Infrastructure Vantage Point',
+        description: 'Sees threats across global network before they reach email. Unique DNS/network-level signals.',
+        icon: '🌐'
       },
       {
-        title: 'API-Native from Day 1',
-        description: 'Legacy vendors built on SEG architecture can\'t match native API design speed-to-value.',
-        icon: '⚡'
+        title: 'Preemptive Detection',
+        description: 'Crawls and identifies attacker infrastructure before campaigns launch.',
+        icon: '🔮'
       },
       {
-        title: 'Autonomous Operations',
-        description: 'Full closed-loop detection, investigation, and remediation. AI Security Mailbox differentiator.',
-        icon: '🤖'
+        title: 'Zero Trust Integration',
+        description: 'Part of broader SASE/SSE platform. Email security + access + gateway unified.',
+        icon: '🔒'
       },
       {
-        title: 'Network Effects at Scale',
-        description: '3,000+ customers, 1.4B+ mailboxes powering continuous model improvement.',
-        icon: '📈'
+        title: 'Developer-First',
+        description: 'Strong API, easy integration for technical teams. Cloudflare brand trust.',
+        icon: '👨‍💻'
       },
     ],
 
     // Strengths & Weaknesses
     strengths: [
-      'Furthest on Gartner vision axis - recognized thought leader',
-      'API-native architecture - fastest deployment in market',
-      'Best-in-class behavioral AI for BEC/ATO detection',
-      'Low false positives - "set it and forget it" operations',
-      '95% SOC workload reduction claims',
-      'Strong Fortune 500 penetration (17%)',
-      'Well-funded ($546M) for continued innovation',
-      'IPO-ready executive bench (ex-Okta, Zoom, Microsoft, CrowdStrike)',
+      'Unique infrastructure vantage point - sees threats others can\'t',
+      'Part of broader Zero Trust platform - consolidation play',
+      'Strong brand recognition and developer adoption',
+      'Public company stability and continued investment',
+      'Preemptive detection approach is differentiated',
+      'Global network scale (300+ cities)',
     ],
     weaknesses: [
-      'Premium pricing vs. mid-market competitors',
-      'Microsoft Defender bundling pressure in E5 deals',
-      'Less established in EMEA/APAC vs. incumbents',
-      'Dependent on M365/Google ecosystem',
-      'Limited on-premise support',
-      'Newer brand vs. Proofpoint/Mimecast legacy relationships',
+      'Email security is not core focus (vs. pure-play vendors)',
+      'Less mature behavioral AI vs. Abnormal/Proofpoint',
+      'Area 1 integration still evolving post-acquisition',
+      'Limited enterprise email security track record',
+      'Not separately positioned in Gartner Email Security MQ',
+      'Less SOC workflow integration vs. incumbents',
     ],
 
     // Strategic Outlook
     outlook: {
       tailwinds: [
-        'AI-powered attacks accelerating (GenAI arms race)',
-        'Cloud migration complete for most enterprises (M365/GWS dominance)',
-        'SEG model obsolescence recognized by analysts and buyers',
-        'Security talent shortage driving automation demand',
-        'Platform consolidation trend (extend beyond email)',
+        'SASE/SSE consolidation trend favors platform players',
+        'Zero Trust adoption driving bundled security purchases',
+        'Developer/SMB segment strong for Cloudflare',
+        'Continued investment as public company',
       ],
       headwinds: [
-        'Microsoft Defender native integration advantage (included in E5)',
-        'Proofpoint entrenched enterprise relationships, high switching costs',
-        'M&A risk - could be acquired by XDR platforms',
-        'Behavioral AI commoditization over 24-36 months',
+        'Competing against focused email security specialists',
+        'Enterprise buyers may prefer best-of-breed for email',
+        'Area 1 brand diluted into Cloudflare umbrella',
+        'Less analyst coverage for email-specific capabilities',
       ],
-      trajectory: 'IPO likely 2026-2027. Expansion into broader Human Risk Management platform.',
-    },
-
-    // Key Metrics
-    metrics: {
-      detectionRate: '99.6% threats auto-remediated',
-      mttd: '<5 seconds mean time to detect',
-      workloadReduction: '95% SOC workload reduction',
-      deploymentTime: '60 seconds',
-      falsePositiveRate: 'Industry-lowest FP rate',
+      trajectory: 'Email security as feature of broader Zero Trust platform. Less likely to compete head-to-head with Abnormal/Proofpoint in enterprise.',
     },
 
     // Recent News
     news: [
       {
-        date: 'Aug 2024',
-        title: 'Series D at $5.1B Valuation',
-        summary: 'Raised additional funding, doubling valuation from 2023.',
-        type: 'funding'
+        date: 'Feb 2022',
+        title: 'Area 1 Acquisition Closed',
+        summary: 'Cloudflare completed $162M acquisition of Area 1 Security.',
+        type: 'acquisition'
       },
       {
-        date: 'Jan 2025',
-        title: 'Gartner MQ Leader - Vision Axis',
-        summary: 'Named furthest on Completeness of Vision for second consecutive year.',
-        type: 'recognition'
-      },
-      {
-        date: 'Dec 2024',
-        title: 'Multi-Channel Expansion',
-        summary: 'Extended protection to Slack, Teams, and Zoom collaboration platforms.',
-        type: 'product'
-      },
-      {
-        date: 'Nov 2024',
-        title: 'AI Security Mailbox Launch',
-        summary: 'Autonomous triage of user-reported emails with AI-generated responses.',
+        date: '2024',
+        title: 'Zero Trust Platform Integration',
+        summary: 'Area 1 fully integrated into Cloudflare Zero Trust suite.',
         type: 'product'
       },
     ],
-
-    // Competitive Positioning
-    competitivePositioning: {
-      vsProofpoint: 'Faster deployment (60s vs weeks), lower operational overhead, better AI detection. Proofpoint has deeper enterprise relationships.',
-      vsMicrosoft: 'Catches what Defender misses. Behavioral AI vs. static rules. Premium tier vs. bundled "good enough".',
-      vsMimecast: 'API-native vs. gateway-first. Lower false positives, faster time-to-value. Mimecast stronger on archiving/compliance.',
-    }
   };
 
   const sections = [
@@ -183,7 +147,7 @@ const AbnormalCompanyPage = () => {
       case 'funding': return 'bg-green-900/50 text-green-400 border-green-700';
       case 'product': return 'bg-blue-900/50 text-blue-400 border-blue-700';
       case 'recognition': return 'bg-purple-900/50 text-purple-400 border-purple-700';
-      case 'partnership': return 'bg-cyan-900/50 text-cyan-400 border-cyan-700';
+      case 'acquisition': return 'bg-orange-900/50 text-orange-400 border-orange-700';
       default: return 'bg-gray-800 text-gray-400 border-gray-700';
     }
   };
@@ -206,7 +170,7 @@ const AbnormalCompanyPage = () => {
               <span className="text-gray-600 hidden sm:inline">/</span>
               <a href="/pillars/network-edge/email-security" className="text-gray-400 hover:text-white hidden sm:inline">Email Security</a>
               <span className="text-gray-600 hidden sm:inline">/</span>
-              <span className="text-gray-300 hidden sm:inline">Abnormal</span>
+              <span className="text-gray-300 hidden sm:inline">Cloudflare</span>
             </div>
             <div className="flex items-center gap-6 text-sm">
               <a href="/pillars/network-edge/email-security" className="text-gray-300 hover:text-white">← Back to Market</a>
@@ -223,7 +187,7 @@ const AbnormalCompanyPage = () => {
             <div>
               <div className="flex items-center gap-3 mb-2">
                 <h1 className="text-4xl font-bold">{company.name}</h1>
-                <span className="px-3 py-1 bg-purple-900/50 text-purple-400 border border-purple-700 rounded-full text-sm">
+                <span className="px-3 py-1 bg-cyan-900/50 text-cyan-400 border border-cyan-700 rounded-full text-sm">
                   {company.position}
                 </span>
               </div>
@@ -241,33 +205,29 @@ const AbnormalCompanyPage = () => {
           </div>
           
           <div className="flex items-center gap-4 text-sm text-gray-500">
-            <span>Research Status: <span className="text-yellow-400">In Progress</span></span>
+            <span>Research Status: <span className="text-gray-400">Pending</span></span>
             <span>•</span>
             <span>Last updated: January 2026</span>
           </div>
         </div>
 
         {/* Snapshot Cards */}
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 mb-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
           <div className="bg-gray-900 rounded-xl p-4 border border-gray-800">
-            <div className="text-2xl font-bold text-white mb-1">{company.snapshot.valuation.split(' ')[0]}</div>
-            <div className="text-xs text-gray-400">Valuation</div>
+            <div className="text-2xl font-bold text-white mb-1">~$30B</div>
+            <div className="text-xs text-gray-400">Market Cap (NET)</div>
           </div>
           <div className="bg-gray-900 rounded-xl p-4 border border-gray-800">
-            <div className="text-2xl font-bold text-green-400 mb-1">{company.snapshot.arr.split(' ')[0]}</div>
-            <div className="text-xs text-gray-400">ARR (100% YoY)</div>
+            <div className="text-2xl font-bold text-orange-400 mb-1">$162M</div>
+            <div className="text-xs text-gray-400">Area 1 Acquisition</div>
           </div>
           <div className="bg-gray-900 rounded-xl p-4 border border-gray-800">
-            <div className="text-2xl font-bold text-white mb-1">{company.snapshot.customers.split(' ')[0]}</div>
-            <div className="text-xs text-gray-400">Customers</div>
+            <div className="text-2xl font-bold text-white mb-1">300+</div>
+            <div className="text-xs text-gray-400">Global Network Cities</div>
           </div>
           <div className="bg-gray-900 rounded-xl p-4 border border-gray-800">
-            <div className="text-2xl font-bold text-white mb-1">{company.snapshot.employees.split(' ')[0]}</div>
+            <div className="text-2xl font-bold text-white mb-1">4,000+</div>
             <div className="text-xs text-gray-400">Employees</div>
-          </div>
-          <div className="bg-gray-900 rounded-xl p-4 border border-gray-800">
-            <div className="text-2xl font-bold text-purple-400 mb-1">{company.marketPosition.fortune500}</div>
-            <div className="text-xs text-gray-400">Fortune 500</div>
           </div>
         </div>
 
@@ -286,7 +246,7 @@ const AbnormalCompanyPage = () => {
                       onClick={() => scrollToSection(section.id)}
                       className={`w-full text-left px-3 py-2 rounded-lg text-sm flex items-center gap-2 transition-all ${
                         activeSection === section.id
-                          ? 'bg-purple-900/50 text-purple-400 border border-purple-800'
+                          ? 'bg-cyan-900/50 text-cyan-400 border border-cyan-800'
                           : 'text-gray-400 hover:bg-gray-800 hover:text-white'
                       }`}
                     >
@@ -297,27 +257,12 @@ const AbnormalCompanyPage = () => {
                 </div>
               </div>
 
-              {/* Quick Stats */}
-              <div className="bg-gray-900 rounded-xl border border-gray-800 p-4">
-                <h3 className="text-sm font-semibold text-gray-400 mb-3">Key Metrics</h3>
-                <div className="space-y-3 text-sm">
-                  <div className="flex justify-between">
-                    <span className="text-gray-500">Detection Rate</span>
-                    <span className="text-green-400">{company.metrics.detectionRate}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-500">MTTD</span>
-                    <span className="text-white">{company.metrics.mttd}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-500">SOC Reduction</span>
-                    <span className="text-white">{company.metrics.workloadReduction}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-500">Deployment</span>
-                    <span className="text-white">{company.metrics.deploymentTime}</span>
-                  </div>
-                </div>
+              {/* Research Notice */}
+              <div className="bg-yellow-900/20 border border-yellow-800/50 rounded-xl p-4">
+                <h3 className="text-sm font-semibold text-yellow-400 mb-2">⚠️ Research Pending</h3>
+                <p className="text-xs text-gray-400">
+                  This page contains preliminary research. Full SRP analysis coming soon.
+                </p>
               </div>
             </div>
           </div>
@@ -340,20 +285,16 @@ const AbnormalCompanyPage = () => {
                       <span className="text-gray-300">{company.snapshot.founded}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-500">Founders</span>
-                      <span className="text-gray-300">{company.snapshot.founders}</span>
-                    </div>
-                    <div className="flex justify-between">
                       <span className="text-gray-500">Headquarters</span>
                       <span className="text-gray-300">{company.snapshot.hq}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-500">Total Funding</span>
+                      <span className="text-gray-500">Status</span>
                       <span className="text-gray-300">{company.snapshot.funding}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-500">Key Investors</span>
-                      <span className="text-gray-300">{company.snapshot.investors}</span>
+                      <span className="text-gray-500">Area 1 Deal</span>
+                      <span className="text-gray-300">{company.snapshot.acquisition}</span>
                     </div>
                   </div>
                 </div>
@@ -370,21 +311,9 @@ const AbnormalCompanyPage = () => {
                     </div>
                     <div>
                       <span className="text-gray-500 block mb-2">Gartner Position</span>
-                      <span className="text-purple-400 text-xs">{company.marketPosition.gartnerPosition}</span>
+                      <span className="text-cyan-400 text-xs">{company.marketPosition.gartnerPosition}</span>
                     </div>
                   </div>
-                </div>
-              </div>
-
-              {/* Recognition */}
-              <div>
-                <h3 className="text-sm font-semibold text-gray-400 mb-3">Recognition</h3>
-                <div className="flex flex-wrap gap-2">
-                  {company.marketPosition.keyRecognition.map((item, idx) => (
-                    <span key={idx} className="px-3 py-1 bg-gray-800 rounded-full text-xs text-gray-300">
-                      {item}
-                    </span>
-                  ))}
                 </div>
               </div>
             </section>
@@ -421,7 +350,7 @@ const AbnormalCompanyPage = () => {
                   <div className="space-y-2">
                     {company.coreProduct.primaryUseCases.map((item, idx) => (
                       <div key={idx} className="flex items-center gap-2 text-sm text-gray-300">
-                        <span className="text-purple-400">→</span>
+                        <span className="text-cyan-400">→</span>
                         {item}
                       </div>
                     ))}
@@ -447,9 +376,9 @@ const AbnormalCompanyPage = () => {
                 <span>⚡</span> Competitive Differentiation
               </h2>
 
-              <div className="grid md:grid-cols-2 gap-4 mb-6">
+              <div className="grid md:grid-cols-2 gap-4">
                 {company.differentiation.map((diff, idx) => (
-                  <div key={idx} className="bg-gray-800 rounded-lg p-4 border-l-2 border-purple-500">
+                  <div key={idx} className="bg-gray-800 rounded-lg p-4 border-l-2 border-cyan-500">
                     <div className="flex items-center gap-2 mb-2">
                       <span className="text-xl">{diff.icon}</span>
                       <h3 className="font-medium text-white">{diff.title}</h3>
@@ -457,25 +386,6 @@ const AbnormalCompanyPage = () => {
                     <p className="text-sm text-gray-400">{diff.description}</p>
                   </div>
                 ))}
-              </div>
-
-              {/* Competitive Positioning */}
-              <div>
-                <h3 className="text-sm font-semibold text-gray-400 mb-3">Head-to-Head</h3>
-                <div className="space-y-3">
-                  <div className="bg-gray-800 rounded-lg p-4">
-                    <div className="font-medium text-white mb-1">vs. Proofpoint</div>
-                    <p className="text-sm text-gray-400">{company.competitivePositioning.vsProofpoint}</p>
-                  </div>
-                  <div className="bg-gray-800 rounded-lg p-4">
-                    <div className="font-medium text-white mb-1">vs. Microsoft Defender</div>
-                    <p className="text-sm text-gray-400">{company.competitivePositioning.vsMicrosoft}</p>
-                  </div>
-                  <div className="bg-gray-800 rounded-lg p-4">
-                    <div className="font-medium text-white mb-1">vs. Mimecast</div>
-                    <p className="text-sm text-gray-400">{company.competitivePositioning.vsMimecast}</p>
-                  </div>
-                </div>
               </div>
             </section>
 
@@ -546,8 +456,8 @@ const AbnormalCompanyPage = () => {
                 </div>
               </div>
 
-              <div className="bg-purple-900/20 border border-purple-800/50 rounded-lg p-4">
-                <h3 className="text-sm font-semibold text-purple-400 mb-2">Trajectory</h3>
+              <div className="bg-cyan-900/20 border border-cyan-800/50 rounded-lg p-4">
+                <h3 className="text-sm font-semibold text-cyan-400 mb-2">Trajectory</h3>
                 <p className="text-sm text-gray-300">{company.outlook.trajectory}</p>
               </div>
             </section>
@@ -574,12 +484,6 @@ const AbnormalCompanyPage = () => {
                   </div>
                 ))}
               </div>
-
-              <div className="mt-4 text-center">
-                <button className="text-sm text-gray-500 hover:text-white transition-colors">
-                  Load more news →
-                </button>
-              </div>
             </section>
 
           </div>
@@ -587,7 +491,7 @@ const AbnormalCompanyPage = () => {
 
         {/* Footer */}
         <footer className="mt-12 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
-          <p>Analysis by Andy Simko • CISSP • GPEN • CISA • GSNA • HCSFP • PMC-Level III</p>
+          <p>Analysis by Andy Simko • CISSP, GPEN, CISA, GSNA, HCSFP • PMC-Level III</p>
           <p className="mt-1 text-gray-600">Independent research • Not affiliated with {company.name}</p>
         </footer>
       </div>
@@ -595,4 +499,4 @@ const AbnormalCompanyPage = () => {
   );
 };
 
-export default AbnormalCompanyPage;
+export default CloudflareCompanyPage;
