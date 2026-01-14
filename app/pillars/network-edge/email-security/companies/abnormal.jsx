@@ -1,590 +1,328 @@
-"use client";
-
 import React, { useState } from 'react';
-import { Logo } from '@/components/Logo';
 
-const AbnormalCompanyPage = () => {
+const AbnormalResearchProfile = () => {
   const [activeSection, setActiveSection] = useState('overview');
 
-  // Company data - this would be the template structure for all vendors
-  const company = {
-    name: 'Abnormal Security',
-    product: 'Abnormal Email Security',
-    tagline: 'AI-native email security that stops attacks humans can\'t detect',
-    position: 'Vision Leader',
-    positionColor: 'purple',
-    website: 'https://abnormal.ai',
-    
-    // Snapshot
-    snapshot: {
-      founded: '2018',
-      founders: 'Evan Reiser (CEO) & Sanjay Jeyakumar',
-      hq: 'Las Vegas, NV',
-      funding: '$546M raised',
-      valuation: '$5.1B (Series D, Aug 2024)',
-      arr: '$200M+ (100% YoY growth)',
-      customers: '3,000+ across 35 countries',
-      employees: '1,000+ (70% growth in 2024)',
-      investors: 'Greylock, Wellington, CrowdStrike Ventures',
-    },
-
-    // Market Position
-    marketPosition: {
-      gartnerPosition: 'Leader - Furthest on Completeness of Vision (2024, 2025)',
-      category: 'Integrated Cloud Email Security (ICES)',
-      subCategory: 'AI-Native Human Behavior Security',
-      fortune500: '17% of Fortune 500',
-      keyRecognition: [
-        'Gartner Magic Quadrant Leader 2024, 2025',
-        'CNBC Disruptor 50',
-        'Forbes Cloud 100',
-      ]
-    },
-
-    // Core Product
-    coreProduct: {
-      architecture: 'API-native (post-delivery)',
-      deployment: '60-second setup via M365/Google Workspace API',
-      primaryUseCases: [
-        'Business Email Compromise (BEC)',
-        'Account Takeover Detection',
-        'Vendor Email Compromise (VEC)',
-        'Credential Phishing',
-        'Supply Chain Attacks',
-      ],
-      keyCapabilities: [
-        'Behavioral AI Engine (PeopleBase, VendorBase, TenantBase)',
-        'AI Security Mailbox (autonomous triage)',
-        'Multi-channel protection (Slack, Teams, Zoom)',
-        'Zero-touch remediation',
-        'Human Risk Scoring',
-      ],
-      integrations: ['Microsoft 365', 'Google Workspace', 'Slack', 'Microsoft Teams', 'Zoom', 'SIEM/SOAR'],
-    },
-
-    // Differentiation
-    differentiation: [
-      {
-        title: 'Behavioral AI ≠ Traditional AI/ML',
-        description: 'Creates unique baseline for each organization. Not just LLMs or threat intelligence.',
-        icon: '🧠'
-      },
-      {
-        title: 'API-Native from Day 1',
-        description: 'Legacy vendors built on SEG architecture can\'t match native API design speed-to-value.',
-        icon: '⚡'
-      },
-      {
-        title: 'Autonomous Operations',
-        description: 'Full closed-loop detection, investigation, and remediation. AI Security Mailbox differentiator.',
-        icon: '🤖'
-      },
-      {
-        title: 'Network Effects at Scale',
-        description: '3,000+ customers, 1.4B+ mailboxes powering continuous model improvement.',
-        icon: '📈'
-      },
-    ],
-
-    // Strengths & Weaknesses
-    strengths: [
-      'Furthest on Gartner vision axis - recognized thought leader',
-      'API-native architecture - fastest deployment in market',
-      'Best-in-class behavioral AI for BEC/ATO detection',
-      'Low false positives - "set it and forget it" operations',
-      '95% SOC workload reduction claims',
-      'Strong Fortune 500 penetration (17%)',
-      'Well-funded ($546M) for continued innovation',
-      'IPO-ready executive bench (ex-Okta, Zoom, Microsoft, CrowdStrike)',
-    ],
-    weaknesses: [
-      'Premium pricing vs. mid-market competitors',
-      'Microsoft Defender bundling pressure in E5 deals',
-      'Less established in EMEA/APAC vs. incumbents',
-      'Dependent on M365/Google ecosystem',
-      'Limited on-premise support',
-      'Newer brand vs. Proofpoint/Mimecast legacy relationships',
-    ],
-
-    // Strategic Outlook
-    outlook: {
-      tailwinds: [
-        'AI-powered attacks accelerating (GenAI arms race)',
-        'Cloud migration complete for most enterprises (M365/GWS dominance)',
-        'SEG model obsolescence recognized by analysts and buyers',
-        'Security talent shortage driving automation demand',
-        'Platform consolidation trend (extend beyond email)',
-      ],
-      headwinds: [
-        'Microsoft Defender native integration advantage (included in E5)',
-        'Proofpoint entrenched enterprise relationships, high switching costs',
-        'M&A risk - could be acquired by XDR platforms',
-        'Behavioral AI commoditization over 24-36 months',
-      ],
-      trajectory: 'IPO likely 2026-2027. Expansion into broader Human Risk Management platform.',
-    },
-
-    // Key Metrics
-    metrics: {
-      detectionRate: '99.6% threats auto-remediated',
-      mttd: '<5 seconds mean time to detect',
-      workloadReduction: '95% SOC workload reduction',
-      deploymentTime: '60 seconds',
-      falsePositiveRate: 'Industry-lowest FP rate',
-    },
-
-    // Recent News
-    news: [
-      {
-        date: 'Aug 2024',
-        title: 'Series D at $5.1B Valuation',
-        summary: 'Raised additional funding, doubling valuation from 2023.',
-        type: 'funding'
-      },
-      {
-        date: 'Jan 2025',
-        title: 'Gartner MQ Leader - Vision Axis',
-        summary: 'Named furthest on Completeness of Vision for second consecutive year.',
-        type: 'recognition'
-      },
-      {
-        date: 'Dec 2024',
-        title: 'Multi-Channel Expansion',
-        summary: 'Extended protection to Slack, Teams, and Zoom collaboration platforms.',
-        type: 'product'
-      },
-      {
-        date: 'Nov 2024',
-        title: 'AI Security Mailbox Launch',
-        summary: 'Autonomous triage of user-reported emails with AI-generated responses.',
-        type: 'product'
-      },
-    ],
-
-    // Competitive Positioning
-    competitivePositioning: {
-      vsProofpoint: 'Faster deployment (60s vs weeks), lower operational overhead, better AI detection. Proofpoint has deeper enterprise relationships.',
-      vsMicrosoft: 'Catches what Defender misses. Behavioral AI vs. static rules. Premium tier vs. bundled "good enough".',
-      vsMimecast: 'API-native vs. gateway-first. Lower false positives, faster time-to-value. Mimecast stronger on archiving/compliance.',
-    }
-  };
-
   const sections = [
-    { id: 'overview', name: 'Overview', icon: '📋' },
-    { id: 'product', name: 'Product', icon: '🎯' },
-    { id: 'differentiation', name: 'Differentiation', icon: '⚡' },
-    { id: 'analysis', name: 'Analysis', icon: '📊' },
-    { id: 'outlook', name: 'Outlook', icon: '🔮' },
-    { id: 'news', name: 'Recent News', icon: '📰' },
+    { id: 'overview', label: 'Overview', icon: '◉' },
+    { id: 'products', label: 'Products', icon: '◈' },
+    { id: 'platform', label: 'Platform', icon: '◇' },
+    { id: 'market', label: 'Market Context', icon: '◆' },
+    { id: 'stakeholders', label: 'Stakeholders', icon: '◊' },
+    { id: 'economics', label: 'Economics', icon: '○' },
+    { id: 'competitive', label: 'Competitive', icon: '●' },
+    { id: 'outlook', label: 'Outlook', icon: '◐' },
+    { id: 'news', label: 'Recent News', icon: '◑' }
   ];
 
-  const getNewsTypeStyle = (type) => {
-    switch (type) {
-      case 'funding': return 'bg-green-900/50 text-green-400 border-green-700';
-      case 'product': return 'bg-blue-900/50 text-blue-400 border-blue-700';
-      case 'recognition': return 'bg-purple-900/50 text-purple-400 border-purple-700';
-      case 'partnership': return 'bg-cyan-900/50 text-cyan-400 border-cyan-700';
-      default: return 'bg-gray-800 text-gray-400 border-gray-700';
-    }
-  };
+  const CitationFooter = ({ citations }) => (
+    <div className="mt-8 pt-4 border-t border-slate-700">
+      <p className="text-xs text-slate-500 uppercase tracking-wider mb-2">Sources</p>
+      <div className="space-y-1">
+        {citations.map((cite, i) => (
+          <p key={i} className="text-xs text-slate-400">
+            [{i + 1}] {cite.url ? (
+              <a href={cite.url} target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline">{cite.text}</a>
+            ) : cite.text}
+          </p>
+        ))}
+      </div>
+      <div className="mt-4 pt-4 border-t border-slate-800">
+        <p className="text-xs text-slate-600 italic">Research compiled January 2026 • Andy Simko Portfolio</p>
+      </div>
+    </div>
+  );
 
-  const scrollToSection = (sectionId) => {
-    setActiveSection(sectionId);
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+  const HypeCycleDiagram = () => (
+    <div className="bg-slate-800/50 rounded-xl p-6 mt-6">
+      <h4 className="text-sm font-semibold text-slate-300 mb-4">Gartner Hype Cycle Position</h4>
+      <svg viewBox="0 0 500 200" className="w-full h-48">
+        <line x1="50" y1="170" x2="450" y2="170" stroke="#334155" strokeWidth="1"/>
+        <line x1="50" y1="170" x2="50" y2="30" stroke="#334155" strokeWidth="1"/>
+        <text x="250" y="195" textAnchor="middle" className="fill-slate-500 text-xs">Time →</text>
+        <text x="20" y="100" textAnchor="middle" className="fill-slate-500 text-xs" transform="rotate(-90, 20, 100)">Expectations</text>
+        <path d="M 60 160 Q 100 160 120 60 Q 140 20 160 60 Q 180 120 220 140 Q 280 160 340 120 Q 400 90 440 80" fill="none" stroke="#0891b2" strokeWidth="2"/>
+        <text x="90" y="185" textAnchor="middle" className="fill-slate-500" style={{fontSize: '8px'}}>Innovation</text>
+        <text x="90" y="193" textAnchor="middle" className="fill-slate-500" style={{fontSize: '8px'}}>Trigger</text>
+        <text x="150" y="185" textAnchor="middle" className="fill-slate-500" style={{fontSize: '8px'}}>Peak of</text>
+        <text x="150" y="193" textAnchor="middle" className="fill-slate-500" style={{fontSize: '8px'}}>Expectations</text>
+        <text x="220" y="185" textAnchor="middle" className="fill-slate-500" style={{fontSize: '8px'}}>Trough of</text>
+        <text x="220" y="193" textAnchor="middle" className="fill-slate-500" style={{fontSize: '8px'}}>Disillusion</text>
+        <text x="320" y="185" textAnchor="middle" className="fill-slate-500" style={{fontSize: '8px'}}>Slope of</text>
+        <text x="320" y="193" textAnchor="middle" className="fill-slate-500" style={{fontSize: '8px'}}>Enlightenment</text>
+        <text x="420" y="185" textAnchor="middle" className="fill-slate-500" style={{fontSize: '8px'}}>Plateau of</text>
+        <text x="420" y="193" textAnchor="middle" className="fill-slate-500" style={{fontSize: '8px'}}>Productivity</text>
+        <circle cx="320" cy="120" r="8" fill="#22d3ee" className="animate-pulse"/>
+        <text x="320" y="108" textAnchor="middle" className="fill-cyan-300" style={{fontSize: '9px', fontWeight: 'bold'}}>API-Based ICES</text>
+        <circle cx="440" cy="80" r="6" fill="#94a3b8"/>
+        <text x="440" y="68" textAnchor="middle" className="fill-slate-400" style={{fontSize: '8px'}}>Legacy SEG</text>
+      </svg>
+      <p className="text-xs text-slate-500 mt-2 text-center">API-based ICES positioned on Slope of Enlightenment with 2-5 year mainstream adoption</p>
+    </div>
+  );
+
+  const renderOverview = () => (
+    <div className="space-y-6">
+      <div className="bg-gradient-to-br from-cyan-900/30 to-slate-800/50 rounded-2xl p-8 border border-cyan-800/30">
+        <div className="flex items-start justify-between">
+          <div>
+            <h2 className="text-3xl font-bold text-white mb-2">Abnormal Security</h2>
+            <p className="text-cyan-400 text-lg">AI-Native Email Security Platform</p>
+          </div>
+          <div className="text-right">
+            <p className="text-4xl font-bold text-cyan-400">$5.1B</p>
+            <p className="text-slate-400 text-sm">Valuation (Aug 2024)</p>
+          </div>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+          <div className="bg-slate-800/50 rounded-xl p-4 text-center">
+            <p className="text-2xl font-bold text-white">$200M+</p>
+            <p className="text-slate-400 text-sm">ARR</p>
+          </div>
+          <div className="bg-slate-800/50 rounded-xl p-4 text-center">
+            <p className="text-2xl font-bold text-white">100%</p>
+            <p className="text-slate-400 text-sm">YoY Growth</p>
+          </div>
+          <div className="bg-slate-800/50 rounded-xl p-4 text-center">
+            <p className="text-2xl font-bold text-white">3,200+</p>
+            <p className="text-slate-400 text-sm">Customers</p>
+          </div>
+          <div className="bg-slate-800/50 rounded-xl p-4 text-center">
+            <p className="text-2xl font-bold text-white">25%</p>
+            <p className="text-slate-400 text-sm">of Fortune 500</p>
+          </div>
+        </div>
+      </div>
+      <div className="grid md:grid-cols-2 gap-6">
+        <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
+          <h3 className="text-lg font-semibold text-cyan-400 mb-4">Company Profile</h3>
+          <div className="space-y-3">
+            <div className="flex justify-between"><span className="text-slate-400">Founded</span><span className="text-white">2018</span></div>
+            <div className="flex justify-between"><span className="text-slate-400">Headquarters</span><span className="text-white">San Francisco, CA</span></div>
+            <div className="flex justify-between"><span className="text-slate-400">Employees</span><span className="text-white">~1,300</span></div>
+            <div className="flex justify-between"><span className="text-slate-400">Total Funding</span><span className="text-white">$284M</span></div>
+          </div>
+        </div>
+        <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
+          <h3 className="text-lg font-semibold text-cyan-400 mb-4">Leadership</h3>
+          <div className="space-y-3">
+            <div className="flex justify-between"><span className="text-slate-400">CEO</span><span className="text-white">Evan Reiser</span></div>
+            <div className="flex justify-between"><span className="text-slate-400">CTO</span><span className="text-white">Sanjay Jeyakumar</span></div>
+            <div className="flex justify-between"><span className="text-slate-400">Head of ML</span><span className="text-white">Jeshua Bratman</span></div>
+            <div className="flex justify-between"><span className="text-slate-400">Background</span><span className="text-white">Twitter ML Team</span></div>
+          </div>
+        </div>
+      </div>
+      <div className="bg-gradient-to-r from-emerald-900/30 to-slate-800/50 rounded-xl p-6 border border-emerald-800/30">
+        <h3 className="text-lg font-semibold text-emerald-400 mb-4">🏆 Analyst Recognition</h3>
+        <div className="grid md:grid-cols-2 gap-4">
+          <div className="flex items-center gap-3">
+            <div className="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center"><span className="text-emerald-400 text-xl">★</span></div>
+            <div><p className="text-white font-medium">Gartner MQ Leader</p><p className="text-slate-400 text-sm">Email Security 2024 & 2025</p></div>
+          </div>
+          <div className="flex items-center gap-3">
+            <div className="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center"><span className="text-emerald-400 text-xl">→</span></div>
+            <div><p className="text-white font-medium">Furthest Right Position</p><p className="text-slate-400 text-sm">Completeness of Vision (2 yrs)</p></div>
+          </div>
+          <div className="flex items-center gap-3">
+            <div className="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center"><span className="text-emerald-400 text-xl">99%</span></div>
+            <div><p className="text-white font-medium">Peer Insights</p><p className="text-slate-400 text-sm">Would Recommend (4.8/5.0)</p></div>
+          </div>
+          <div className="flex items-center gap-3">
+            <div className="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center"><span className="text-emerald-400 text-xl">🏅</span></div>
+            <div><p className="text-white font-medium">ISO 42001 Certified</p><p className="text-slate-400 text-sm">First AI Mgmt System (Sept 2025)</p></div>
+          </div>
+        </div>
+      </div>
+      <CitationFooter citations={[
+        { text: "Abnormal Security Series D Announcement", url: "https://abnormalsecurity.com/blog/series-d" },
+        { text: "Gartner Magic Quadrant for Email Security Platforms, December 2025" },
+        { text: "Gartner Peer Insights - Abnormal Security Reviews (263 reviews as of Jan 2026)" },
+        { text: "Abnormal Security ISO 42001 Press Release, September 2025" },
+        { text: "Crunchbase - Abnormal Security Funding History" }
+      ]} />
+    </div>
+  );
+
+  const renderProducts = () => (
+    <div className="space-y-6">
+      <h2 className="text-2xl font-bold text-white mb-6">Product Portfolio</h2>
+      <div className="bg-slate-800/50 rounded-xl p-6 border border-cyan-700/30">
+        <h3 className="text-xl font-semibold text-cyan-400 mb-4">Cloud Email Security</h3>
+        <div className="grid gap-4">
+          {[
+            { name: 'Inbound Email Security', desc: 'Autonomous AI detection for BEC, phishing, malware, social engineering attacks' },
+            { name: 'Email Account Takeover Protection', desc: 'Detects compromised accounts across email platforms via behavioral analysis' },
+            { name: 'Security Posture Management', desc: 'Identifies M365/Google Workspace misconfigurations and risky settings' },
+            { name: 'Email Productivity', desc: 'AI-powered graymail filtering personalized to each user communication patterns' },
+            { name: 'Misdirected Email Prevention', desc: 'Prevents wrong-recipient data leaks before send' }
+          ].map((product, i) => (
+            <div key={i} className="bg-slate-900/50 rounded-lg p-4 border border-slate-700">
+              <h4 className="font-medium text-white">{product.name}</h4>
+              <p className="text-slate-400 text-sm mt-1">{product.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="bg-slate-800/50 rounded-xl p-6 border border-purple-700/30">
+        <h3 className="text-xl font-semibold text-purple-400 mb-4">AI Security Agents</h3>
+        <div className="grid gap-4">
+          {[
+            { name: 'AI Security Mailbox', desc: 'Superhuman-speed triage of user-reported suspicious emails (replaces abuse mailbox)' },
+            { name: 'AI Phishing Coach', desc: 'Hyperpersonalized security awareness training triggered by real threats' },
+            { name: 'AI Data Analyst', desc: 'Natural language interface for security reporting and threat hunting' }
+          ].map((product, i) => (
+            <div key={i} className="bg-slate-900/50 rounded-lg p-4 border border-slate-700">
+              <h4 className="font-medium text-white">{product.name}</h4>
+              <p className="text-slate-400 text-sm mt-1">{product.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+      <CitationFooter citations={[
+        { text: "Abnormal Security Product Documentation", url: "https://abnormalsecurity.com/products" },
+        { text: "Abnormal Security AI Security Mailbox Launch, 2024" },
+        { text: "Abnormal Blog - SaaS Security Expansion Announcements" }
+      ]} />
+    </div>
+  );
+
+  const renderMarket = () => (
+    <div className="space-y-6">
+      <h2 className="text-2xl font-bold text-white mb-6">Market Context</h2>
+      <div className="bg-gradient-to-br from-blue-900/30 to-slate-800/50 rounded-xl p-6 border border-blue-700/30">
+        <h3 className="text-xl font-semibold text-blue-400 mb-4">Email Security Market Size</h3>
+        <div className="grid md:grid-cols-3 gap-4">
+          <div className="bg-slate-800/50 rounded-lg p-4 text-center">
+            <p className="text-3xl font-bold text-white">$4.68B</p>
+            <p className="text-slate-400 text-sm">2024 Market Size</p>
+          </div>
+          <div className="bg-slate-800/50 rounded-lg p-4 text-center">
+            <p className="text-3xl font-bold text-cyan-400">$10.83B</p>
+            <p className="text-slate-400 text-sm">2030 Projected</p>
+          </div>
+          <div className="bg-slate-800/50 rounded-lg p-4 text-center">
+            <p className="text-3xl font-bold text-emerald-400">~12%</p>
+            <p className="text-slate-400 text-sm">CAGR (2024-2030)</p>
+          </div>
+        </div>
+      </div>
+      <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
+        <h3 className="text-xl font-semibold text-white mb-4">Architecture Shift: SEG → API-Native ICES</h3>
+        <p className="text-slate-300 mb-4">The email security market is undergoing a fundamental architecture transition from gateway-based SEGs to API-native ICES solutions.</p>
+        <div className="grid md:grid-cols-2 gap-4">
+          <div className="bg-red-900/20 rounded-lg p-4 border border-red-700/30">
+            <h4 className="font-semibold text-red-400 mb-2">Legacy SEG Challenges</h4>
+            <ul className="text-slate-300 text-sm space-y-1">
+              <li>• MX record changes expose security architecture</li>
+              <li>• Cannot scan internal/lateral email</li>
+              <li>• Single point of failure in mail flow</li>
+            </ul>
+          </div>
+          <div className="bg-emerald-900/20 rounded-lg p-4 border border-emerald-700/30">
+            <h4 className="font-semibold text-emerald-400 mb-2">API-Native ICES Advantages</h4>
+            <ul className="text-slate-300 text-sm space-y-1">
+              <li>• No MX changes required</li>
+              <li>• Full visibility into internal email</li>
+              <li>• Minutes to deploy</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <HypeCycleDiagram />
+      <CitationFooter citations={[
+        { text: "Gartner Magic Quadrant for Email Security Platforms, December 2025" },
+        { text: "Gartner Hype Cycle for Email Security, December 2025 - API-based ICES on Slope of Enlightenment" },
+        { text: "MarketsandMarkets Email Security Market Report, 2024 - Market size $4.68B to $10.83B" },
+        { text: "FBI IC3 Report 2023 - BEC losses $2.9B" }
+      ]} />
+    </div>
+  );
+
+  const renderNews = () => (
+    <div className="space-y-6">
+      <h2 className="text-2xl font-bold text-white mb-6">Recent News & Milestones</h2>
+      <div className="space-y-4">
+        {[
+          { date: 'December 2025', title: 'Named Leader in 2025 Gartner MQ', desc: 'Second consecutive year as Leader in Magic Quadrant for Email Security', url: 'https://abnormalsecurity.com/resources/gartner-magic-quadrant', type: 'recognition' },
+          { date: 'September 2025', title: 'GovRAMP Authorization', desc: 'Achieved StateRAMP authorization for SLED deployments', url: 'https://abnormalsecurity.com/blog/stateramp', type: 'compliance' },
+          { date: 'September 2025', title: 'ISO 42001 Certification', desc: 'First security vendor with AI Management System certification', url: 'https://abnormalsecurity.com/blog/iso-42001', type: 'compliance' },
+          { date: 'August 2024', title: '$250M Series D at $5.1B Valuation', desc: 'Funding led by Wellington Management', url: 'https://abnormalsecurity.com/blog/series-d', type: 'funding' },
+          { date: 'August 2024', title: 'Reached $200M ARR', desc: '100% year-over-year growth', url: 'https://abnormalsecurity.com/blog/series-d', type: 'milestone' },
+          { date: '2025', title: 'FedRAMP Moderate Authorization', desc: 'Achieved in 256 days for federal deployments', url: 'https://abnormalsecurity.com/blog/fedramp', type: 'compliance' }
+        ].map((item, i) => (
+          <div key={i} className={`bg-slate-800/50 rounded-xl p-5 border ${item.type === 'funding' ? 'border-cyan-700/30' : item.type === 'recognition' ? 'border-emerald-700/30' : 'border-purple-700/30'}`}>
+            <p className={`text-sm font-medium ${item.type === 'funding' ? 'text-cyan-400' : item.type === 'recognition' ? 'text-emerald-400' : 'text-purple-400'}`}>{item.date}</p>
+            <h4 className="text-lg font-semibold text-white mt-1">{item.title}</h4>
+            <p className="text-slate-400 text-sm mt-1">{item.desc}</p>
+            <a href={item.url} target="_blank" rel="noopener noreferrer" className="inline-block mt-3 text-xs text-cyan-400 hover:underline">View Source →</a>
+          </div>
+        ))}
+      </div>
+      <CitationFooter citations={[
+        { text: "Abnormal Security Blog", url: "https://abnormalsecurity.com/blog" },
+        { text: "Abnormal Security Press Room", url: "https://abnormalsecurity.com/press" }
+      ]} />
+    </div>
+  );
+
+  const renderContent = () => {
+    switch(activeSection) {
+      case 'overview': return renderOverview();
+      case 'products': return renderProducts();
+      case 'market': return renderMarket();
+      case 'news': return renderNews();
+      default: return <div className="text-slate-400">Section: {activeSection}</div>;
+    }
   };
 
   return (
-    <div className="min-h-screen bg-gray-950 text-gray-100">
-      {/* Navigation */}
-      <nav className="border-b border-gray-800 bg-gray-950/80 backdrop-blur-sm sticky top-0 z-50">
-        <div className="max-w-6xl mx-auto px-6 py-4">
+    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white">
+      <header className="bg-slate-900/80 backdrop-blur-sm border-b border-slate-800 sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <a href="/" className="flex items-center">
-                <Logo size="default" />
-              </a>
-              <span className="text-gray-600 hidden sm:inline">/</span>
-              <a href="/pillars/network-edge/email-security" className="text-gray-400 hover:text-white hidden sm:inline">Email Security</a>
-              <span className="text-gray-600 hidden sm:inline">/</span>
-              <span className="text-gray-300 hidden sm:inline">Abnormal</span>
-            </div>
-            <div className="flex items-center gap-6 text-sm">
-              <a href="/pillars/network-edge/email-security" className="text-gray-300 hover:text-white">← Back to Market</a>
-            </div>
-          </div>
-        </div>
-      </nav>
-
-      <div className="max-w-6xl mx-auto px-6 py-8">
-        
-        {/* Header */}
-        <div className="mb-8">
-          <div className="flex items-start justify-between mb-4">
-            <div>
-              <div className="flex items-center gap-3 mb-2">
-                <h1 className="text-4xl font-bold">{company.name}</h1>
-                <span className="px-3 py-1 bg-purple-900/50 text-purple-400 border border-purple-700 rounded-full text-sm">
-                  {company.position}
-                </span>
+              <div className="w-10 h-10 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-lg">A</span>
               </div>
-              <p className="text-xl text-gray-400 mb-2">{company.tagline}</p>
-              <p className="text-sm text-gray-500">{company.product}</p>
-            </div>
-        </div>
-          
-          <div className="flex items-center gap-4 text-sm text-gray-500">
-            <span>Research Status: <span className="text-yellow-400">In Progress</span></span>
-            <span>•</span>
-            <span>Last updated: January 2026</span>
-          </div>
-        </div>
-
-        {/* Snapshot Cards */}
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 mb-8">
-          <div className="bg-gray-900 rounded-xl p-4 border border-gray-800">
-            <div className="text-2xl font-bold text-white mb-1">{company.snapshot.valuation.split(' ')[0]}</div>
-            <div className="text-xs text-gray-400">Valuation</div>
-          </div>
-          <div className="bg-gray-900 rounded-xl p-4 border border-gray-800">
-            <div className="text-2xl font-bold text-green-400 mb-1">{company.snapshot.arr.split(' ')[0]}</div>
-            <div className="text-xs text-gray-400">ARR (100% YoY)</div>
-          </div>
-          <div className="bg-gray-900 rounded-xl p-4 border border-gray-800">
-            <div className="text-2xl font-bold text-white mb-1">{company.snapshot.customers.split(' ')[0]}</div>
-            <div className="text-xs text-gray-400">Customers</div>
-          </div>
-          <div className="bg-gray-900 rounded-xl p-4 border border-gray-800">
-            <div className="text-2xl font-bold text-white mb-1">{company.snapshot.employees.split(' ')[0]}</div>
-            <div className="text-xs text-gray-400">Employees</div>
-          </div>
-          <div className="bg-gray-900 rounded-xl p-4 border border-gray-800">
-            <div className="text-2xl font-bold text-purple-400 mb-1">{company.marketPosition.fortune500}</div>
-            <div className="text-xs text-gray-400">Fortune 500</div>
-          </div>
-        </div>
-
-        {/* Main Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-          
-          {/* Left Sidebar - Navigation */}
-          <div className="lg:col-span-1">
-            <div className="sticky top-24">
-              <div className="bg-gray-900 rounded-xl border border-gray-800 p-4 mb-6">
-                <h3 className="text-sm font-semibold text-gray-400 mb-3">Sections</h3>
-                <div className="space-y-1">
-                  {sections.map((section) => (
-                    <button
-                      key={section.id}
-                      onClick={() => scrollToSection(section.id)}
-                      className={`w-full text-left px-3 py-2 rounded-lg text-sm flex items-center gap-2 transition-all ${
-                        activeSection === section.id
-                          ? 'bg-purple-900/50 text-purple-400 border border-purple-800'
-                          : 'text-gray-400 hover:bg-gray-800 hover:text-white'
-                      }`}
-                    >
-                      <span>{section.icon}</span>
-                      <span>{section.name}</span>
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {/* Quick Stats */}
-              <div className="bg-gray-900 rounded-xl border border-gray-800 p-4">
-                <h3 className="text-sm font-semibold text-gray-400 mb-3">Key Metrics</h3>
-                <div className="space-y-3 text-sm">
-                  <div className="flex justify-between">
-                    <span className="text-gray-500">Detection Rate</span>
-                    <span className="text-green-400">{company.metrics.detectionRate}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-500">MTTD</span>
-                    <span className="text-white">{company.metrics.mttd}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-500">SOC Reduction</span>
-                    <span className="text-white">{company.metrics.workloadReduction}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-500">Deployment</span>
-                    <span className="text-white">{company.metrics.deploymentTime}</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Main Content Area */}
-          <div className="lg:col-span-3 space-y-8">
-            
-            {/* Overview Section */}
-            <section id="overview" className="bg-gray-900 rounded-xl border border-gray-800 p-6">
-              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                <span>📋</span> Company Overview
-              </h2>
-              
-              <div className="grid md:grid-cols-2 gap-6 mb-6">
-                <div>
-                  <h3 className="text-sm font-semibold text-gray-400 mb-3">Company Details</h3>
-                  <div className="space-y-2 text-sm">
-                    <div className="flex justify-between">
-                      <span className="text-gray-500">Founded</span>
-                      <span className="text-gray-300">{company.snapshot.founded}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-500">Founders</span>
-                      <span className="text-gray-300">{company.snapshot.founders}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-500">Headquarters</span>
-                      <span className="text-gray-300">{company.snapshot.hq}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-500">Total Funding</span>
-                      <span className="text-gray-300">{company.snapshot.funding}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-500">Key Investors</span>
-                      <span className="text-gray-300">{company.snapshot.investors}</span>
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <h3 className="text-sm font-semibold text-gray-400 mb-3">Market Position</h3>
-                  <div className="space-y-2 text-sm">
-                    <div className="flex justify-between">
-                      <span className="text-gray-500">Category</span>
-                      <span className="text-gray-300">{company.marketPosition.category}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-500">Sub-Category</span>
-                      <span className="text-gray-300">{company.marketPosition.subCategory}</span>
-                    </div>
-                    <div>
-                      <span className="text-gray-500 block mb-2">Gartner Position</span>
-                      <span className="text-purple-400 text-xs">{company.marketPosition.gartnerPosition}</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Recognition */}
               <div>
-                <h3 className="text-sm font-semibold text-gray-400 mb-3">Recognition</h3>
-                <div className="flex flex-wrap gap-2">
-                  {company.marketPosition.keyRecognition.map((item, idx) => (
-                    <span key={idx} className="px-3 py-1 bg-gray-800 rounded-full text-xs text-gray-300">
-                      {item}
-                    </span>
-                  ))}
-                </div>
+                <h1 className="text-xl font-bold text-white">Abnormal Security</h1>
+                <p className="text-slate-400 text-sm">Competitive Intelligence Profile</p>
               </div>
-            </section>
-
-            {/* Product Section */}
-            <section id="product" className="bg-gray-900 rounded-xl border border-gray-800 p-6">
-              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                <span>🎯</span> Product Overview
-              </h2>
-
-              <div className="grid md:grid-cols-2 gap-6 mb-6">
-                <div>
-                  <h3 className="text-sm font-semibold text-gray-400 mb-3">Architecture</h3>
-                  <div className="bg-gray-800 rounded-lg p-4">
-                    <div className="text-lg font-medium text-white mb-2">{company.coreProduct.architecture}</div>
-                    <p className="text-sm text-gray-400">{company.coreProduct.deployment}</p>
-                  </div>
-                </div>
-                <div>
-                  <h3 className="text-sm font-semibold text-gray-400 mb-3">Integrations</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {company.coreProduct.integrations.map((item, idx) => (
-                      <span key={idx} className="px-3 py-1 bg-gray-800 rounded-lg text-xs text-gray-300">
-                        {item}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <h3 className="text-sm font-semibold text-gray-400 mb-3">Primary Use Cases</h3>
-                  <div className="space-y-2">
-                    {company.coreProduct.primaryUseCases.map((item, idx) => (
-                      <div key={idx} className="flex items-center gap-2 text-sm text-gray-300">
-                        <span className="text-purple-400">→</span>
-                        {item}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <div>
-                  <h3 className="text-sm font-semibold text-gray-400 mb-3">Key Capabilities</h3>
-                  <div className="space-y-2">
-                    {company.coreProduct.keyCapabilities.map((item, idx) => (
-                      <div key={idx} className="flex items-center gap-2 text-sm text-gray-300">
-                        <span className="text-green-400">✓</span>
-                        {item}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </section>
-
-            {/* Differentiation Section */}
-            <section id="differentiation" className="bg-gray-900 rounded-xl border border-gray-800 p-6">
-              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                <span>⚡</span> Competitive Differentiation
-              </h2>
-
-              <div className="grid md:grid-cols-2 gap-4 mb-6">
-                {company.differentiation.map((diff, idx) => (
-                  <div key={idx} className="bg-gray-800 rounded-lg p-4 border-l-2 border-purple-500">
-                    <div className="flex items-center gap-2 mb-2">
-                      <span className="text-xl">{diff.icon}</span>
-                      <h3 className="font-medium text-white">{diff.title}</h3>
-                    </div>
-                    <p className="text-sm text-gray-400">{diff.description}</p>
-                  </div>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs rounded-full border border-emerald-500/30">Gartner Leader</span>
+              <span className="px-3 py-1 bg-cyan-500/20 text-cyan-400 text-xs rounded-full border border-cyan-500/30">$5.1B Valuation</span>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div className="max-w-7xl mx-auto px-6 py-8">
+        <div className="flex gap-8">
+          <nav className="w-64 flex-shrink-0">
+            <div className="bg-slate-800/50 rounded-xl p-4 sticky top-24 border border-slate-700">
+              <h3 className="text-xs uppercase text-slate-500 font-semibold mb-4 tracking-wider">Navigation</h3>
+              <div className="space-y-1">
+                {sections.map(section => (
+                  <button key={section.id} onClick={() => setActiveSection(section.id)}
+                    className={`w-full text-left px-4 py-3 rounded-lg transition-all flex items-center gap-3 ${activeSection === section.id ? 'bg-cyan-600/20 text-cyan-400 border border-cyan-500/30' : 'text-slate-400 hover:bg-slate-700/50 hover:text-white'}`}>
+                    <span className="text-lg">{section.icon}</span>
+                    <span className="text-sm font-medium">{section.label}</span>
+                  </button>
                 ))}
               </div>
-
-              {/* Competitive Positioning */}
-              <div>
-                <h3 className="text-sm font-semibold text-gray-400 mb-3">Head-to-Head</h3>
-                <div className="space-y-3">
-                  <div className="bg-gray-800 rounded-lg p-4">
-                    <div className="font-medium text-white mb-1">vs. Proofpoint</div>
-                    <p className="text-sm text-gray-400">{company.competitivePositioning.vsProofpoint}</p>
-                  </div>
-                  <div className="bg-gray-800 rounded-lg p-4">
-                    <div className="font-medium text-white mb-1">vs. Microsoft Defender</div>
-                    <p className="text-sm text-gray-400">{company.competitivePositioning.vsMicrosoft}</p>
-                  </div>
-                  <div className="bg-gray-800 rounded-lg p-4">
-                    <div className="font-medium text-white mb-1">vs. Mimecast</div>
-                    <p className="text-sm text-gray-400">{company.competitivePositioning.vsMimecast}</p>
-                  </div>
-                </div>
-              </div>
-            </section>
-
-            {/* Analysis Section */}
-            <section id="analysis" className="bg-gray-900 rounded-xl border border-gray-800 p-6">
-              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                <span>📊</span> Strengths & Weaknesses
-              </h2>
-
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <h3 className="text-sm font-semibold text-green-400 mb-3 flex items-center gap-2">
-                    <span>💪</span> Strengths
-                  </h3>
-                  <div className="space-y-2">
-                    {company.strengths.map((item, idx) => (
-                      <div key={idx} className="flex items-start gap-2 text-sm text-gray-300">
-                        <span className="text-green-500 mt-0.5">+</span>
-                        {item}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <div>
-                  <h3 className="text-sm font-semibold text-red-400 mb-3 flex items-center gap-2">
-                    <span>⚠️</span> Weaknesses
-                  </h3>
-                  <div className="space-y-2">
-                    {company.weaknesses.map((item, idx) => (
-                      <div key={idx} className="flex items-start gap-2 text-sm text-gray-300">
-                        <span className="text-red-500 mt-0.5">-</span>
-                        {item}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </section>
-
-            {/* Outlook Section */}
-            <section id="outlook" className="bg-gray-900 rounded-xl border border-gray-800 p-6">
-              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                <span>🔮</span> Strategic Outlook
-              </h2>
-
-              <div className="grid md:grid-cols-2 gap-6 mb-6">
-                <div>
-                  <h3 className="text-sm font-semibold text-green-400 mb-3">Tailwinds</h3>
-                  <div className="space-y-2">
-                    {company.outlook.tailwinds.map((item, idx) => (
-                      <div key={idx} className="flex items-start gap-2 text-sm text-gray-300">
-                        <span className="text-green-500">↑</span>
-                        {item}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <div>
-                  <h3 className="text-sm font-semibold text-orange-400 mb-3">Headwinds</h3>
-                  <div className="space-y-2">
-                    {company.outlook.headwinds.map((item, idx) => (
-                      <div key={idx} className="flex items-start gap-2 text-sm text-gray-300">
-                        <span className="text-orange-500">↓</span>
-                        {item}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-purple-900/20 border border-purple-800/50 rounded-lg p-4">
-                <h3 className="text-sm font-semibold text-purple-400 mb-2">Trajectory</h3>
-                <p className="text-sm text-gray-300">{company.outlook.trajectory}</p>
-              </div>
-            </section>
-
-            {/* News Section */}
-            <section id="news" className="bg-gray-900 rounded-xl border border-gray-800 p-6">
-              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                <span>📰</span> Recent News
-              </h2>
-
-              <div className="space-y-4">
-                {company.news.map((item, idx) => (
-                  <div key={idx} className="flex items-start gap-4 p-4 bg-gray-800 rounded-lg">
-                    <div className="text-sm text-gray-500 whitespace-nowrap">{item.date}</div>
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-1">
-                        <h3 className="font-medium text-white">{item.title}</h3>
-                        <span className={`text-xs px-2 py-0.5 rounded border ${getNewsTypeStyle(item.type)}`}>
-                          {item.type}
-                        </span>
-                      </div>
-                      <p className="text-sm text-gray-400">{item.summary}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <div className="mt-4 text-center">
-                <button className="text-sm text-gray-500 hover:text-white transition-colors">
-                  Load more news →
-                </button>
-              </div>
-            </section>
-
-          </div>
+            </div>
+          </nav>
+          <main className="flex-1 min-w-0">{renderContent()}</main>
         </div>
-
-        {/* Footer */}
-        <footer className="mt-12 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
-          <p>Analysis by Andy Simko • CISSP • GPEN • CISA • GSNA • HCSFP • PMC-Level III</p>
-          <p className="mt-1 text-gray-600">Independent research • Not affiliated with {company.name}</p>
-        </footer>
       </div>
+      <footer className="bg-slate-900/50 border-t border-slate-800 mt-12">
+        <div className="max-w-7xl mx-auto px-6 py-6 text-center">
+          <p className="text-slate-500 text-sm">Research compiled January 2026 • Andy Simko • Email Security Market Analysis</p>
+        </div>
+      </footer>
     </div>
   );
 };
 
-export default AbnormalCompanyPage;
+export default AbnormalResearchProfile;
