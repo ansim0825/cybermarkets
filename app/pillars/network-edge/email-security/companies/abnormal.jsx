@@ -99,7 +99,7 @@ const AbnormalResearchProfile = () => {
           <h3 className="text-lg font-semibold text-cyan-400 mb-4">Company Profile</h3>
           <div className="space-y-3">
             <div className="flex justify-between"><span className="text-slate-400">Founded</span><span className="text-white">2018</span></div>
-            <div className="flex justify-between"><span className="text-slate-400">Headquarters</span><span className="text-white">San Francisco, CA</span></div>
+            <div className="flex justify-between"><span className="text-slate-400">Headquarters</span><span className="text-white">Las Vegas, NV</span></div>
             <div className="flex justify-between"><span className="text-slate-400">Employees</span><span className="text-white">~1,300</span></div>
             <div className="flex justify-between"><span className="text-slate-400">Total Funding</span><span className="text-white">$284M</span></div>
           </div>
