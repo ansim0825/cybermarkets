@@ -1,388 +1,667 @@
 "use client";
+
 import React, { useState } from 'react';
 
 const CheckPointAvananProfile = () => {
   const [activeSection, setActiveSection] = useState('overview');
 
+  const company = {
+    name: 'Check Point / Avanan',
+    product: 'Harmony Email & Collaboration',
+    tagline: 'Inline API architecture - prevention before the inbox',
+    position: 'Inline API Pioneer',
+    website: 'https://www.checkpoint.com',
+    
+    snapshot: {
+      acquisitionPrice: '$227-300M',
+      customerGrowth: '8x',
+      emailCustomers: '5,000+',
+      parentRevenue: '$2.4B',
+      gartnerPosition: 'Leader',
+    },
+
+    companyDetails: {
+      founded: '2014 (Avanan)',
+      founders: 'Gil Friedrich (CEO) & team',
+      headquarters: 'Tel Aviv / New York',
+      acquisition: '$227-300M (Aug 2021)',
+      parentCompany: 'Check Point Software Technologies',
+    },
+
+    marketPosition: {
+      category: 'Integrated Cloud Email Security (ICES)',
+      subCategory: 'Inline API Prevention',
+      gartnerPosition: 'Leader - Gartner MQ (2024, 2025)',
+    },
+
+    recognition: [
+      'Gartner Magic Quadrant Leader 2024, 2025',
+      'Patented Inline API Technology',
+      '8x Customer Growth Post-Acquisition',
+    ],
+
+    metrics: {
+      architecture: 'Inline API (patented)',
+      threatCloud: '2B+ decisions/day',
+      customerGrowth: '8x since 2021',
+      deployment: 'Minutes via API',
+    },
+
+    marketContext: {
+      hypeCyclePosition: 'Slope of Enlightenment',
+      architectureDebate: 'Inline (prevention) vs Post-Delivery (detection)',
+      keyDifferentiator: 'Only vendor blocking threats BEFORE inbox delivery via API',
+    },
+
+    products: [
+      { name: 'Harmony Email & Collaboration', description: 'Core email security for M365, Google Workspace, Slack, Teams', isPrimary: true },
+      { name: 'Harmony SASE', description: 'Secure Access Service Edge integration' },
+      { name: 'ThreatCloud AI', description: 'Threat intelligence from 100K+ customers' },
+      { name: 'Infinity XDR', description: 'Extended detection and response platform' },
+    ],
+
+    stakeholders: {
+      ciso: {
+        role: 'CISO / Security Leadership',
+        jtbd: 'Reduce email-borne risk with defense-in-depth',
+        painPoints: ['BEC attacks bypassing native controls', 'Board pressure on email security'],
+        valueProps: ['Prevention-first blocks before users see threats', 'Unified platform reduces vendor sprawl'],
+      },
+      secops: {
+        role: 'Security Operations',
+        jtbd: 'Reduce alert fatigue while improving coverage',
+        painPoints: ['Too many tools', 'Manual investigation overhead'],
+        valueProps: ['Automated blocking reduces tickets', 'ThreatCloud intelligence pre-validated'],
+      },
+      itAdmin: {
+        role: 'IT / Email Admin',
+        jtbd: 'Deploy and maintain email security without disruption',
+        painPoints: ['MX record changes', 'Mail flow complexity'],
+        valueProps: ['API deployment in minutes', 'No MX changes required'],
+      },
+    },
+
+    economics: {
+      pricing: 'Platform bundle pricing (part of Harmony suite)',
+      roiDrivers: [
+        'Reduced incident response time (prevention vs remediation)',
+        'Lower SOC workload from automated blocking',
+        'Platform consolidation savings',
+      ],
+      competitivePricing: 'Premium positioning as part of broader Check Point relationship',
+    },
+
+    differentiation: [
+      { title: 'Inline API Patent', description: 'Only vendor with patented inline API approach - blocks BEFORE inbox delivery.', icon: '🛡️' },
+      { title: 'Prevention-First Philosophy', description: 'Check Point DNA: prevent threats, don\'t just detect. Zero risk window.', icon: '🚫' },
+      { title: 'Platform Integration', description: 'Part of Infinity architecture - email + endpoint + network + cloud unified.', icon: '🔗' },
+      { title: 'ThreatCloud Scale', description: '100,000+ customers feeding threat intelligence. 2B+ security decisions daily.', icon: '☁️' },
+    ],
+
+    strengths: [
+      'Patented inline API architecture - unique market position',
+      'Prevention-first approach aligns with CISO risk appetite',
+      'Check Point brand and enterprise relationships',
+      'Unified platform story (Infinity architecture)',
+      'Strong threat intelligence (ThreatCloud)',
+      'Gartner Leader recognition',
+    ],
+
+    weaknesses: [
+      'Integration complexity post-acquisition still evolving',
+      'Less specialized in BEC than pure-play behavioral AI vendors',
+      'Premium pricing as part of larger platform',
+      'Avanan talent retention post-acquisition',
+      'Platform breadth vs. email depth tradeoff',
+    ],
+
+    outlook: {
+      tailwinds: [
+        'Platform consolidation trend benefits unified vendors',
+        'Prevention-first resonates with risk-averse CISOs',
+        'Check Point R&D investment and stability',
+      ],
+      headwinds: [
+        'Behavioral AI narrative dominates analyst coverage',
+        'Post-acquisition integration challenges',
+        'Competition from both SEG incumbents and API-native startups',
+      ],
+      trajectory: 'Continued integration into Infinity platform. Email becomes entry point for broader Check Point relationship.',
+    },
+
+    news: [
+      { date: 'Aug 2021', title: 'Check Point Acquires Avanan', summary: '$227-300M acquisition to add cloud email security.', type: 'acquisition', source: 'Check Point Press Release' },
+      { date: '2024', title: 'Gartner MQ Leader', summary: 'Named Leader in Email Security Platforms Magic Quadrant.', type: 'recognition', source: 'Gartner Magic Quadrant 2024' },
+      { date: '2024', title: '8x Customer Growth', summary: 'Customer base grew 8x since acquisition in 2021.', type: 'milestone', source: 'Check Point Investor Relations' },
+    ],
+  };
+
   const sections = [
-    { id: 'overview', label: 'Overview', icon: '◉' },
-    { id: 'acquisition', label: 'Acquisition Story', icon: '◈' },
-    { id: 'architecture', label: 'Architecture', icon: '◇' },
-    { id: 'products', label: 'Products', icon: '◆' },
-    { id: 'market', label: 'Market Position', icon: '◊' },
-    { id: 'competitive', label: 'vs Abnormal', icon: '●' },
-    { id: 'outlook', label: 'Outlook', icon: '◐' }
+    { id: 'overview', name: 'Overview', icon: '📋' },
+    { id: 'market', name: 'Market Context', icon: '🌍' },
+    { id: 'product', name: 'Product', icon: '🎯' },
+    { id: 'stakeholders', name: 'Stakeholders', icon: '👥' },
+    { id: 'economics', name: 'Economics', icon: '💰' },
+    { id: 'differentiation', name: 'Differentiation', icon: '⚡' },
+    { id: 'analysis', name: 'Analysis', icon: '📊' },
+    { id: 'outlook', name: 'Outlook', icon: '🔮' },
+    { id: 'news', name: 'Recent News', icon: '📰' },
   ];
 
-  const CitationFooter = ({ citations }) => (
-    <div className="mt-8 pt-4 border-t border-slate-700">
-      <p className="text-xs text-slate-500 uppercase tracking-wider mb-2">Sources</p>
-      <div className="space-y-1">
-        {citations.map((cite, i) => (
-          <p key={i} className="text-xs text-slate-400">
-            [{i + 1}] {cite.url ? (
-              <a href={cite.url} target="_blank" rel="noopener noreferrer" className="text-red-400 hover:underline">{cite.text}</a>
-            ) : cite.text}
-          </p>
-        ))}
-      </div>
-      <div className="mt-4 pt-4 border-t border-slate-800">
-        <p className="text-xs text-slate-600 italic">Research compiled January 2026 • Andy Simko Portfolio</p>
-      </div>
-    </div>
-  );
-
-  const renderOverview = () => (
-    <div className="space-y-6">
-      <div className="bg-gradient-to-br from-red-900/30 to-slate-800/50 rounded-2xl p-8 border border-red-800/30">
-        <div className="flex items-start justify-between">
-          <div>
-            <h2 className="text-3xl font-bold text-white mb-2">Check Point / Avanan</h2>
-            <p className="text-red-400 text-lg">Acquisition-Driven Cloud Email Security</p>
-          </div>
-          <div className="text-right">
-            <p className="text-4xl font-bold text-red-400">$100M</p>
-            <p className="text-slate-400 text-sm">Email Security ARR (2024)</p>
-          </div>
-        </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
-          <div className="bg-slate-800/50 rounded-xl p-4 text-center">
-            <p className="text-2xl font-bold text-white">$227-300M</p>
-            <p className="text-slate-400 text-sm">Acquisition (2021)</p>
-          </div>
-          <div className="bg-slate-800/50 rounded-xl p-4 text-center">
-            <p className="text-2xl font-bold text-white">8x</p>
-            <p className="text-slate-400 text-sm">Customer Growth (3yr)</p>
-          </div>
-          <div className="bg-slate-800/50 rounded-xl p-4 text-center">
-            <p className="text-2xl font-bold text-white">99.91%</p>
-            <p className="text-slate-400 text-sm">Malware Catch Rate</p>
-          </div>
-          <div className="bg-slate-800/50 rounded-xl p-4 text-center">
-            <p className="text-2xl font-bold text-white">Leader</p>
-            <p className="text-slate-400 text-sm">Gartner MQ 2024</p>
-          </div>
-        </div>
-      </div>
-
-      <div className="grid md:grid-cols-2 gap-6">
-        <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
-          <h3 className="text-lg font-semibold text-red-400 mb-4">Check Point Overview</h3>
-          <div className="space-y-3">
-            <div className="flex justify-between"><span className="text-slate-400">Parent Founded</span><span className="text-white">1993 (Israel)</span></div>
-            <div className="flex justify-between"><span className="text-slate-400">Parent Revenue</span><span className="text-white">$2B+ annual</span></div>
-            <div className="flex justify-between"><span className="text-slate-400">Avanan Acquired</span><span className="text-white">August 2021</span></div>
-            <div className="flex justify-between"><span className="text-slate-400">Email Product</span><span className="text-white">Harmony Email</span></div>
-          </div>
-        </div>
-        <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
-          <h3 className="text-lg font-semibold text-red-400 mb-4">Avanan Heritage</h3>
-          <div className="space-y-3">
-            <div className="flex justify-between"><span className="text-slate-400">Founded</span><span className="text-white">2015 (Tel Aviv/NYC)</span></div>
-            <div className="flex justify-between"><span className="text-slate-400">Founder/VP</span><span className="text-white">Gil Friedrich</span></div>
-            <div className="flex justify-between"><span className="text-slate-400">Key Patent</span><span className="text-white">US #10,372,931</span></div>
-            <div className="flex justify-between"><span className="text-slate-400">At Acquisition</span><span className="text-white">5,000+ customers</span></div>
-          </div>
-        </div>
-      </div>
-
-      <div className="bg-gradient-to-r from-amber-900/30 to-slate-800/50 rounded-xl p-6 border border-amber-800/30">
-        <h3 className="text-lg font-semibold text-amber-400 mb-4">⚡ Strategic Significance</h3>
-        <p className="text-slate-300 mb-4">Check Point's acquisition of Avanan represents a build vs. buy case study—how a traditional network security vendor acquired API-based cloud email security rather than building organically.</p>
-        <div className="grid md:grid-cols-2 gap-4">
-          <div className="bg-slate-800/50 rounded-lg p-4">
-            <h4 className="font-medium text-amber-400">Architecture Debate</h4>
-            <p className="text-slate-400 text-sm">Avanan's "inline API" vs. Abnormal's "pure API" represents fundamental philosophical split</p>
-          </div>
-          <div className="bg-slate-800/50 rounded-lg p-4">
-            <h4 className="font-medium text-amber-400">Platform Integration</h4>
-            <p className="text-slate-400 text-sm">Check Point leverages Infinity ecosystem (ThreatCloud, XDR)—Abnormal is email-focused specialist</p>
-          </div>
-        </div>
-      </div>
-
-      <CitationFooter citations={[
-        { text: "Check Point Acquisition of Avanan Announcement, August 2021" },
-        { text: "Gartner Magic Quadrant for Email Security Platforms, December 2024" },
-        { text: "NSS Labs Email Security Testing - 99.91% malware catch rate" },
-        { text: "USPTO Patent #10,372,931 - Inline API Security (Priority Dec 2015)" },
-        { text: "Check Point Investor Reports - Email Security ARR" }
-      ]} />
-    </div>
-  );
-
-  const renderAcquisition = () => (
-    <div className="space-y-6">
-      <h2 className="text-2xl font-bold text-white mb-6">The Acquisition Story</h2>
-      
-      <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
-        <h3 className="text-xl font-semibold text-white mb-4">Avanan Timeline to Acquisition</h3>
-        <div className="space-y-4">
-          {[
-            { date: 'July 2014', event: 'Seed funding from StageOne Ventures, Magma Venture Partners' },
-            { date: '2015', event: 'Company founded; begins development of inline API technology' },
-            { date: 'May 2016', event: 'Series A ($14.9M) led by TPG Growth' },
-            { date: 'December 2018', event: 'Series B ($25M); total funding reaches $41.4M' },
-            { date: 'August 2019', event: 'US Patent #10,372,931 granted for inline API security' },
-            { date: '2019', event: 'Surpasses 1,000 customers; 500% YoY growth; licenses patent to 3 vendors' },
-            { date: 'January 2021', event: 'Gartner Peer Insights Customers Choice for Email Security' },
-            { date: 'June 2021', event: 'Exceeds 4,000 customers; 260% YoY growth' },
-            { date: 'August 2021', event: 'Check Point announces acquisition ($227-300M estimated)' }
-          ].map((item, i) => (
-            <div key={i} className="flex gap-4 items-start">
-              <div className="w-32 flex-shrink-0">
-                <span className="text-red-400 text-sm font-medium">{item.date}</span>
-              </div>
-              <div className="flex-1 bg-slate-900/50 rounded-lg p-3">
-                <p className="text-slate-300 text-sm">{item.event}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="bg-gradient-to-br from-red-900/20 to-slate-800/50 rounded-xl p-6 border border-red-700/30">
-        <h3 className="text-xl font-semibold text-red-400 mb-4">Why Check Point Bought vs. Built</h3>
-        <div className="grid md:grid-cols-2 gap-4">
-          {[
-            { reason: 'Speed to Market', detail: 'Avanan already had 5,000 customers and proven technology—building organically would take years' },
-            { reason: 'Patent Protection', detail: 'Avanan inline API patent created defensible moat expensive to design around' },
-            { reason: 'Team Acquisition', detail: 'Gil Friedrich (founder) became VP of Email Security—retaining domain expertise' },
-            { reason: 'Platform Integration', detail: 'Avanan technology could leverage ThreatCloud intelligence and unified management' }
-          ].map((item, i) => (
-            <div key={i} className="bg-slate-800/50 rounded-lg p-4">
-              <h4 className="font-medium text-white">{item.reason}</h4>
-              <p className="text-slate-400 text-sm mt-1">{item.detail}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <CitationFooter citations={[
-        { text: "Check Point Acquisition Press Release, August 30, 2021" },
-        { text: "Crunchbase - Avanan Funding History" },
-        { text: "USPTO Patent Database - US #10,372,931" }
-      ]} />
-    </div>
-  );
-
-  const renderArchitecture = () => (
-    <div className="space-y-6">
-      <h2 className="text-2xl font-bold text-white mb-6">Architecture: Inline API Approach</h2>
-      
-      <div className="bg-gradient-to-br from-blue-900/30 to-slate-800/50 rounded-xl p-6 border border-blue-700/30">
-        <h3 className="text-xl font-semibold text-blue-400 mb-4">The Inline API Innovation</h3>
-        <p className="text-slate-300 mb-4">Avanan pioneered "inline API-based" email security—a hybrid approach using cloud APIs to intercept emails <strong>before</strong> inbox delivery (inline), not after (post-delivery). This is fundamentally different from both traditional SEGs and pure API solutions like Abnormal.</p>
-      </div>
-
-      <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
-        <h3 className="text-xl font-semibold text-white mb-4">Architecture Comparison</h3>
-        <div className="overflow-x-auto">
-          <table className="w-full text-sm">
-            <thead>
-              <tr className="border-b border-slate-700">
-                <th className="text-left py-3 text-slate-400">Aspect</th>
-                <th className="text-left py-3 text-slate-400">Traditional SEG</th>
-                <th className="text-left py-3 text-red-400">Check Point (Inline API)</th>
-                <th className="text-left py-3 text-cyan-400">Abnormal (Pure API)</th>
-              </tr>
-            </thead>
-            <tbody className="text-slate-300">
-              <tr className="border-b border-slate-800">
-                <td className="py-3">MX Record Change</td>
-                <td className="py-3">Required</td>
-                <td className="py-3 text-red-300">Not required</td>
-                <td className="py-3 text-cyan-300">Not required</td>
-              </tr>
-              <tr className="border-b border-slate-800">
-                <td className="py-3">Scanning Timing</td>
-                <td className="py-3">Pre-delivery</td>
-                <td className="py-3 text-red-300">Pre-delivery (inline)</td>
-                <td className="py-3 text-cyan-300">Post-delivery</td>
-              </tr>
-              <tr className="border-b border-slate-800">
-                <td className="py-3">Internal Email</td>
-                <td className="py-3">Cannot scan</td>
-                <td className="py-3 text-red-300">Can scan</td>
-                <td className="py-3 text-cyan-300">Can scan</td>
-              </tr>
-              <tr className="border-b border-slate-800">
-                <td className="py-3">Mail Delivery Risk</td>
-                <td className="py-3">SPOF if gateway fails</td>
-                <td className="py-3 text-red-300">Some latency risk</td>
-                <td className="py-3 text-cyan-300">No delivery impact</td>
-              </tr>
-              <tr>
-                <td className="py-3">Detection Philosophy</td>
-                <td className="py-3">Block known threats</td>
-                <td className="py-3 text-red-300">Block before inbox</td>
-                <td className="py-3 text-cyan-300">Behavioral anomaly</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <div className="grid md:grid-cols-2 gap-6">
-        <div className="bg-red-900/20 rounded-xl p-6 border border-red-700/30">
-          <h3 className="text-lg font-semibold text-red-400 mb-4">Check Point's Position: "Prevention First"</h3>
-          <ul className="space-y-2 text-slate-300 text-sm">
-            <li>• Block threats before they reach the inbox—users never see malicious emails</li>
-            <li>• Claims 99.91% malware catch rate (NSS Labs validated)</li>
-            <li>• Uses transport rules to hold mail for scanning before delivery</li>
-            <li>• Argument: "Why let threats reach the inbox at all?"</li>
-          </ul>
-        </div>
-        <div className="bg-cyan-900/20 rounded-xl p-6 border border-cyan-700/30">
-          <h3 className="text-lg font-semibold text-cyan-400 mb-4">Abnormal's Position: "Behavioral AI"</h3>
-          <ul className="space-y-2 text-slate-300 text-sm">
-            <li>• Post-delivery analysis allows deeper behavioral context</li>
-            <li>• No mail flow disruption—remediation in milliseconds after delivery</li>
-            <li>• Better for detecting payload-less BEC attacks (social engineering)</li>
-            <li>• Argument: "Inline creates latency and complexity; modern attacks require behavioral detection"</li>
-          </ul>
-        </div>
-      </div>
-
-      <CitationFooter citations={[
-        { text: "Check Point Harmony Email Architecture Documentation" },
-        { text: "USPTO Patent #10,372,931 - Inline API Security Method" },
-        { text: "NSS Labs Email Security Testing Report - Malware Catch Rates" },
-        { text: "Abnormal Security Competitive Positioning Materials" }
-      ]} />
-    </div>
-  );
-
-  const renderCompetitive = () => (
-    <div className="space-y-6">
-      <h2 className="text-2xl font-bold text-white mb-6">Competitive Positioning vs Abnormal</h2>
-      
-      <div className="grid md:grid-cols-2 gap-6">
-        <div className="bg-cyan-900/20 rounded-xl p-6 border border-cyan-700/30">
-          <h3 className="text-lg font-semibold text-cyan-400 mb-4">Where Abnormal Should Win</h3>
-          <ul className="space-y-3 text-slate-300 text-sm">
-            <li className="flex items-start gap-2">
-              <span className="text-cyan-400">✓</span>
-              <div><strong>Behavioral AI Superiority:</strong> 50,000+ behavioral signals vs. Check Point's prevention-first approach. BEC attacks without payloads favor behavioral detection.</div>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-cyan-400">✓</span>
-              <div><strong>Pure API Architecture:</strong> No mail flow risk, no latency, no transport rule complexity. "We don't disrupt Microsoft—we augment it."</div>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-cyan-400">✓</span>
-              <div><strong>Focus & Depth:</strong> Email security specialist vs. part of Check Point's broad portfolio. Single-minded product development.</div>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-cyan-400">✓</span>
-              <div><strong>No Lock-In:</strong> Works alongside any existing security stack; Check Point incentivizes full Infinity adoption.</div>
-            </li>
-          </ul>
-        </div>
-        <div className="bg-red-900/20 rounded-xl p-6 border border-red-700/30">
-          <h3 className="text-lg font-semibold text-red-400 mb-4">Where Check Point Competes Strongly</h3>
-          <ul className="space-y-3 text-slate-300 text-sm">
-            <li className="flex items-start gap-2">
-              <span className="text-red-400">✓</span>
-              <div><strong>Platform Integration:</strong> ThreatCloud intelligence + XDR + network/endpoint creates unified security story.</div>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-red-400">✓</span>
-              <div><strong>Existing Customer Base:</strong> 100,000+ Check Point customers can add email security with minimal friction.</div>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-red-400">✓</span>
-              <div><strong>Pre-Delivery Blocking:</strong> "Users never see threats" is compelling narrative for risk-averse buyers.</div>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-red-400">✓</span>
-              <div><strong>Price Competition:</strong> Bundle discounts + lower SMB pricing creates cost pressure.</div>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
-        <h3 className="text-xl font-semibold text-white mb-4">Positioning Recommendations</h3>
-        <div className="space-y-4">
-          {[
-            { scenario: 'vs. Check Point Customers', positioning: '"We\'re the behavioral layer Check Point can\'t provide. Their prevention catches known threats; we catch the novel BEC attacks that bypass signature-based detection."' },
-            { scenario: 'Architecture Debate', positioning: '"Inline APIs create complexity and mail flow risk. Microsoft actively discourages transport rule modifications. Pure API = zero disruption with millisecond remediation."' },
-            { scenario: 'Platform vs. Specialist', positioning: '"Check Point spreads attention across network, cloud, endpoint. We\'re 100% focused on email security with dedicated behavioral AI research."' },
-            { scenario: 'BEC Detection', positioning: '"$2.8B in BEC losses (FBI 2024) happen with payload-less attacks. Prevention-first architectures miss these because there\'s nothing to block pre-delivery."' }
-          ].map((item, i) => (
-            <div key={i} className="bg-slate-900/50 rounded-lg p-4">
-              <h4 className="font-medium text-amber-400 mb-2">{item.scenario}</h4>
-              <p className="text-slate-300 text-sm italic">{item.positioning}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <CitationFooter citations={[
-        { text: "Gartner Magic Quadrant for Email Security Platforms, 2024 - Both vendors named Leaders" },
-        { text: "FBI IC3 Report 2024 - BEC Losses Statistics" },
-        { text: "Abnormal Security Competitive Battle Cards" },
-        { text: "Check Point Infinity Platform Documentation" }
-      ]} />
-    </div>
-  );
-
-  const renderContent = () => {
-    switch(activeSection) {
-      case 'overview': return renderOverview();
-      case 'acquisition': return renderAcquisition();
-      case 'architecture': return renderArchitecture();
-      case 'competitive': return renderCompetitive();
-      default: return <div className="text-slate-400">Section: {activeSection} - Content in development</div>;
+  const getNewsTypeStyle = (type) => {
+    switch (type) {
+      case 'acquisition': return 'bg-purple-900/50 text-purple-400 border-purple-700';
+      case 'recognition': return 'bg-green-900/50 text-green-400 border-green-700';
+      case 'milestone': return 'bg-blue-900/50 text-blue-400 border-blue-700';
+      default: return 'bg-gray-800 text-gray-400 border-gray-700';
     }
   };
 
+  const scrollToSection = (sectionId) => {
+    setActiveSection(sectionId);
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const CitationFooter = ({ citations }) => (
+    <div className="mt-6 pt-4 border-t border-gray-700">
+      <p className="text-xs text-gray-500 uppercase tracking-wider mb-2">Sources</p>
+      <div className="space-y-1">
+        {citations.map((cite, i) => (
+          <p key={i} className="text-xs text-gray-500">[{i + 1}] {cite}</p>
+        ))}
+      </div>
+    </div>
+  );
+
+  // Hype Cycle SVG Component
+  const HypeCycleSVG = () => (
+    <svg viewBox="0 0 500 200" className="w-full h-48">
+      <defs>
+        <linearGradient id="curveGradientCP" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor="#8b5cf6" stopOpacity="0.8" />
+          <stop offset="50%" stopColor="#06b6d4" stopOpacity="0.8" />
+          <stop offset="100%" stopColor="#10b981" stopOpacity="0.8" />
+        </linearGradient>
+      </defs>
+      <path d="M 30 180 Q 80 180 100 160 Q 120 140 140 60 Q 160 20 180 40 Q 200 60 220 120 Q 260 160 300 150 Q 340 140 380 130 Q 420 120 470 110" stroke="url(#curveGradientCP)" strokeWidth="3" fill="none" />
+      <circle cx="140" cy="60" r="6" fill="#f97316" stroke="#fff" strokeWidth="2" />
+      <text x="140" y="45" textAnchor="middle" fill="#f97316" fontSize="10" fontWeight="bold">GenAI Email</text>
+      <circle cx="320" cy="145" r="8" fill="#ef4444" stroke="#fff" strokeWidth="2" />
+      <text x="320" y="130" textAnchor="middle" fill="#ef4444" fontSize="10" fontWeight="bold">Inline API ICES</text>
+      <text x="320" y="170" textAnchor="middle" fill="#9ca3af" fontSize="8">(Check Point/Avanan)</text>
+      <circle cx="440" cy="115" r="6" fill="#10b981" stroke="#fff" strokeWidth="2" />
+      <text x="440" y="100" textAnchor="middle" fill="#10b981" fontSize="10" fontWeight="bold">SEG</text>
+      <text x="60" y="195" fill="#6b7280" fontSize="8">Innovation Trigger</text>
+      <text x="160" y="195" fill="#6b7280" fontSize="8">Peak</text>
+      <text x="230" y="195" fill="#6b7280" fontSize="8">Trough</text>
+      <text x="320" y="195" fill="#6b7280" fontSize="8">Slope of Enlightenment</text>
+      <text x="440" y="195" fill="#6b7280" fontSize="8">Plateau</text>
+    </svg>
+  );
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white">
-      <header className="bg-slate-900/80 backdrop-blur-sm border-b border-slate-800 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-6 py-4">
+    <div className="min-h-screen bg-gray-950 text-gray-100">
+      {/* Navigation */}
+      <nav className="border-b border-gray-800 bg-gray-950/80 backdrop-blur-sm sticky top-0 z-50">
+        <div className="max-w-6xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-red-500 to-red-700 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">✓</span>
-              </div>
-              <div>
-                <h1 className="text-xl font-bold text-white">Check Point / Avanan</h1>
-                <p className="text-slate-400 text-sm">Competitive Intelligence Profile</p>
-              </div>
+              <a href="/" className="text-gray-400 hover:text-white">Home</a>
+              <span className="text-gray-600">/</span>
+              <a href="/pillars/network-edge/email-security" className="text-gray-400 hover:text-white">Email Security</a>
+              <span className="text-gray-600">/</span>
+              <span className="text-gray-300">Check Point / Avanan</span>
             </div>
-            <div className="flex items-center gap-2">
-              <span className="px-3 py-1 bg-red-500/20 text-red-400 text-xs rounded-full border border-red-500/30">Inline API</span>
-              <span className="px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs rounded-full border border-emerald-500/30">Gartner Leader</span>
-            </div>
+            <a href="/pillars/network-edge/email-security" className="text-gray-300 hover:text-white text-sm">← Back to Market</a>
           </div>
         </div>
-      </header>
-      <div className="max-w-7xl mx-auto px-6 py-8">
-        <div className="flex gap-8">
-          <nav className="w-64 flex-shrink-0">
-            <div className="bg-slate-800/50 rounded-xl p-4 sticky top-24 border border-slate-700">
-              <h3 className="text-xs uppercase text-slate-500 font-semibold mb-4 tracking-wider">Navigation</h3>
-              <div className="space-y-1">
-                {sections.map(section => (
-                  <button key={section.id} onClick={() => setActiveSection(section.id)}
-                    className={`w-full text-left px-4 py-3 rounded-lg transition-all flex items-center gap-3 ${activeSection === section.id ? 'bg-red-600/20 text-red-400 border border-red-500/30' : 'text-slate-400 hover:bg-slate-700/50 hover:text-white'}`}>
-                    <span className="text-lg">{section.icon}</span>
-                    <span className="text-sm font-medium">{section.label}</span>
-                  </button>
-                ))}
+      </nav>
+
+      <div className="max-w-6xl mx-auto px-6 py-8">
+        
+        {/* Header */}
+        <div className="mb-8">
+          <div className="flex items-start justify-between mb-4">
+            <div>
+              <div className="flex items-center gap-3 mb-2">
+                <h1 className="text-4xl font-bold">{company.name}</h1>
+                <span className="px-3 py-1 bg-red-900/50 text-red-400 border border-red-700 rounded-full text-sm">
+                  {company.position}
+                </span>
+              </div>
+              <p className="text-xl text-gray-400 mb-2">{company.tagline}</p>
+              <p className="text-sm text-gray-500">{company.product}</p>
+            </div>
+            <a 
+              href={company.website}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg text-sm transition-colors"
+            >
+              Visit Website →
+            </a>
+          </div>
+          
+          <div className="flex items-center gap-4 text-sm text-gray-500">
+            <span>Research Status: <span className="text-yellow-400">In Progress</span></span>
+            <span>•</span>
+            <span>Last updated: January 2026</span>
+          </div>
+        </div>
+
+        {/* Snapshot Cards */}
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8">
+          <div className="bg-gray-900 rounded-xl p-4 border border-gray-800">
+            <div className="text-2xl font-bold text-white mb-1">{company.snapshot.acquisitionPrice}</div>
+            <div className="text-xs text-gray-400">Acquisition Price</div>
+          </div>
+          <div className="bg-gray-900 rounded-xl p-4 border border-gray-800">
+            <div className="text-2xl font-bold text-green-400 mb-1">{company.snapshot.customerGrowth}</div>
+            <div className="text-xs text-gray-400">Customer Growth</div>
+          </div>
+          <div className="bg-gray-900 rounded-xl p-4 border border-gray-800">
+            <div className="text-2xl font-bold text-white mb-1">{company.snapshot.emailCustomers}</div>
+            <div className="text-xs text-gray-400">Customers</div>
+          </div>
+          <div className="bg-gray-900 rounded-xl p-4 border border-gray-800">
+            <div className="text-2xl font-bold text-white mb-1">{company.snapshot.parentRevenue}</div>
+            <div className="text-xs text-gray-400">Parent Revenue</div>
+          </div>
+          <div className="bg-gray-900 rounded-xl p-4 border border-gray-800">
+            <div className="text-2xl font-bold text-red-400 mb-1">{company.snapshot.gartnerPosition}</div>
+            <div className="text-xs text-gray-400">Gartner MQ 2024</div>
+          </div>
+        </div>
+
+        {/* Main Content Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+          
+          {/* Left Sidebar */}
+          <div className="lg:col-span-1">
+            <div className="sticky top-24">
+              {/* Sections Navigation */}
+              <div className="bg-gray-900 rounded-xl border border-gray-800 p-4 mb-6">
+                <h3 className="text-sm font-semibold text-gray-400 mb-3">Sections</h3>
+                <div className="space-y-1">
+                  {sections.map((section) => (
+                    <button
+                      key={section.id}
+                      onClick={() => scrollToSection(section.id)}
+                      className={`w-full text-left px-3 py-2 rounded-lg text-sm flex items-center gap-2 transition-all ${
+                        activeSection === section.id
+                          ? 'bg-red-900/50 text-red-400 border border-red-800'
+                          : 'text-gray-400 hover:bg-gray-800 hover:text-white'
+                      }`}
+                    >
+                      <span>{section.icon}</span>
+                      <span>{section.name}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Key Metrics */}
+              <div className="bg-gray-900 rounded-xl border border-gray-800 p-4">
+                <h3 className="text-sm font-semibold text-gray-400 mb-3">Key Metrics</h3>
+                <div className="space-y-3 text-sm">
+                  <div>
+                    <span className="text-gray-500 block">Architecture</span>
+                    <span className="text-red-400">{company.metrics.architecture}</span>
+                  </div>
+                  <div>
+                    <span className="text-gray-500 block">ThreatCloud</span>
+                    <span className="text-white">{company.metrics.threatCloud}</span>
+                  </div>
+                  <div>
+                    <span className="text-gray-500 block">Customer Growth</span>
+                    <span className="text-green-400">{company.metrics.customerGrowth}</span>
+                  </div>
+                  <div>
+                    <span className="text-gray-500 block">Deployment</span>
+                    <span className="text-white">{company.metrics.deployment}</span>
+                  </div>
+                </div>
               </div>
             </div>
-          </nav>
-          <main className="flex-1 min-w-0">{renderContent()}</main>
+          </div>
+
+          {/* Main Content Area */}
+          <div className="lg:col-span-3 space-y-8">
+            
+            {/* Overview Section */}
+            <section id="overview" className="bg-gray-900 rounded-xl border border-gray-800 p-6">
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                <span>📋</span> Company Overview
+              </h2>
+              
+              <div className="grid md:grid-cols-2 gap-6 mb-6">
+                <div>
+                  <h3 className="text-sm font-semibold text-gray-400 mb-3">Company Details</h3>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex justify-between">
+                      <span className="text-gray-500">Founded</span>
+                      <span className="text-gray-300">{company.companyDetails.founded}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-gray-500">Founders</span>
+                      <span className="text-gray-300">{company.companyDetails.founders}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-gray-500">Headquarters</span>
+                      <span className="text-gray-300">{company.companyDetails.headquarters}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-gray-500">Acquisition</span>
+                      <span className="text-gray-300">{company.companyDetails.acquisition}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-gray-500">Parent Company</span>
+                      <span className="text-gray-300">{company.companyDetails.parentCompany}</span>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-sm font-semibold text-gray-400 mb-3">Market Position</h3>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex justify-between">
+                      <span className="text-gray-500">Category</span>
+                      <span className="text-gray-300">{company.marketPosition.category}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-gray-500">Sub-Category</span>
+                      <span className="text-gray-300">{company.marketPosition.subCategory}</span>
+                    </div>
+                    <div>
+                      <span className="text-gray-500 block mb-1">Gartner Position</span>
+                      <span className="text-red-400 text-xs">{company.marketPosition.gartnerPosition}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Recognition */}
+              <div className="mb-4">
+                <h3 className="text-sm font-semibold text-gray-400 mb-3">Recognition</h3>
+                <div className="flex flex-wrap gap-2">
+                  {company.recognition.map((item, idx) => (
+                    <span key={idx} className="px-3 py-1 bg-gray-800 rounded-full text-xs text-gray-300 border border-gray-700">
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <CitationFooter citations={[
+                'Check Point Software Technologies - Corporate Information',
+                'Crunchbase - Avanan Acquisition History',
+                'Gartner Magic Quadrant for Email Security Platforms, 2024 & 2025',
+              ]} />
+            </section>
+
+            {/* Market Context Section */}
+            <section id="market" className="bg-gray-900 rounded-xl border border-gray-800 p-6">
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                <span>🌍</span> Market Context
+              </h2>
+
+              <div className="bg-gray-800 rounded-lg p-4 mb-4">
+                <h3 className="text-sm font-semibold text-gray-400 mb-3">Email Security Hype Cycle Position</h3>
+                <HypeCycleSVG />
+                <p className="text-xs text-gray-500 text-center mt-2">[1] Gartner Hype Cycle for Security Operations, 2024</p>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="bg-red-900/20 border border-red-800/50 rounded-lg p-4">
+                  <h3 className="text-sm font-semibold text-red-400 mb-2">Architecture Debate</h3>
+                  <p className="text-xs text-gray-400">{company.marketContext.architectureDebate}</p>
+                </div>
+                <div className="bg-gray-800 rounded-lg p-4">
+                  <h3 className="text-sm font-semibold text-white mb-2">Key Differentiator</h3>
+                  <p className="text-xs text-gray-400">{company.marketContext.keyDifferentiator}</p>
+                </div>
+              </div>
+
+              <CitationFooter citations={[
+                'Gartner Hype Cycle for Security Operations, 2024',
+                'Check Point Avanan Technical Architecture',
+              ]} />
+            </section>
+
+            {/* Product Section */}
+            <section id="product" className="bg-gray-900 rounded-xl border border-gray-800 p-6">
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                <span>🎯</span> Product
+              </h2>
+
+              <div className="space-y-3">
+                {company.products.map((product, idx) => (
+                  <div key={idx} className={`rounded-lg p-4 ${product.isPrimary ? 'bg-red-900/20 border border-red-800/50' : 'bg-gray-800'}`}>
+                    <div className="flex justify-between items-start">
+                      <div>
+                        <h3 className="font-medium text-white">{product.name}</h3>
+                        <p className="text-sm text-gray-400">{product.description}</p>
+                      </div>
+                      {product.isPrimary && (
+                        <span className="text-xs px-2 py-1 bg-red-900/50 text-red-400 rounded">Primary</span>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <CitationFooter citations={[
+                'Check Point Harmony Product Documentation',
+              ]} />
+            </section>
+
+            {/* Stakeholders Section */}
+            <section id="stakeholders" className="bg-gray-900 rounded-xl border border-gray-800 p-6">
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                <span>👥</span> Stakeholders
+              </h2>
+
+              <div className="space-y-4">
+                {Object.values(company.stakeholders).map((stakeholder, idx) => (
+                  <div key={idx} className="bg-gray-800 rounded-lg p-4">
+                    <h3 className="font-medium text-white mb-2">{stakeholder.role}</h3>
+                    <p className="text-sm text-red-400 mb-3">JTBD: {stakeholder.jtbd}</p>
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div>
+                        <span className="text-xs text-gray-500 uppercase">Pain Points</span>
+                        {stakeholder.painPoints.map((pain, i) => (
+                          <p key={i} className="text-xs text-gray-400 mt-1">• {pain}</p>
+                        ))}
+                      </div>
+                      <div>
+                        <span className="text-xs text-gray-500 uppercase">Value Props</span>
+                        {stakeholder.valueProps.map((prop, i) => (
+                          <p key={i} className="text-xs text-gray-300 mt-1">• {prop}</p>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <CitationFooter citations={[
+                'Check Point Customer Case Studies',
+                'Gartner Voice of the Customer',
+              ]} />
+            </section>
+
+            {/* Economics Section */}
+            <section id="economics" className="bg-gray-900 rounded-xl border border-gray-800 p-6">
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                <span>💰</span> Economics
+              </h2>
+
+              <div className="grid md:grid-cols-2 gap-4 mb-4">
+                <div className="bg-gray-800 rounded-lg p-4">
+                  <h3 className="text-sm font-semibold text-gray-400 mb-2">Pricing Model</h3>
+                  <p className="text-sm text-white">{company.economics.pricing}</p>
+                </div>
+                <div className="bg-gray-800 rounded-lg p-4">
+                  <h3 className="text-sm font-semibold text-gray-400 mb-2">Market Position</h3>
+                  <p className="text-sm text-white">{company.economics.competitivePricing}</p>
+                </div>
+              </div>
+
+              <div className="bg-green-900/20 border border-green-800/50 rounded-lg p-4">
+                <h3 className="text-sm font-semibold text-green-400 mb-2">ROI Drivers</h3>
+                {company.economics.roiDrivers.map((driver, idx) => (
+                  <p key={idx} className="text-xs text-gray-300 mt-1">• {driver}</p>
+                ))}
+              </div>
+
+              <CitationFooter citations={[
+                'Check Point Pricing Documentation',
+                'Industry ROI Analysis',
+              ]} />
+            </section>
+
+            {/* Differentiation Section */}
+            <section id="differentiation" className="bg-gray-900 rounded-xl border border-gray-800 p-6">
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                <span>⚡</span> Differentiation
+              </h2>
+
+              <div className="grid md:grid-cols-2 gap-4">
+                {company.differentiation.map((diff, idx) => (
+                  <div key={idx} className="bg-gray-800 rounded-lg p-4 border-l-2 border-red-500">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-xl">{diff.icon}</span>
+                      <h3 className="font-medium text-white">{diff.title}</h3>
+                    </div>
+                    <p className="text-sm text-gray-400">{diff.description}</p>
+                  </div>
+                ))}
+              </div>
+
+              <CitationFooter citations={[
+                'Check Point ThreatCloud Intelligence Report',
+                'US Patent #10,372,931 - Inline API Method',
+              ]} />
+            </section>
+
+            {/* Analysis Section */}
+            <section id="analysis" className="bg-gray-900 rounded-xl border border-gray-800 p-6">
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                <span>📊</span> Analysis
+              </h2>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h3 className="text-sm font-semibold text-green-400 mb-3 flex items-center gap-2">
+                    <span>💪</span> Strengths
+                  </h3>
+                  <div className="space-y-2">
+                    {company.strengths.map((item, idx) => (
+                      <div key={idx} className="flex items-start gap-2 text-sm text-gray-300">
+                        <span className="text-green-500 mt-0.5">+</span>
+                        {item}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-sm font-semibold text-red-400 mb-3 flex items-center gap-2">
+                    <span>⚠️</span> Weaknesses
+                  </h3>
+                  <div className="space-y-2">
+                    {company.weaknesses.map((item, idx) => (
+                      <div key={idx} className="flex items-start gap-2 text-sm text-gray-300">
+                        <span className="text-red-500 mt-0.5">-</span>
+                        {item}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <CitationFooter citations={[
+                'Gartner Critical Capabilities for Email Security',
+                'Industry Analyst Reports',
+              ]} />
+            </section>
+
+            {/* Outlook Section */}
+            <section id="outlook" className="bg-gray-900 rounded-xl border border-gray-800 p-6">
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                <span>🔮</span> Outlook
+              </h2>
+
+              <div className="grid md:grid-cols-2 gap-6 mb-6">
+                <div>
+                  <h3 className="text-sm font-semibold text-green-400 mb-3">Tailwinds</h3>
+                  <div className="space-y-2">
+                    {company.outlook.tailwinds.map((item, idx) => (
+                      <div key={idx} className="flex items-start gap-2 text-sm text-gray-300">
+                        <span className="text-green-500">↑</span>
+                        {item}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-sm font-semibold text-orange-400 mb-3">Headwinds</h3>
+                  <div className="space-y-2">
+                    {company.outlook.headwinds.map((item, idx) => (
+                      <div key={idx} className="flex items-start gap-2 text-sm text-gray-300">
+                        <span className="text-orange-500">↓</span>
+                        {item}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-red-900/20 border border-red-800/50 rounded-lg p-4">
+                <h3 className="text-sm font-semibold text-red-400 mb-2">Trajectory</h3>
+                <p className="text-sm text-gray-300">{company.outlook.trajectory}</p>
+              </div>
+
+              <CitationFooter citations={[
+                'Check Point Strategic Roadmap',
+                'Industry Analyst Forecasts',
+              ]} />
+            </section>
+
+            {/* News Section */}
+            <section id="news" className="bg-gray-900 rounded-xl border border-gray-800 p-6">
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                <span>📰</span> Recent News
+              </h2>
+
+              <div className="space-y-4">
+                {company.news.map((item, idx) => (
+                  <div key={idx} className="flex items-start gap-4 p-4 bg-gray-800 rounded-lg">
+                    <div className="text-sm text-gray-500 whitespace-nowrap">{item.date}</div>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-1">
+                        <h3 className="font-medium text-white">{item.title}</h3>
+                        <span className={`text-xs px-2 py-0.5 rounded border ${getNewsTypeStyle(item.type)}`}>
+                          {item.type}
+                        </span>
+                      </div>
+                      <p className="text-sm text-gray-400">{item.summary}</p>
+                      {item.source && (
+                        <p className="text-xs text-gray-500 mt-1">Source: {item.source}</p>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+          </div>
         </div>
+
+        {/* Footer */}
+        <footer className="mt-12 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
+          <p>Research compiled January 2026 • Andy Simko • Email Security Market Analysis</p>
+          <p className="mt-1 text-gray-600">Independent research • Not affiliated with {company.name}</p>
+        </footer>
       </div>
-      <footer className="bg-slate-900/50 border-t border-slate-800 mt-12">
-        <div className="max-w-7xl mx-auto px-6 py-6 text-center">
-          <p className="text-slate-500 text-sm">Research compiled January 2026 • Andy Simko • Email Security Market Analysis</p>
-        </div>
-      </footer>
     </div>
   );
 };
