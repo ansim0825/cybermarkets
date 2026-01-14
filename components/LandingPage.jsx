@@ -191,8 +191,8 @@ const LandingPage = () => {
       {/* Footer */}
       <footer className="relative z-10 border-t border-gray-800/50 py-8">
         <div className="max-w-5xl mx-auto px-6 text-center text-gray-500 text-sm">
-          <p>Built by Andy Simko • CISSP, GPEN, OSIR, OSTH</p>
-          <p className="text-gray-600 mt-1">10+ years in cybersecurity product management</p>
+          <p>Built by Andy Simko • CISSP • GPEN • CISA • GSNA • HCSFP • PMC-Level III</p>
+          <p className="text-gray-600 mt-1">15+ years in cybersecurity product management</p>
         </div>
       </footer>
     </div>

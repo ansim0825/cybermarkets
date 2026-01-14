@@ -202,7 +202,7 @@ const Homepage = () => {
         {/* Footer */}
         <footer className="mt-12 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
           <p>© 2026 Won With Data • Not affiliated with any vendor</p>
-          <p className="mt-1 text-gray-600">Strategic analysis by a human • Market signals updated periodically</p>
+          <p className="mt-1 text-gray-600">Strategic analysis by Andy Simko • CISSP • GPEN • CISA • GSNA • HCSFP • PMC-Level III • Market signals updated periodically</p>
         </footer>
       </div>
     </div>
