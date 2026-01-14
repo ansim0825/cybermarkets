@@ -1,295 +1,466 @@
 "use client";
+
 import React, { useState } from 'react';
 
 const DarktraceEmailProfile = () => {
   const [activeSection, setActiveSection] = useState('overview');
 
+  const company = {
+    name: 'Darktrace',
+    product: 'Darktrace / EMAIL',
+    tagline: 'Self-Learning AI across the entire digital estate',
+    position: 'Self-Learning AI Platform',
+    website: 'https://www.darktrace.com',
+    
+    snapshot: {
+      valuation: '$5.3B',
+      emailCustomers: '6,000+',
+      totalCustomers: '9,000+',
+      employees: '2,200+',
+      gartnerPosition: 'Leader',
+    },
+
+    companyDetails: {
+      founded: '2013',
+      founders: 'Cambridge mathematicians & intelligence experts',
+      headquarters: 'Cambridge, UK',
+      acquisition: '$5.3B by Thoma Bravo (Oct 2024)',
+      employees: '2,200+',
+    },
+
+    marketPosition: {
+      category: 'Integrated Cloud Email Security (ICES)',
+      subCategory: 'Self-Learning AI Platform',
+      gartnerPosition: 'Leader - Gartner MQ (2024, 2025)',
+    },
+
+    recognition: [
+      'Gartner Magic Quadrant Leader 2024, 2025',
+      '$5.3B Thoma Bravo Acquisition',
+      'Self-Learning AI Pioneer',
+    ],
+
+    metrics: {
+      valuation: '$5.3B',
+      emailCustomers: '6,000+',
+      totalCustomers: '9,000+',
+      platformModules: '6',
+    },
+
+    marketContext: {
+      hypeCyclePosition: 'Slope of Enlightenment',
+      uniqueApproach: 'Unsupervised ML learns "normal" without rules or signatures',
+      keyDifferentiator: 'Cross-domain correlation: email + network + cloud + endpoint + OT + identity',
+    },
+
+    platformComponents: [
+      { name: 'Darktrace / EMAIL', description: 'AI-powered email security with behavioral analysis', isPrimary: true },
+      { name: 'Darktrace / NETWORK', description: 'Network detection and response (NDR)' },
+      { name: 'Darktrace / CLOUD', description: 'Cloud infrastructure security' },
+      { name: 'Darktrace / ENDPOINT', description: 'Endpoint detection and response' },
+      { name: 'Darktrace / OT', description: 'Operational technology security' },
+      { name: 'Darktrace / IDENTITY', description: 'Identity threat detection' },
+    ],
+
+    stakeholders: {
+      ciso: {
+        role: 'CISO / Security Leadership',
+        jtbd: 'Unified visibility across entire digital estate',
+        painPoints: ['Siloed security tools', 'Cross-domain attack blind spots'],
+        valueProps: ['Single platform for all security domains', 'Cross-domain threat correlation'],
+      },
+      secops: {
+        role: 'Security Operations',
+        jtbd: 'Detect novel threats without writing rules',
+        painPoints: ['Rule-based systems miss zero-days', 'Alert fatigue from false positives'],
+        valueProps: ['Self-learning reduces rule maintenance', 'Autonomous response capabilities'],
+      },
+      itAdmin: {
+        role: 'IT / Infrastructure',
+        jtbd: 'Security that understands our unique environment',
+        painPoints: ['Generic signatures miss environment-specific threats', 'Tuning overhead'],
+        valueProps: ['Learns your normal automatically', 'No training data required'],
+      },
+    },
+
+    economics: {
+      pricing: 'Platform pricing based on users/devices protected',
+      roiDrivers: [
+        'Platform consolidation (replace multiple point products)',
+        'Cross-domain correlation improves detection',
+        'Reduced rule maintenance overhead',
+      ],
+      competitivePricing: 'Premium positioning - justified by platform breadth',
+    },
+
+    selfLearningAi: {
+      description: 'Unsupervised machine learning that learns "normal" for each environment without rules or signatures.',
+      keyDifferentiator: 'No training data required - learns autonomously from day one.',
+      crossDomainCorrelation: 'Unique ability to correlate signals across email + network + cloud + endpoint.',
+    },
+
+    differentiation: [
+      { title: 'Self-Learning AI', description: 'No rules, no signatures. Learns your unique "normal" autonomously from day one.', icon: '🧠' },
+      { title: 'Cross-Domain Correlation', description: 'Only platform correlating email + network + cloud + endpoint + OT + identity signals.', icon: '🔗' },
+      { title: 'Platform Breadth', description: 'Email security as part of unified security platform - not point product.', icon: '🏗️' },
+      { title: 'Autonomous Response', description: 'Antigena can take autonomous action to contain threats in real-time.', icon: '⚡' },
+    ],
+
+    strengths: [
+      'Platform breadth - email is one of many integrated products',
+      'Self-Learning AI - no rules, no signatures, autonomous learning',
+      'Cross-domain correlation - network + email + cloud + endpoint signals',
+      'Thoma Bravo backing ($5.3B) - resources for continued investment',
+      'Gartner Leader recognition in multiple categories',
+      'Strong EMEA presence and brand recognition',
+    ],
+
+    weaknesses: [
+      'Email is not primary focus - breadth vs. depth tradeoff',
+      'Premium pricing across platform',
+      'Less email-specific innovation than pure-play vendors',
+      'PE ownership may drive efficiency over innovation',
+      'Complex platform may overwhelm email-only buyers',
+    ],
+
+    outlook: {
+      tailwinds: [
+        'Platform consolidation trend favors unified vendors',
+        'Cross-domain correlation increasingly valuable',
+        'Thoma Bravo resources for M&A and growth',
+      ],
+      headwinds: [
+        'PE ownership pressure on margins',
+        'Pure-play email vendors winning email-specific deals',
+        'Microsoft platform expansion',
+      ],
+      trajectory: 'Email becomes entry point for broader Darktrace platform. Cross-sell from 6K email → full ActiveAI platform.',
+    },
+
+    news: [
+      { date: 'Oct 2024', title: 'Thoma Bravo Acquisition', summary: '$5.3B take-private deal completed.', type: 'acquisition', source: 'Thoma Bravo Press Release' },
+      { date: '2024', title: 'Gartner MQ Leader', summary: 'Named Leader in Email Security Platforms for second year.', type: 'recognition', source: 'Gartner Magic Quadrant 2024' },
+      { date: '2025', title: 'ActiveAI Platform Launch', summary: 'Unified platform branding across all Darktrace products.', type: 'product', source: 'Darktrace Product Announcements' },
+    ],
+  };
+
   const sections = [
-    { id: 'overview', label: 'Overview', icon: '◉' },
-    { id: 'platform', label: 'Platform', icon: '◈' },
-    { id: 'technology', label: 'Technology', icon: '◇' },
-    { id: 'competitive', label: 'vs Abnormal', icon: '●' },
-    { id: 'outlook', label: 'Outlook', icon: '◐' }
+    { id: 'overview', name: 'Overview', icon: '📋' },
+    { id: 'market', name: 'Market Context', icon: '🌍' },
+    { id: 'product', name: 'Product', icon: '🎯' },
+    { id: 'stakeholders', name: 'Stakeholders', icon: '👥' },
+    { id: 'economics', name: 'Economics', icon: '💰' },
+    { id: 'differentiation', name: 'Differentiation', icon: '⚡' },
+    { id: 'analysis', name: 'Analysis', icon: '📊' },
+    { id: 'outlook', name: 'Outlook', icon: '🔮' },
+    { id: 'news', name: 'Recent News', icon: '📰' },
   ];
 
-  const CitationFooter = ({ citations }) => (
-    <div className="mt-8 pt-4 border-t border-slate-700">
-      <p className="text-xs text-slate-500 uppercase tracking-wider mb-2">Sources</p>
-      <div className="space-y-1">
-        {citations.map((cite, i) => (
-          <p key={i} className="text-xs text-slate-400">[{i + 1}] {cite.text}</p>
-        ))}
-      </div>
-      <div className="mt-4 pt-4 border-t border-slate-800">
-        <p className="text-xs text-slate-600 italic">Research compiled January 2026 • Andy Simko Portfolio</p>
-      </div>
-    </div>
-  );
-
-  const renderOverview = () => (
-    <div className="space-y-6">
-      <div className="bg-gradient-to-br from-purple-900/30 to-slate-800/50 rounded-2xl p-8 border border-purple-800/30">
-        <div className="flex items-start justify-between">
-          <div>
-            <h2 className="text-3xl font-bold text-white mb-2">Darktrace / EMAIL</h2>
-            <p className="text-purple-400 text-lg">Self-Learning AI Security Platform</p>
-          </div>
-          <div className="text-right">
-            <p className="text-4xl font-bold text-purple-400">$5.3B</p>
-            <p className="text-slate-400 text-sm">Thoma Bravo (Oct 2024)</p>
-          </div>
-        </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
-          <div className="bg-slate-800/50 rounded-xl p-4 text-center">
-            <p className="text-2xl font-bold text-white">$782M</p>
-            <p className="text-slate-400 text-sm">Total ARR (FY24)</p>
-          </div>
-          <div className="bg-slate-800/50 rounded-xl p-4 text-center">
-            <p className="text-2xl font-bold text-white">6,000+</p>
-            <p className="text-slate-400 text-sm">Email Customers</p>
-          </div>
-          <div className="bg-slate-800/50 rounded-xl p-4 text-center">
-            <p className="text-2xl font-bold text-white">Leader</p>
-            <p className="text-slate-400 text-sm">Gartner MQ 2025</p>
-          </div>
-          <div className="bg-slate-800/50 rounded-xl p-4 text-center">
-            <p className="text-2xl font-bold text-white">4.8/5</p>
-            <p className="text-slate-400 text-sm">Peer Insights</p>
-          </div>
-        </div>
-      </div>
-
-      <div className="grid md:grid-cols-2 gap-6">
-        <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
-          <h3 className="text-lg font-semibold text-purple-400 mb-4">Company Profile</h3>
-          <div className="space-y-3">
-            <div className="flex justify-between"><span className="text-slate-400">Founded</span><span className="text-white">2013 (Cambridge, UK)</span></div>
-            <div className="flex justify-between"><span className="text-slate-400">Heritage</span><span className="text-white">GCHQ/MI5 Founders</span></div>
-            <div className="flex justify-between"><span className="text-slate-400">CEO</span><span className="text-white">Jill Popelka (Sept 2024)</span></div>
-            <div className="flex justify-between"><span className="text-slate-400">Employees</span><span className="text-white">2,400+</span></div>
-          </div>
-        </div>
-        <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
-          <h3 className="text-lg font-semibold text-purple-400 mb-4">Platform Breadth</h3>
-          <div className="space-y-3 text-sm">
-            <div className="flex justify-between"><span className="text-slate-400">Email Security</span><span className="text-emerald-400">Gartner Leader</span></div>
-            <div className="flex justify-between"><span className="text-slate-400">NDR</span><span className="text-emerald-400">Gartner Leader</span></div>
-            <div className="flex justify-between"><span className="text-slate-400">CPS/OT</span><span className="text-amber-400">Gartner Visionary</span></div>
-            <div className="flex justify-between"><span className="text-slate-400">Patents Filed</span><span className="text-white">200+</span></div>
-          </div>
-        </div>
-      </div>
-
-      <div className="bg-gradient-to-r from-amber-900/30 to-slate-800/50 rounded-xl p-6 border border-amber-800/30">
-        <h3 className="text-lg font-semibold text-amber-400 mb-4">⚡ Unique Competitive Dynamic</h3>
-        <p className="text-slate-300 mb-4">Darktrace approaches email as one component of a unified, AI-native security platform spanning network, cloud, endpoint, identity, and OT. Both Darktrace and Abnormal emphasize AI-native behavioral approaches—but platform breadth vs. email depth creates different value propositions.</p>
-        <div className="grid md:grid-cols-2 gap-4">
-          <div className="bg-purple-900/20 rounded-lg p-4 border border-purple-700/30">
-            <p className="text-purple-400 font-medium">Darktrace Approach</p>
-            <p className="text-slate-400 text-sm">Platform breadth, cross-domain correlation</p>
-          </div>
-          <div className="bg-cyan-900/20 rounded-lg p-4 border border-cyan-700/30">
-            <p className="text-cyan-400 font-medium">Abnormal Approach</p>
-            <p className="text-slate-400 text-sm">Email-focused depth, purpose-built behavioral AI</p>
-          </div>
-        </div>
-      </div>
-
-      <CitationFooter citations={[
-        { text: "Thoma Bravo - Darktrace Acquisition Announcement, $5.3B, October 2024" },
-        { text: "Gartner Magic Quadrant for Email Security Platforms, December 2025 - Leader" },
-        { text: "Gartner Magic Quadrant for NDR, 2025 - Leader" },
-        { text: "Darktrace FY2024 Financial Results - $782.2M ARR" },
-        { text: "Gartner Peer Insights - Darktrace Email Security Reviews (340 reviews)" }
-      ]} />
-    </div>
-  );
-
-  const renderPlatform = () => (
-    <div className="space-y-6">
-      <h2 className="text-2xl font-bold text-white mb-6">ActiveAI Security Platform</h2>
-      
-      <div className="bg-slate-800/50 rounded-xl p-6 border border-purple-700/30">
-        <h3 className="text-xl font-semibold text-purple-400 mb-4">Platform Components</h3>
-        <div className="grid md:grid-cols-2 gap-4">
-          {[
-            { name: 'Darktrace / EMAIL', desc: 'AI-native email security with behavioral detection and autonomous response', status: 'Leader' },
-            { name: 'Darktrace / NETWORK', desc: 'Network detection and response (NDR)', status: 'Leader' },
-            { name: 'Darktrace / CLOUD', desc: 'Cloud security for AWS, Azure, GCP', status: 'Available' },
-            { name: 'Darktrace / ENDPOINT', desc: 'Endpoint visibility with NEXT agent combining NDR+EDR', status: 'New' },
-            { name: 'Darktrace / IDENTITY', desc: 'Identity security with risk management', status: 'Available' },
-            { name: 'Darktrace / OT', desc: 'Operational technology security', status: 'Visionary' },
-            { name: 'Cyber AI Analyst', desc: 'Agentic AI automating investigations across domains', status: 'Core' },
-            { name: 'PREVENT', desc: 'Proactive exposure management, attack path analysis', status: 'New' }
-          ].map((item, i) => (
-            <div key={i} className="bg-slate-900/50 rounded-lg p-4">
-              <div className="flex justify-between items-start mb-2">
-                <h4 className="font-medium text-white">{item.name}</h4>
-                <span className={`text-xs px-2 py-1 rounded ${item.status === 'Leader' ? 'bg-emerald-500/20 text-emerald-400' : item.status === 'New' ? 'bg-cyan-500/20 text-cyan-400' : 'bg-slate-700 text-slate-400'}`}>{item.status}</span>
-              </div>
-              <p className="text-slate-400 text-sm">{item.desc}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="bg-gradient-to-br from-emerald-900/20 to-slate-800/50 rounded-xl p-6 border border-emerald-700/30">
-        <h3 className="text-xl font-semibold text-emerald-400 mb-4">Cross-Domain Correlation Advantage</h3>
-        <p className="text-slate-300 mb-4">The Cyber AI Analyst operates natively across endpoint, network, cloud, SaaS, identity, and email—correlating events without external integrations, data lakes, or manual correlation.</p>
-        <div className="bg-slate-800/50 rounded-lg p-4">
-          <p className="text-slate-300 text-sm">This enables detection of multi-vector attacks that move across domain boundaries—something email-focused vendors like Abnormal cannot replicate without external integrations.</p>
-        </div>
-      </div>
-
-      <CitationFooter citations={[
-        { text: "Darktrace ActiveAI Security Platform Launch, April 2024" },
-        { text: "Darktrace NEXT Agent Announcement, October 2025" },
-        { text: "Gartner Magic Quadrants - Email Security (Leader), NDR (Leader), CPS (Visionary)" }
-      ]} />
-    </div>
-  );
-
-  const renderCompetitive = () => (
-    <div className="space-y-6">
-      <h2 className="text-2xl font-bold text-white mb-6">Darktrace vs Abnormal Security</h2>
-      
-      <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
-        <h3 className="text-xl font-semibold text-white mb-4">Strategic Positioning Comparison</h3>
-        <div className="overflow-x-auto">
-          <table className="w-full text-sm">
-            <thead>
-              <tr className="border-b border-slate-700">
-                <th className="text-left py-3 text-slate-400">Dimension</th>
-                <th className="text-left py-3 text-purple-400">Darktrace</th>
-                <th className="text-left py-3 text-cyan-400">Abnormal</th>
-              </tr>
-            </thead>
-            <tbody className="text-slate-300">
-              <tr className="border-b border-slate-800">
-                <td className="py-3">Core Identity</td>
-                <td className="py-3">AI-native security platform vendor</td>
-                <td className="py-3 text-cyan-300">Email-focused behavioral AI specialist</td>
-              </tr>
-              <tr className="border-b border-slate-800">
-                <td className="py-3">Product Scope</td>
-                <td className="py-3">Email + Network + Cloud + Endpoint + OT</td>
-                <td className="py-3 text-cyan-300">Email security + adjacent expansion</td>
-              </tr>
-              <tr className="border-b border-slate-800">
-                <td className="py-3">Email Customers</td>
-                <td className="py-3">6,000+</td>
-                <td className="py-3 text-cyan-300">3,200+</td>
-              </tr>
-              <tr className="border-b border-slate-800">
-                <td className="py-3">Gartner MQ 2025</td>
-                <td className="py-3">Leader</td>
-                <td className="py-3 text-cyan-300">Leader</td>
-              </tr>
-              <tr>
-                <td className="py-3">Valuation/Backing</td>
-                <td className="py-3">$5.3B (Thoma Bravo)</td>
-                <td className="py-3 text-cyan-300">$5.1B (VC)</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <div className="grid md:grid-cols-2 gap-6">
-        <div className="bg-purple-900/20 rounded-xl p-6 border border-purple-700/30">
-          <h3 className="text-lg font-semibold text-purple-400 mb-4">Where Darktrace Competes Effectively</h3>
-          <ul className="space-y-3 text-slate-300 text-sm">
-            <li>• <strong>Platform Consolidators:</strong> Organizations seeking vendor reduction across email, network, cloud, endpoint</li>
-            <li>• <strong>Cross-Domain Visibility:</strong> Teams needing to correlate threats across IT domains</li>
-            <li>• <strong>OT/IT Convergence:</strong> Industrial organizations with unified IT/OT visibility needs</li>
-            <li>• <strong>Existing Darktrace NDR:</strong> Easy add-on for current customers</li>
-          </ul>
-        </div>
-        <div className="bg-cyan-900/20 rounded-xl p-6 border border-cyan-700/30">
-          <h3 className="text-lg font-semibold text-cyan-400 mb-4">Where Abnormal Wins</h3>
-          <ul className="space-y-3 text-slate-300 text-sm">
-            <li>• <strong>Email-Focused Buyers:</strong> Organizations prioritizing email depth over platform breadth</li>
-            <li>• <strong>BEC Specialists:</strong> Companies with significant executive impersonation/vendor fraud concerns</li>
-            <li>• <strong>Simpler Deployment:</strong> Rapid email-only deployment without platform complexity</li>
-            <li>• <strong>Cost-Sensitive Enterprise:</strong> Email budget cannot justify full platform investment</li>
-          </ul>
-        </div>
-      </div>
-
-      <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
-        <h3 className="text-xl font-semibold text-white mb-4">Positioning for Abnormal</h3>
-        <div className="space-y-4">
-          <div className="bg-slate-900/50 rounded-lg p-4">
-            <h4 className="font-medium text-amber-400 mb-2">Against Platform Argument</h4>
-            <p className="text-slate-300 text-sm italic">"Best-of-breed email security integrates with any platform. Email is too critical for compromise—purpose-built AI consistently outperforms multi-purpose tools."</p>
-          </div>
-          <div className="bg-slate-900/50 rounded-lg p-4">
-            <h4 className="font-medium text-amber-400 mb-2">On Depth vs. Breadth</h4>
-            <p className="text-slate-300 text-sm italic">"We've processed billions of emails specifically to understand email-based attacks. Our entire R&D investment is focused on email security innovation."</p>
-          </div>
-          <div className="bg-slate-900/50 rounded-lg p-4">
-            <h4 className="font-medium text-amber-400 mb-2">For Existing Darktrace NDR Customers</h4>
-            <p className="text-slate-300 text-sm italic">"We can complement your Darktrace investment with deeper email-specific protection. You'll get purpose-built BEC detection that catches threats their broader approach may miss."</p>
-          </div>
-        </div>
-      </div>
-
-      <CitationFooter citations={[
-        { text: "Gartner Magic Quadrant for Email Security Platforms, 2025 - Both vendors named Leaders" },
-        { text: "Darktrace Customer Count - 6,000+ email security customers" },
-        { text: "Abnormal Security Customer Count - 3,200+ organizations" },
-        { text: "Thoma Bravo - Darktrace acquisition $5.3B; Abnormal Series D $5.1B valuation" }
-      ]} />
-    </div>
-  );
-
-  const renderContent = () => {
-    switch(activeSection) {
-      case 'overview': return renderOverview();
-      case 'platform': return renderPlatform();
-      case 'competitive': return renderCompetitive();
-      default: return <div className="text-slate-400">Section: {activeSection}</div>;
+  const getNewsTypeStyle = (type) => {
+    switch (type) {
+      case 'acquisition': return 'bg-purple-900/50 text-purple-400 border-purple-700';
+      case 'recognition': return 'bg-green-900/50 text-green-400 border-green-700';
+      case 'product': return 'bg-blue-900/50 text-blue-400 border-blue-700';
+      default: return 'bg-gray-800 text-gray-400 border-gray-700';
     }
   };
 
+  const scrollToSection = (sectionId) => {
+    setActiveSection(sectionId);
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const CitationFooter = ({ citations }) => (
+    <div className="mt-6 pt-4 border-t border-gray-700">
+      <p className="text-xs text-gray-500 uppercase tracking-wider mb-2">Sources</p>
+      <div className="space-y-1">
+        {citations.map((cite, i) => (
+          <p key={i} className="text-xs text-gray-500">[{i + 1}] {cite}</p>
+        ))}
+      </div>
+    </div>
+  );
+
+  const HypeCycleSVG = () => (
+    <svg viewBox="0 0 500 200" className="w-full h-48">
+      <defs>
+        <linearGradient id="curveGradientDT" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor="#8b5cf6" stopOpacity="0.8" />
+          <stop offset="50%" stopColor="#06b6d4" stopOpacity="0.8" />
+          <stop offset="100%" stopColor="#10b981" stopOpacity="0.8" />
+        </linearGradient>
+      </defs>
+      <path d="M 30 180 Q 80 180 100 160 Q 120 140 140 60 Q 160 20 180 40 Q 200 60 220 120 Q 260 160 300 150 Q 340 140 380 130 Q 420 120 470 110" stroke="url(#curveGradientDT)" strokeWidth="3" fill="none" />
+      <circle cx="140" cy="60" r="6" fill="#f97316" stroke="#fff" strokeWidth="2" />
+      <text x="140" y="45" textAnchor="middle" fill="#f97316" fontSize="10" fontWeight="bold">GenAI Email</text>
+      <circle cx="340" cy="140" r="8" fill="#a855f7" stroke="#fff" strokeWidth="2" />
+      <text x="340" y="125" textAnchor="middle" fill="#a855f7" fontSize="10" fontWeight="bold">Self-Learning AI</text>
+      <text x="340" y="165" textAnchor="middle" fill="#9ca3af" fontSize="8">(Darktrace)</text>
+      <circle cx="450" cy="110" r="6" fill="#10b981" stroke="#fff" strokeWidth="2" />
+      <text x="450" y="95" textAnchor="middle" fill="#10b981" fontSize="10" fontWeight="bold">SEG</text>
+      <text x="60" y="195" fill="#6b7280" fontSize="8">Innovation Trigger</text>
+      <text x="160" y="195" fill="#6b7280" fontSize="8">Peak</text>
+      <text x="230" y="195" fill="#6b7280" fontSize="8">Trough</text>
+      <text x="320" y="195" fill="#6b7280" fontSize="8">Slope of Enlightenment</text>
+      <text x="440" y="195" fill="#6b7280" fontSize="8">Plateau</text>
+    </svg>
+  );
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white">
-      <header className="bg-slate-900/80 backdrop-blur-sm border-b border-slate-800 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-6 py-4">
+    <div className="min-h-screen bg-gray-950 text-gray-100">
+      <nav className="border-b border-gray-800 bg-gray-950/80 backdrop-blur-sm sticky top-0 z-50">
+        <div className="max-w-6xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-700 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">D</span>
-              </div>
-              <div>
-                <h1 className="text-xl font-bold text-white">Darktrace / EMAIL</h1>
-                <p className="text-slate-400 text-sm">Competitive Intelligence Profile</p>
-              </div>
+              <a href="/" className="text-gray-400 hover:text-white">Home</a>
+              <span className="text-gray-600">/</span>
+              <a href="/pillars/network-edge/email-security" className="text-gray-400 hover:text-white">Email Security</a>
+              <span className="text-gray-600">/</span>
+              <span className="text-gray-300">Darktrace</span>
             </div>
-            <div className="flex items-center gap-2">
-              <span className="px-3 py-1 bg-purple-500/20 text-purple-400 text-xs rounded-full border border-purple-500/30">Self-Learning AI</span>
-              <span className="px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs rounded-full border border-emerald-500/30">Gartner Leader</span>
-            </div>
+            <a href="/pillars/network-edge/email-security" className="text-gray-300 hover:text-white text-sm">← Back to Market</a>
           </div>
         </div>
-      </header>
-      <div className="max-w-7xl mx-auto px-6 py-8">
-        <div className="flex gap-8">
-          <nav className="w-64 flex-shrink-0">
-            <div className="bg-slate-800/50 rounded-xl p-4 sticky top-24 border border-slate-700">
-              <div className="space-y-1">
-                {sections.map(section => (
-                  <button key={section.id} onClick={() => setActiveSection(section.id)}
-                    className={`w-full text-left px-4 py-3 rounded-lg transition-all flex items-center gap-3 ${activeSection === section.id ? 'bg-purple-600/20 text-purple-400 border border-purple-500/30' : 'text-slate-400 hover:bg-slate-700/50 hover:text-white'}`}>
-                    <span className="text-lg">{section.icon}</span>
-                    <span className="text-sm font-medium">{section.label}</span>
-                  </button>
-                ))}
+      </nav>
+
+      <div className="max-w-6xl mx-auto px-6 py-8">
+        <div className="mb-8">
+          <div className="flex items-start justify-between mb-4">
+            <div>
+              <div className="flex items-center gap-3 mb-2">
+                <h1 className="text-4xl font-bold">{company.name}</h1>
+                <span className="px-3 py-1 bg-purple-900/50 text-purple-400 border border-purple-700 rounded-full text-sm">{company.position}</span>
+              </div>
+              <p className="text-xl text-gray-400 mb-2">{company.tagline}</p>
+              <p className="text-sm text-gray-500">{company.product}</p>
+            </div>
+            <a href={company.website} target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg text-sm transition-colors">Visit Website →</a>
+          </div>
+          <div className="flex items-center gap-4 text-sm text-gray-500">
+            <span>Research Status: <span className="text-yellow-400">In Progress</span></span>
+            <span>•</span>
+            <span>Last updated: January 2026</span>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8">
+          <div className="bg-gray-900 rounded-xl p-4 border border-gray-800">
+            <div className="text-2xl font-bold text-white mb-1">{company.snapshot.valuation}</div>
+            <div className="text-xs text-gray-400">Thoma Bravo Acquisition</div>
+          </div>
+          <div className="bg-gray-900 rounded-xl p-4 border border-gray-800">
+            <div className="text-2xl font-bold text-purple-400 mb-1">{company.snapshot.emailCustomers}</div>
+            <div className="text-xs text-gray-400">Email Customers</div>
+          </div>
+          <div className="bg-gray-900 rounded-xl p-4 border border-gray-800">
+            <div className="text-2xl font-bold text-white mb-1">{company.snapshot.totalCustomers}</div>
+            <div className="text-xs text-gray-400">Total Customers</div>
+          </div>
+          <div className="bg-gray-900 rounded-xl p-4 border border-gray-800">
+            <div className="text-2xl font-bold text-white mb-1">{company.snapshot.employees}</div>
+            <div className="text-xs text-gray-400">Employees</div>
+          </div>
+          <div className="bg-gray-900 rounded-xl p-4 border border-gray-800">
+            <div className="text-2xl font-bold text-green-400 mb-1">{company.snapshot.gartnerPosition}</div>
+            <div className="text-xs text-gray-400">Gartner MQ 2024/25</div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+          <div className="lg:col-span-1">
+            <div className="sticky top-24">
+              <div className="bg-gray-900 rounded-xl border border-gray-800 p-4 mb-6">
+                <h3 className="text-sm font-semibold text-gray-400 mb-3">Sections</h3>
+                <div className="space-y-1">
+                  {sections.map((section) => (
+                    <button key={section.id} onClick={() => scrollToSection(section.id)}
+                      className={`w-full text-left px-3 py-2 rounded-lg text-sm flex items-center gap-2 transition-all ${activeSection === section.id ? 'bg-purple-900/50 text-purple-400 border border-purple-800' : 'text-gray-400 hover:bg-gray-800 hover:text-white'}`}>
+                      <span>{section.icon}</span>
+                      <span>{section.name}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div className="bg-gray-900 rounded-xl border border-gray-800 p-4">
+                <h3 className="text-sm font-semibold text-gray-400 mb-3">Key Metrics</h3>
+                <div className="space-y-3 text-sm">
+                  <div>
+                    <span className="text-gray-500 block">Valuation</span>
+                    <span className="text-purple-400">{company.metrics.valuation}</span>
+                  </div>
+                  <div>
+                    <span className="text-gray-500 block">Email Customers</span>
+                    <span className="text-white">{company.metrics.emailCustomers}</span>
+                  </div>
+                  <div>
+                    <span className="text-gray-500 block">Total Customers</span>
+                    <span className="text-white">{company.metrics.totalCustomers}</span>
+                  </div>
+                  <div>
+                    <span className="text-gray-500 block">Platform Modules</span>
+                    <span className="text-white">{company.metrics.platformModules}</span>
+                  </div>
+                </div>
               </div>
             </div>
-          </nav>
-          <main className="flex-1 min-w-0">{renderContent()}</main>
+          </div>
+
+          <div className="lg:col-span-3 space-y-8">
+            
+            <section id="overview" className="bg-gray-900 rounded-xl border border-gray-800 p-6">
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2"><span>📋</span> Company Overview</h2>
+              <div className="grid md:grid-cols-2 gap-6 mb-6">
+                <div>
+                  <h3 className="text-sm font-semibold text-gray-400 mb-3">Company Details</h3>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex justify-between"><span className="text-gray-500">Founded</span><span className="text-gray-300">{company.companyDetails.founded}</span></div>
+                    <div className="flex justify-between"><span className="text-gray-500">Founders</span><span className="text-gray-300">{company.companyDetails.founders}</span></div>
+                    <div className="flex justify-between"><span className="text-gray-500">Headquarters</span><span className="text-gray-300">{company.companyDetails.headquarters}</span></div>
+                    <div className="flex justify-between"><span className="text-gray-500">Acquisition</span><span className="text-gray-300">{company.companyDetails.acquisition}</span></div>
+                    <div className="flex justify-between"><span className="text-gray-500">Employees</span><span className="text-gray-300">{company.companyDetails.employees}</span></div>
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-sm font-semibold text-gray-400 mb-3">Market Position</h3>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex justify-between"><span className="text-gray-500">Category</span><span className="text-gray-300">{company.marketPosition.category}</span></div>
+                    <div className="flex justify-between"><span className="text-gray-500">Sub-Category</span><span className="text-gray-300">{company.marketPosition.subCategory}</span></div>
+                    <div><span className="text-gray-500 block mb-1">Gartner Position</span><span className="text-green-400 text-xs">{company.marketPosition.gartnerPosition}</span></div>
+                  </div>
+                </div>
+              </div>
+              <div className="mb-4">
+                <h3 className="text-sm font-semibold text-gray-400 mb-3">Recognition</h3>
+                <div className="flex flex-wrap gap-2">
+                  {company.recognition.map((item, idx) => (
+                    <span key={idx} className="px-3 py-1 bg-gray-800 rounded-full text-xs text-gray-300 border border-gray-700">{item}</span>
+                  ))}
+                </div>
+              </div>
+              <CitationFooter citations={['Darktrace Company Information', 'Thoma Bravo Acquisition Announcement, October 2024', 'Gartner Magic Quadrant 2024']} />
+            </section>
+
+            <section id="market" className="bg-gray-900 rounded-xl border border-gray-800 p-6">
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2"><span>🌍</span> Market Context</h2>
+              <div className="bg-gray-800 rounded-lg p-4 mb-4">
+                <h3 className="text-sm font-semibold text-gray-400 mb-3">Email Security Hype Cycle Position</h3>
+                <HypeCycleSVG />
+                <p className="text-xs text-gray-500 text-center mt-2">[1] Gartner Hype Cycle for Security Operations, 2024</p>
+              </div>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="bg-purple-900/20 border border-purple-800/50 rounded-lg p-4">
+                  <h3 className="text-sm font-semibold text-purple-400 mb-2">Unique Approach</h3>
+                  <p className="text-xs text-gray-400">{company.marketContext.uniqueApproach}</p>
+                </div>
+                <div className="bg-gray-800 rounded-lg p-4">
+                  <h3 className="text-sm font-semibold text-white mb-2">Key Differentiator</h3>
+                  <p className="text-xs text-gray-400">{company.marketContext.keyDifferentiator}</p>
+                </div>
+              </div>
+              <CitationFooter citations={['Gartner Hype Cycle for Security Operations, 2024', 'Darktrace Self-Learning AI Overview']} />
+            </section>
+
+            <section id="product" className="bg-gray-900 rounded-xl border border-gray-800 p-6">
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2"><span>🎯</span> Product (ActiveAI Security Platform)</h2>
+              <p className="text-sm text-gray-400 mb-4">Email is one component of Darktrace's unified security platform - key differentiator is cross-domain correlation.</p>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                {company.platformComponents.map((component, idx) => (
+                  <div key={idx} className={`rounded-lg p-4 border ${component.isPrimary ? 'bg-purple-900/20 border-purple-800/50' : 'bg-gray-800 border-gray-700'}`}>
+                    <h3 className="font-medium text-white text-sm">{component.name}</h3>
+                    <p className="text-xs text-gray-400 mt-1">{component.description}</p>
+                    {component.isPrimary && <span className="text-xs text-purple-400 mt-2 block">Primary Focus</span>}
+                  </div>
+                ))}
+              </div>
+              <CitationFooter citations={['Darktrace ActiveAI Platform Documentation']} />
+            </section>
+
+            <section id="stakeholders" className="bg-gray-900 rounded-xl border border-gray-800 p-6">
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2"><span>👥</span> Stakeholders</h2>
+              <div className="space-y-4">
+                {Object.values(company.stakeholders).map((stakeholder, idx) => (
+                  <div key={idx} className="bg-gray-800 rounded-lg p-4">
+                    <h3 className="font-medium text-white mb-2">{stakeholder.role}</h3>
+                    <p className="text-sm text-purple-400 mb-3">JTBD: {stakeholder.jtbd}</p>
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div><span className="text-xs text-gray-500 uppercase">Pain Points</span>{stakeholder.painPoints.map((pain, i) => (<p key={i} className="text-xs text-gray-400 mt-1">• {pain}</p>))}</div>
+                      <div><span className="text-xs text-gray-500 uppercase">Value Props</span>{stakeholder.valueProps.map((prop, i) => (<p key={i} className="text-xs text-gray-300 mt-1">• {prop}</p>))}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <CitationFooter citations={['Darktrace Customer Case Studies', 'Gartner Voice of the Customer']} />
+            </section>
+
+            <section id="economics" className="bg-gray-900 rounded-xl border border-gray-800 p-6">
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2"><span>💰</span> Economics</h2>
+              <div className="grid md:grid-cols-2 gap-4 mb-4">
+                <div className="bg-gray-800 rounded-lg p-4"><h3 className="text-sm font-semibold text-gray-400 mb-2">Pricing Model</h3><p className="text-sm text-white">{company.economics.pricing}</p></div>
+                <div className="bg-gray-800 rounded-lg p-4"><h3 className="text-sm font-semibold text-gray-400 mb-2">Market Position</h3><p className="text-sm text-white">{company.economics.competitivePricing}</p></div>
+              </div>
+              <div className="bg-green-900/20 border border-green-800/50 rounded-lg p-4">
+                <h3 className="text-sm font-semibold text-green-400 mb-2">ROI Drivers</h3>
+                {company.economics.roiDrivers.map((driver, idx) => (<p key={idx} className="text-xs text-gray-300 mt-1">• {driver}</p>))}
+              </div>
+              <CitationFooter citations={['Darktrace Pricing Documentation', 'Industry ROI Analysis']} />
+            </section>
+
+            <section id="differentiation" className="bg-gray-900 rounded-xl border border-gray-800 p-6">
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2"><span>⚡</span> Differentiation</h2>
+              <div className="grid md:grid-cols-2 gap-4">
+                {company.differentiation.map((diff, idx) => (
+                  <div key={idx} className="bg-gray-800 rounded-lg p-4 border-l-2 border-purple-500">
+                    <div className="flex items-center gap-2 mb-2"><span className="text-xl">{diff.icon}</span><h3 className="font-medium text-white">{diff.title}</h3></div>
+                    <p className="text-sm text-gray-400">{diff.description}</p>
+                  </div>
+                ))}
+              </div>
+              <CitationFooter citations={['Darktrace AI Technology White Paper', 'Darktrace Platform Overview']} />
+            </section>
+
+            <section id="analysis" className="bg-gray-900 rounded-xl border border-gray-800 p-6">
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2"><span>📊</span> Analysis</h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div><h3 className="text-sm font-semibold text-green-400 mb-3 flex items-center gap-2"><span>💪</span> Strengths</h3><div className="space-y-2">{company.strengths.map((item, idx) => (<div key={idx} className="flex items-start gap-2 text-sm text-gray-300"><span className="text-green-500 mt-0.5">+</span>{item}</div>))}</div></div>
+                <div><h3 className="text-sm font-semibold text-red-400 mb-3 flex items-center gap-2"><span>⚠️</span> Weaknesses</h3><div className="space-y-2">{company.weaknesses.map((item, idx) => (<div key={idx} className="flex items-start gap-2 text-sm text-gray-300"><span className="text-red-500 mt-0.5">-</span>{item}</div>))}</div></div>
+              </div>
+              <CitationFooter citations={['Gartner Critical Capabilities for Email Security', 'Industry Analyst Reports']} />
+            </section>
+
+            <section id="outlook" className="bg-gray-900 rounded-xl border border-gray-800 p-6">
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2"><span>🔮</span> Outlook</h2>
+              <div className="grid md:grid-cols-2 gap-6 mb-6">
+                <div><h3 className="text-sm font-semibold text-green-400 mb-3">Tailwinds</h3><div className="space-y-2">{company.outlook.tailwinds.map((item, idx) => (<div key={idx} className="flex items-start gap-2 text-sm text-gray-300"><span className="text-green-500">↑</span>{item}</div>))}</div></div>
+                <div><h3 className="text-sm font-semibold text-orange-400 mb-3">Headwinds</h3><div className="space-y-2">{company.outlook.headwinds.map((item, idx) => (<div key={idx} className="flex items-start gap-2 text-sm text-gray-300"><span className="text-orange-500">↓</span>{item}</div>))}</div></div>
+              </div>
+              <div className="bg-purple-900/20 border border-purple-800/50 rounded-lg p-4"><h3 className="text-sm font-semibold text-purple-400 mb-2">Trajectory</h3><p className="text-sm text-gray-300">{company.outlook.trajectory}</p></div>
+              <CitationFooter citations={['Thoma Bravo Investment Thesis', 'Market Analyst Forecasts']} />
+            </section>
+
+            <section id="news" className="bg-gray-900 rounded-xl border border-gray-800 p-6">
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2"><span>📰</span> Recent News</h2>
+              <div className="space-y-4">
+                {company.news.map((item, idx) => (
+                  <div key={idx} className="flex items-start gap-4 p-4 bg-gray-800 rounded-lg">
+                    <div className="text-sm text-gray-500 whitespace-nowrap">{item.date}</div>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-1"><h3 className="font-medium text-white">{item.title}</h3><span className={`text-xs px-2 py-0.5 rounded border ${getNewsTypeStyle(item.type)}`}>{item.type}</span></div>
+                      <p className="text-sm text-gray-400">{item.summary}</p>
+                      {item.source && <p className="text-xs text-gray-500 mt-1">Source: {item.source}</p>}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+          </div>
         </div>
+
+        <footer className="mt-12 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
+          <p>Research compiled January 2026 • Andy Simko • Email Security Market Analysis</p>
+          <p className="mt-1 text-gray-600">Independent research • Not affiliated with {company.name}</p>
+        </footer>
       </div>
     </div>
   );

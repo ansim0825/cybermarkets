@@ -2,143 +2,143 @@
 
 import React, { useState } from 'react';
 
-const CiscoSecureEmailProfile = () => {
+const GoogleWorkspaceSecurityProfile = () => {
   const [activeSection, setActiveSection] = useState('overview');
 
   const company = {
-    name: 'Cisco Secure Email',
-    product: 'Cisco Secure Email Threat Defense',
-    tagline: 'Legacy SEG giant navigating the cloud transition',
-    position: 'Legacy SEG Transitioning',
-    website: 'https://www.cisco.com',
+    name: 'Google Workspace Security',
+    product: 'Gmail Security',
+    tagline: 'The "other half" of email platform security alongside Microsoft',
+    position: 'Platform Incumbent',
+    website: 'https://workspace.google.com',
     
     snapshot: {
-      ironportAcquisition: '$830M',
-      talosEvents: '800B+/day',
-      mindshare: '5.8%',
-      productLines: '3',
-      parentRevenue: '$57B',
+      gmailUsers: '3B+',
+      businessCustomers: '6M+',
+      k12Share: '58%',
+      spamBlock: '99.9%',
+      higherEd: '80%+',
     },
 
     companyDetails: {
-      founded: '1984 (Cisco) / 2007 IronPort acquired',
-      headquarters: 'San Jose, CA',
-      parentCompany: 'Cisco Systems',
-      parentRevenue: '$57B (FY2024)',
-      ironportAcquisition: '$830M (2007)',
+      founded: '2004 (Gmail)',
+      headquarters: 'Mountain View, CA',
+      parentCompany: 'Alphabet Inc.',
+      workspaceLaunch: '2020 (G Suite rebranding)',
+      parentRevenue: '$307B (Alphabet FY2024)',
     },
 
     marketPosition: {
-      category: 'Secure Email Gateway (SEG) + ICES',
-      subCategory: 'Platform Incumbent Transitioning',
-      gartnerPosition: 'Challenger - Gartner MQ 2024',
+      category: 'Native Email Platform Security',
+      subCategory: 'Platform Incumbent',
+      gartnerPosition: 'Not separately rated (platform)',
     },
 
     recognition: [
-      'Talos Threat Intelligence (800B+ events/day)',
-      'IronPort Heritage (17+ years)',
-      'Mindshare Declining: 8.1% → 5.8%',
+      '3B+ Gmail Users Globally',
+      '99.9% Spam Block Rate',
+      'K-12 Market Leader (58%)',
     ],
 
     metrics: {
-      talosEvents: '800B+/day',
-      mindshare: '5.8% (↓)',
-      productLines: '3 (fragmented)',
-      talosResearchers: '400+',
+      gmailUsers: '3B+',
+      businessCustomers: '6M+',
+      k12Market: '58%',
+      spamBlockRate: '99.9%',
     },
 
     marketContext: {
-      hypeCyclePosition: 'Plateau of Productivity (SEG) → Transitioning',
-      challenge: 'Three-product fragmentation creates customer confusion',
-      keyDifferentiator: 'Talos threat intelligence scale unmatched by pure-play vendors',
+      hypeCyclePosition: 'Plateau of Productivity (native email security)',
+      marketShare: '~50% global productivity suite market (with Microsoft)',
+      keyGap: 'BEC/social engineering attacks bypass native controls - same as Microsoft',
     },
 
-    productFragmentation: [
-      { name: 'Cisco Secure Email Gateway (SEG)', description: 'Traditional on-prem/cloud gateway - IronPort heritage', status: 'Legacy', isPrimary: false },
-      { name: 'Cisco Secure Email Cloud Gateway', description: 'Cloud-hosted SEG - same architecture, different deployment', status: 'Transitional', isPrimary: false },
-      { name: 'Cisco Secure Email Threat Defense', description: 'API-based ICES for M365 - Armorblox acquisition', status: 'Modern', isPrimary: true },
+    securityGaps: [
+      { gap: 'BEC / Social Engineering', detail: 'Gmail filters struggle with text-based intent attacks without payloads.', severity: 'critical' },
+      { gap: 'Behavioral Analysis', detail: 'No mailbox-level behavioral baseline for communication pattern anomalies.', severity: 'high' },
+      { gap: 'Internal Threat Detection', detail: 'Implicit trust of internal communications; compromised accounts bypass filters.', severity: 'high' },
+      { gap: 'Post-Delivery Remediation', detail: 'Limited native ability to retract/quarantine post-delivery.', severity: 'medium' },
+      { gap: 'Advanced Features Gated', detail: 'Security Sandbox, advanced DLP require Enterprise editions.', severity: 'medium' },
     ],
 
     stakeholders: {
       ciso: {
         role: 'CISO / Security Leadership',
-        jtbd: 'Consolidate security stack with trusted enterprise vendor',
-        painPoints: ['Vendor sprawl complexity', 'Board questions on email security gaps'],
-        valueProps: ['Cisco brand trust and stability', 'XDR integration story', 'Talos intelligence'],
+        jtbd: 'Close the BEC gap without disrupting users',
+        painPoints: ['Board pressure on email security', 'BEC losses despite 99.9% spam block'],
+        valueProps: ['Native integration reduces friction', 'Cloud-native = smaller attack surface'],
       },
       secops: {
         role: 'Security Operations',
-        jtbd: 'Leverage threat intelligence to prioritize real threats',
-        painPoints: ['Alert fatigue from multiple tools', 'Lack of context for email threats'],
-        valueProps: ['Talos pre-validated intelligence', 'SecureX/XDR correlation'],
+        jtbd: 'Detect what Gmail misses without alert overload',
+        painPoints: ['The 0.1% that gets through includes high-value targets', 'Limited native forensics'],
+        valueProps: ['Google Admin Console integration', 'API-based augmentation available'],
       },
       itAdmin: {
-        role: 'IT / Email Admin',
-        jtbd: 'Migrate from legacy SEG without disruption',
-        painPoints: ['Hardware EOL forcing decisions', 'Migration complexity'],
-        valueProps: ['Familiar Cisco ecosystem', 'Cloud migration path available'],
+        role: 'IT / Workspace Admin',
+        jtbd: 'Maintain email security with minimal overhead',
+        painPoints: ['Security features require Enterprise licensing', 'Complex policy management'],
+        valueProps: ['Cloud-native = automatic updates', 'No infrastructure to maintain'],
       },
     },
 
     economics: {
-      pricing: 'Enterprise agreement pricing (part of Cisco security bundle)',
+      pricing: 'Included in Workspace licensing ($6-18/user/month base)',
       roiDrivers: [
-        'Talos intelligence value (not available separately)',
-        'XDR platform consolidation savings',
-        'Existing Cisco relationship leverage',
+        'No additional cost for native security features',
+        'Cloud-native reduces infrastructure overhead',
+        'Automatic updates eliminate patching cycles',
       ],
-      competitivePricing: 'Premium enterprise pricing, often bundled with other Cisco security',
+      competitivePricing: 'Security "included" but gaps require third-party augmentation',
     },
 
-    hardwareEol: [
-      { product: 'C195 Series', swMaintenanceEnd: 'October 2025', lastShip: 'April 2024' },
-      { product: 'C395 Series', swMaintenanceEnd: 'October 2026', lastShip: 'April 2025' },
-      { product: 'C695 Series', swMaintenanceEnd: 'October 2026', lastShip: 'April 2025' },
-    ],
+    geminiIntegration: {
+      launch: 'January 2025',
+      capabilities: 'AI-powered email summaries, draft assistance, threat hunting',
+      risk: 'GeminiJack vulnerability (Dec 2025) - zero-click data exfiltration via hidden instructions',
+    },
 
     differentiation: [
-      { title: 'Talos Intelligence Scale', description: '800B+ security events daily from 100K+ customers. Unmatched threat visibility.', icon: '🛡️' },
-      { title: 'XDR Integration', description: 'Email signals correlate with network, endpoint, cloud in SecureX/XDR platform.', icon: '🔗' },
-      { title: 'Enterprise Relationships', description: 'Decades of enterprise trust. Security buying often follows network decisions.', icon: '🏢' },
-      { title: 'Compliance & Archiving', description: 'Strong compliance, archiving, and eDiscovery capabilities for regulated industries.', icon: '📋' },
+      { title: 'Cloud-Native Architecture', description: '100% cloud = smaller attack surface, automatic updates, no desktop vulnerabilities.', icon: '☁️' },
+      { title: 'Scale & Intelligence', description: '3B+ users provide massive threat signal. Blocks 99.9% of spam/phishing.', icon: '📊' },
+      { title: 'Education Dominance', description: '58% K-12 market share, 80%+ higher ed. Default email for millions of students.', icon: '🎓' },
+      { title: 'Gemini AI Integration', description: 'GenAI capabilities embedded in Workspace (with emerging security implications).', icon: '🤖' },
     ],
 
     strengths: [
-      'Talos threat intelligence - genuine differentiator (800B events/day)',
-      'Cisco enterprise relationships and bundling power',
-      'XDR integration story (SecureX / XDR platform)',
-      'Strong compliance and archiving capabilities',
-      'Global support infrastructure',
+      '99.9% spam/phishing block rate',
+      'Cloud-native architecture advantages',
+      'Massive threat intelligence from 3B+ users',
+      'Education market dominance (K-12, Higher Ed)',
+      'SMB/startup preference and growth',
+      'Gemini AI integration and innovation',
     ],
 
     weaknesses: [
-      'Three-product fragmentation creates customer confusion',
-      'Hardware EOL cascade forcing migration decisions',
-      'Mindshare declining (8.1% → 5.8%)',
-      'Email Threat Defense M365-only (no Google Workspace)',
-      'Late to API-native architecture vs. pure-play vendors',
-      'Armorblox integration still maturing',
+      'BEC gap same as Microsoft - text-based attacks bypass filters',
+      'Limited behavioral analysis capabilities',
+      'Advanced security features require Enterprise tiers',
+      'Post-delivery remediation limitations',
+      'Less enterprise penetration than Microsoft',
     ],
 
     outlook: {
       tailwinds: [
-        'Cisco XDR platform consolidation opportunity',
-        'Talos intelligence remains unique asset',
-        'Enterprise installed base for cross-sell',
+        'Cloud-native appeals to digital-first organizations',
+        'Gemini AI driving innovation',
+        'Education market loyalty and growth',
       ],
       headwinds: [
-        'SEG architecture increasingly obsolete',
-        'Hardware EOL forcing uncomfortable migrations',
-        'Pure-play API vendors winning new deployments',
-        'Mindshare and momentum loss',
+        'Microsoft 365 enterprise dominance',
+        'BEC gap creates third-party opportunity',
+        'GeminiJack-style AI vulnerabilities emerging',
       ],
-      trajectory: 'Managed decline of SEG business. Email Threat Defense growth depends on successful Armorblox integration and GWS expansion.',
+      trajectory: 'Continued strength in education, SMB, and cloud-native enterprises. BEC gap ensures ongoing demand for third-party email security.',
     },
 
     news: [
-      { date: '2023', title: 'Armorblox Acquisition', summary: 'Acquired Armorblox to add AI/ML email security capabilities.', type: 'acquisition', source: 'Cisco Press Release' },
-      { date: '2024', title: 'Mindshare Decline', summary: 'Market mindshare dropped from 8.1% to 5.8% per analyst reports.', type: 'market', source: 'Gartner Market Share Analysis' },
-      { date: '2025', title: 'Hardware EOL Cascade', summary: 'C195 series SW maintenance ending, forcing cloud migration.', type: 'product', source: 'Cisco EOL Announcements' },
+      { date: 'Jan 2025', title: 'Gemini AI Integration', summary: 'Gemini integrated into Business and Enterprise plans.', type: 'product', source: 'Google Cloud Announcement' },
+      { date: 'Dec 2025', title: 'GeminiJack Vulnerability', summary: 'Zero-click data exfiltration via hidden instructions disclosed.', type: 'security', source: 'Security Research Disclosure' },
     ],
   };
 
@@ -156,9 +156,8 @@ const CiscoSecureEmailProfile = () => {
 
   const getNewsTypeStyle = (type) => {
     switch (type) {
-      case 'acquisition': return 'bg-purple-900/50 text-purple-400 border-purple-700';
-      case 'market': return 'bg-amber-900/50 text-amber-400 border-amber-700';
       case 'product': return 'bg-blue-900/50 text-blue-400 border-blue-700';
+      case 'security': return 'bg-red-900/50 text-red-400 border-red-700';
       default: return 'bg-gray-800 text-gray-400 border-gray-700';
     }
   };
@@ -182,21 +181,21 @@ const CiscoSecureEmailProfile = () => {
   const HypeCycleSVG = () => (
     <svg viewBox="0 0 500 200" className="w-full h-48">
       <defs>
-        <linearGradient id="curveGradientCisco" x1="0%" y1="0%" x2="100%" y2="0%">
+        <linearGradient id="curveGradientGoogle" x1="0%" y1="0%" x2="100%" y2="0%">
           <stop offset="0%" stopColor="#8b5cf6" stopOpacity="0.8" />
           <stop offset="50%" stopColor="#06b6d4" stopOpacity="0.8" />
           <stop offset="100%" stopColor="#10b981" stopOpacity="0.8" />
         </linearGradient>
       </defs>
-      <path d="M 30 180 Q 80 180 100 160 Q 120 140 140 60 Q 160 20 180 40 Q 200 60 220 120 Q 260 160 300 150 Q 340 140 380 130 Q 420 120 470 110" stroke="url(#curveGradientCisco)" strokeWidth="3" fill="none" />
+      <path d="M 30 180 Q 80 180 100 160 Q 120 140 140 60 Q 160 20 180 40 Q 200 60 220 120 Q 260 160 300 150 Q 340 140 380 130 Q 420 120 470 110" stroke="url(#curveGradientGoogle)" strokeWidth="3" fill="none" />
       <circle cx="140" cy="60" r="6" fill="#f97316" stroke="#fff" strokeWidth="2" />
       <text x="140" y="45" textAnchor="middle" fill="#f97316" fontSize="10" fontWeight="bold">GenAI Email</text>
-      <circle cx="350" cy="135" r="8" fill="#3b82f6" stroke="#fff" strokeWidth="2" />
-      <text x="350" y="120" textAnchor="middle" fill="#3b82f6" fontSize="10" fontWeight="bold">API-based ICES</text>
-      <text x="350" y="160" textAnchor="middle" fill="#9ca3af" fontSize="8">(Threat Defense)</text>
-      <circle cx="450" cy="110" r="8" fill="#f59e0b" stroke="#fff" strokeWidth="2" />
-      <text x="450" y="95" textAnchor="middle" fill="#f59e0b" fontSize="10" fontWeight="bold">SEG</text>
-      <text x="450" y="130" textAnchor="middle" fill="#9ca3af" fontSize="8">(Cisco Legacy)</text>
+      <text x="140" y="80" textAnchor="middle" fill="#9ca3af" fontSize="8">(Gemini)</text>
+      <circle cx="350" cy="135" r="6" fill="#22c55e" stroke="#fff" strokeWidth="2" />
+      <text x="350" y="120" textAnchor="middle" fill="#22c55e" fontSize="10" fontWeight="bold">API-based ICES</text>
+      <circle cx="460" cy="110" r="8" fill="#22c55e" stroke="#fff" strokeWidth="2" />
+      <text x="460" y="95" textAnchor="middle" fill="#22c55e" fontSize="10" fontWeight="bold">Native Email</text>
+      <text x="460" y="130" textAnchor="middle" fill="#9ca3af" fontSize="8">(Gmail/Google)</text>
       <text x="60" y="195" fill="#6b7280" fontSize="8">Innovation Trigger</text>
       <text x="160" y="195" fill="#6b7280" fontSize="8">Peak</text>
       <text x="230" y="195" fill="#6b7280" fontSize="8">Trough</text>
@@ -215,7 +214,7 @@ const CiscoSecureEmailProfile = () => {
               <span className="text-gray-600">/</span>
               <a href="/pillars/network-edge/email-security" className="text-gray-400 hover:text-white">Email Security</a>
               <span className="text-gray-600">/</span>
-              <span className="text-gray-300">Cisco</span>
+              <span className="text-gray-300">Google Workspace</span>
             </div>
             <a href="/pillars/network-edge/email-security" className="text-gray-300 hover:text-white text-sm">← Back to Market</a>
           </div>
@@ -228,7 +227,7 @@ const CiscoSecureEmailProfile = () => {
             <div>
               <div className="flex items-center gap-3 mb-2">
                 <h1 className="text-4xl font-bold">{company.name}</h1>
-                <span className="px-3 py-1 bg-amber-900/50 text-amber-400 border border-amber-700 rounded-full text-sm">{company.position}</span>
+                <span className="px-3 py-1 bg-green-900/50 text-green-400 border border-green-700 rounded-full text-sm">{company.position}</span>
               </div>
               <p className="text-xl text-gray-400 mb-2">{company.tagline}</p>
               <p className="text-sm text-gray-500">{company.product}</p>
@@ -244,24 +243,24 @@ const CiscoSecureEmailProfile = () => {
 
         <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8">
           <div className="bg-gray-900 rounded-xl p-4 border border-gray-800">
-            <div className="text-2xl font-bold text-white mb-1">{company.snapshot.ironportAcquisition}</div>
-            <div className="text-xs text-gray-400">IronPort (2007)</div>
+            <div className="text-2xl font-bold text-white mb-1">{company.snapshot.gmailUsers}</div>
+            <div className="text-xs text-gray-400">Gmail Users</div>
           </div>
           <div className="bg-gray-900 rounded-xl p-4 border border-gray-800">
-            <div className="text-2xl font-bold text-blue-400 mb-1">{company.snapshot.talosEvents}</div>
-            <div className="text-xs text-gray-400">Talos Events/Day</div>
+            <div className="text-2xl font-bold text-green-400 mb-1">{company.snapshot.spamBlock}</div>
+            <div className="text-xs text-gray-400">Spam Block Rate</div>
           </div>
           <div className="bg-gray-900 rounded-xl p-4 border border-gray-800">
-            <div className="text-2xl font-bold text-red-400 mb-1">{company.snapshot.mindshare}</div>
-            <div className="text-xs text-gray-400">Mindshare (↓)</div>
+            <div className="text-2xl font-bold text-white mb-1">{company.snapshot.k12Share}</div>
+            <div className="text-xs text-gray-400">K-12 Market Share</div>
           </div>
           <div className="bg-gray-900 rounded-xl p-4 border border-gray-800">
-            <div className="text-2xl font-bold text-amber-400 mb-1">{company.snapshot.productLines}</div>
-            <div className="text-xs text-gray-400">Product Lines</div>
+            <div className="text-2xl font-bold text-white mb-1">{company.snapshot.businessCustomers}</div>
+            <div className="text-xs text-gray-400">Business Customers</div>
           </div>
           <div className="bg-gray-900 rounded-xl p-4 border border-gray-800">
-            <div className="text-2xl font-bold text-white mb-1">{company.snapshot.parentRevenue}</div>
-            <div className="text-xs text-gray-400">Cisco Revenue</div>
+            <div className="text-2xl font-bold text-white mb-1">{company.snapshot.higherEd}</div>
+            <div className="text-xs text-gray-400">Top 100 Higher Ed</div>
           </div>
         </div>
 
@@ -273,7 +272,7 @@ const CiscoSecureEmailProfile = () => {
                 <div className="space-y-1">
                   {sections.map((section) => (
                     <button key={section.id} onClick={() => scrollToSection(section.id)}
-                      className={`w-full text-left px-3 py-2 rounded-lg text-sm flex items-center gap-2 transition-all ${activeSection === section.id ? 'bg-blue-900/50 text-blue-400 border border-blue-800' : 'text-gray-400 hover:bg-gray-800 hover:text-white'}`}>
+                      className={`w-full text-left px-3 py-2 rounded-lg text-sm flex items-center gap-2 transition-all ${activeSection === section.id ? 'bg-green-900/50 text-green-400 border border-green-800' : 'text-gray-400 hover:bg-gray-800 hover:text-white'}`}>
                       <span>{section.icon}</span>
                       <span>{section.name}</span>
                     </button>
@@ -285,20 +284,20 @@ const CiscoSecureEmailProfile = () => {
                 <h3 className="text-sm font-semibold text-gray-400 mb-3">Key Metrics</h3>
                 <div className="space-y-3 text-sm">
                   <div>
-                    <span className="text-gray-500 block">Talos Events</span>
-                    <span className="text-blue-400">{company.metrics.talosEvents}</span>
+                    <span className="text-gray-500 block">Gmail Users</span>
+                    <span className="text-green-400">{company.metrics.gmailUsers}</span>
                   </div>
                   <div>
-                    <span className="text-gray-500 block">Mindshare</span>
-                    <span className="text-red-400">{company.metrics.mindshare}</span>
+                    <span className="text-gray-500 block">Business Customers</span>
+                    <span className="text-white">{company.metrics.businessCustomers}</span>
                   </div>
                   <div>
-                    <span className="text-gray-500 block">Product Lines</span>
-                    <span className="text-amber-400">{company.metrics.productLines}</span>
+                    <span className="text-gray-500 block">K-12 Market</span>
+                    <span className="text-white">{company.metrics.k12Market}</span>
                   </div>
                   <div>
-                    <span className="text-gray-500 block">Talos Researchers</span>
-                    <span className="text-white">{company.metrics.talosResearchers}</span>
+                    <span className="text-gray-500 block">Spam Block Rate</span>
+                    <span className="text-green-400">{company.metrics.spamBlockRate}</span>
                   </div>
                 </div>
               </div>
@@ -313,11 +312,11 @@ const CiscoSecureEmailProfile = () => {
                 <div>
                   <h3 className="text-sm font-semibold text-gray-400 mb-3">Company Details</h3>
                   <div className="space-y-2 text-sm">
-                    <div className="flex justify-between"><span className="text-gray-500">Founded</span><span className="text-gray-300">{company.companyDetails.founded}</span></div>
+                    <div className="flex justify-between"><span className="text-gray-500">Gmail Launched</span><span className="text-gray-300">{company.companyDetails.founded}</span></div>
                     <div className="flex justify-between"><span className="text-gray-500">Headquarters</span><span className="text-gray-300">{company.companyDetails.headquarters}</span></div>
                     <div className="flex justify-between"><span className="text-gray-500">Parent Company</span><span className="text-gray-300">{company.companyDetails.parentCompany}</span></div>
-                    <div className="flex justify-between"><span className="text-gray-500">IronPort Acquisition</span><span className="text-gray-300">{company.companyDetails.ironportAcquisition}</span></div>
-                    <div className="flex justify-between"><span className="text-gray-500">Parent Revenue</span><span className="text-gray-300">{company.companyDetails.parentRevenue}</span></div>
+                    <div className="flex justify-between"><span className="text-gray-500">Workspace Launch</span><span className="text-gray-300">{company.companyDetails.workspaceLaunch}</span></div>
+                    <div className="flex justify-between"><span className="text-gray-500">Alphabet Revenue</span><span className="text-gray-300">{company.companyDetails.parentRevenue}</span></div>
                   </div>
                 </div>
                 <div>
@@ -325,7 +324,7 @@ const CiscoSecureEmailProfile = () => {
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between"><span className="text-gray-500">Category</span><span className="text-gray-300">{company.marketPosition.category}</span></div>
                     <div className="flex justify-between"><span className="text-gray-500">Sub-Category</span><span className="text-gray-300">{company.marketPosition.subCategory}</span></div>
-                    <div><span className="text-gray-500 block mb-1">Gartner Position</span><span className="text-amber-400 text-xs">{company.marketPosition.gartnerPosition}</span></div>
+                    <div><span className="text-gray-500 block mb-1">Gartner Position</span><span className="text-gray-400 text-xs">{company.marketPosition.gartnerPosition}</span></div>
                   </div>
                 </div>
               </div>
@@ -337,7 +336,7 @@ const CiscoSecureEmailProfile = () => {
                   ))}
                 </div>
               </div>
-              <CitationFooter citations={['Cisco Annual Report FY2024', 'Gartner Market Share Analysis 2024', 'Cisco IronPort Acquisition History']} />
+              <CitationFooter citations={['Google Workspace Customer Statistics', 'Alphabet Inc. Annual Report 2024']} />
             </section>
 
             <section id="market" className="bg-gray-900 rounded-xl border border-gray-800 p-6">
@@ -348,47 +347,46 @@ const CiscoSecureEmailProfile = () => {
                 <p className="text-xs text-gray-500 text-center mt-2">[1] Gartner Hype Cycle for Security Operations, 2024</p>
               </div>
               <div className="grid md:grid-cols-2 gap-4 mb-4">
-                <div className="bg-amber-900/20 border border-amber-800/50 rounded-lg p-4">
-                  <h3 className="text-sm font-semibold text-amber-400 mb-2">The Challenge</h3>
-                  <p className="text-xs text-gray-400">{company.marketContext.challenge}</p>
+                <div className="bg-green-900/20 border border-green-800/50 rounded-lg p-4">
+                  <h3 className="text-sm font-semibold text-green-400 mb-2">Market Share</h3>
+                  <p className="text-xs text-gray-400">{company.marketContext.marketShare}</p>
                 </div>
-                <div className="bg-blue-900/20 border border-blue-800/50 rounded-lg p-4">
-                  <h3 className="text-sm font-semibold text-blue-400 mb-2">Key Differentiator</h3>
-                  <p className="text-xs text-gray-400">{company.marketContext.keyDifferentiator}</p>
-                </div>
-              </div>
-              <div className="bg-red-900/20 border border-red-800/50 rounded-lg p-4">
-                <h3 className="text-sm font-semibold text-red-400 mb-2">⚠️ Hardware EOL Cascade</h3>
-                <div className="overflow-x-auto">
-                  <table className="w-full text-xs mt-2">
-                    <thead><tr className="border-b border-gray-700"><th className="text-left p-2 text-gray-400">Product</th><th className="text-left p-2 text-gray-400">Last Ship</th><th className="text-left p-2 text-gray-400">SW Maintenance End</th></tr></thead>
-                    <tbody>
-                      {company.hardwareEol.map((item, idx) => (
-                        <tr key={idx} className="border-b border-gray-800"><td className="p-2 text-white">{item.product}</td><td className="p-2 text-gray-400">{item.lastShip}</td><td className="p-2 text-red-400">{item.swMaintenanceEnd}</td></tr>
-                      ))}
-                    </tbody>
-                  </table>
+                <div className="bg-red-900/20 border border-red-800/50 rounded-lg p-4">
+                  <h3 className="text-sm font-semibold text-red-400 mb-2">Key Gap</h3>
+                  <p className="text-xs text-gray-400">{company.marketContext.keyGap}</p>
                 </div>
               </div>
-              <CitationFooter citations={['Gartner Hype Cycle for Security Operations, 2024', 'Cisco End-of-Life Announcements']} />
+              <div className="bg-amber-900/20 border border-amber-800/50 rounded-lg p-4">
+                <h3 className="text-sm font-semibold text-amber-400 mb-2">⚠️ Security Gaps (Pure-Play Opportunity)</h3>
+                <div className="space-y-2 mt-2">
+                  {company.securityGaps.map((item, idx) => (
+                    <div key={idx} className="flex justify-between items-center text-xs">
+                      <span className="text-gray-300">{item.gap}</span>
+                      <span className={`px-2 py-0.5 rounded ${item.severity === 'critical' ? 'bg-red-900/50 text-red-400' : item.severity === 'high' ? 'bg-amber-900/50 text-amber-400' : 'bg-gray-700 text-gray-400'}`}>{item.severity}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <CitationFooter citations={['Gartner Hype Cycle for Security Operations, 2024', 'Google Workspace Security Documentation']} />
             </section>
 
             <section id="product" className="bg-gray-900 rounded-xl border border-gray-800 p-6">
-              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2"><span>🎯</span> Product (The Fragmentation Problem)</h2>
-              <div className="space-y-3">
-                {company.productFragmentation.map((product, idx) => (
-                  <div key={idx} className={`rounded-lg p-4 border ${product.status === 'Legacy' ? 'bg-red-900/20 border-red-800/50' : product.status === 'Transitional' ? 'bg-amber-900/20 border-amber-800/50' : 'bg-green-900/20 border-green-800/50'}`}>
-                    <div className="flex justify-between items-start">
-                      <div>
-                        <h3 className="font-medium text-white">{product.name}</h3>
-                        <p className="text-sm text-gray-400">{product.description}</p>
-                      </div>
-                      <span className={`text-xs px-2 py-1 rounded ${product.status === 'Legacy' ? 'bg-red-900/50 text-red-400' : product.status === 'Transitional' ? 'bg-amber-900/50 text-amber-400' : 'bg-green-900/50 text-green-400'}`}>{product.status}</span>
-                    </div>
-                  </div>
-                ))}
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2"><span>🎯</span> Product</h2>
+              <div className="grid md:grid-cols-2 gap-4 mb-4">
+                <div className="bg-green-900/20 border border-green-800/50 rounded-lg p-4">
+                  <h3 className="text-sm font-semibold text-green-400 mb-2">Gmail Security (Native)</h3>
+                  <p className="text-xs text-gray-400">99.9% spam/phishing block rate, safe browsing, attachment scanning, confidential mode.</p>
+                </div>
+                <div className="bg-blue-900/20 border border-blue-800/50 rounded-lg p-4">
+                  <h3 className="text-sm font-semibold text-blue-400 mb-2">Gemini AI ({company.geminiIntegration.launch})</h3>
+                  <p className="text-xs text-gray-400">{company.geminiIntegration.capabilities}</p>
+                </div>
               </div>
-              <CitationFooter citations={['Cisco Secure Email Product Documentation']} />
+              <div className="bg-red-900/20 border border-red-800/50 rounded-lg p-4">
+                <h3 className="text-sm font-semibold text-red-400 mb-2">⚠️ GeminiJack Vulnerability (Dec 2025)</h3>
+                <p className="text-xs text-gray-400">{company.geminiIntegration.risk}</p>
+              </div>
+              <CitationFooter citations={['Google Workspace Security Features', 'GeminiJack Vulnerability Disclosure']} />
             </section>
 
             <section id="stakeholders" className="bg-gray-900 rounded-xl border border-gray-800 p-6">
@@ -397,7 +395,7 @@ const CiscoSecureEmailProfile = () => {
                 {Object.values(company.stakeholders).map((stakeholder, idx) => (
                   <div key={idx} className="bg-gray-800 rounded-lg p-4">
                     <h3 className="font-medium text-white mb-2">{stakeholder.role}</h3>
-                    <p className="text-sm text-blue-400 mb-3">JTBD: {stakeholder.jtbd}</p>
+                    <p className="text-sm text-green-400 mb-3">JTBD: {stakeholder.jtbd}</p>
                     <div className="grid md:grid-cols-2 gap-4">
                       <div><span className="text-xs text-gray-500 uppercase">Pain Points</span>{stakeholder.painPoints.map((pain, i) => (<p key={i} className="text-xs text-gray-400 mt-1">• {pain}</p>))}</div>
                       <div><span className="text-xs text-gray-500 uppercase">Value Props</span>{stakeholder.valueProps.map((prop, i) => (<p key={i} className="text-xs text-gray-300 mt-1">• {prop}</p>))}</div>
@@ -405,7 +403,7 @@ const CiscoSecureEmailProfile = () => {
                   </div>
                 ))}
               </div>
-              <CitationFooter citations={['Cisco Customer Case Studies', 'Gartner Voice of the Customer']} />
+              <CitationFooter citations={['Google Workspace Customer Case Studies', 'Gartner Voice of the Customer']} />
             </section>
 
             <section id="economics" className="bg-gray-900 rounded-xl border border-gray-800 p-6">
@@ -418,20 +416,20 @@ const CiscoSecureEmailProfile = () => {
                 <h3 className="text-sm font-semibold text-green-400 mb-2">ROI Drivers</h3>
                 {company.economics.roiDrivers.map((driver, idx) => (<p key={idx} className="text-xs text-gray-300 mt-1">• {driver}</p>))}
               </div>
-              <CitationFooter citations={['Cisco Enterprise Agreement Pricing', 'Industry ROI Analysis']} />
+              <CitationFooter citations={['Google Workspace Pricing', 'Industry ROI Analysis']} />
             </section>
 
             <section id="differentiation" className="bg-gray-900 rounded-xl border border-gray-800 p-6">
               <h2 className="text-xl font-semibold mb-4 flex items-center gap-2"><span>⚡</span> Differentiation</h2>
               <div className="grid md:grid-cols-2 gap-4">
                 {company.differentiation.map((diff, idx) => (
-                  <div key={idx} className="bg-gray-800 rounded-lg p-4 border-l-2 border-blue-500">
+                  <div key={idx} className="bg-gray-800 rounded-lg p-4 border-l-2 border-green-500">
                     <div className="flex items-center gap-2 mb-2"><span className="text-xl">{diff.icon}</span><h3 className="font-medium text-white">{diff.title}</h3></div>
                     <p className="text-sm text-gray-400">{diff.description}</p>
                   </div>
                 ))}
               </div>
-              <CitationFooter citations={['Cisco Talos Intelligence Group Overview', 'Cisco XDR Platform Documentation']} />
+              <CitationFooter citations={['Google Workspace Security Overview', 'Education Market Analysis']} />
             </section>
 
             <section id="analysis" className="bg-gray-900 rounded-xl border border-gray-800 p-6">
@@ -440,7 +438,7 @@ const CiscoSecureEmailProfile = () => {
                 <div><h3 className="text-sm font-semibold text-green-400 mb-3 flex items-center gap-2"><span>💪</span> Strengths</h3><div className="space-y-2">{company.strengths.map((item, idx) => (<div key={idx} className="flex items-start gap-2 text-sm text-gray-300"><span className="text-green-500 mt-0.5">+</span>{item}</div>))}</div></div>
                 <div><h3 className="text-sm font-semibold text-red-400 mb-3 flex items-center gap-2"><span>⚠️</span> Weaknesses</h3><div className="space-y-2">{company.weaknesses.map((item, idx) => (<div key={idx} className="flex items-start gap-2 text-sm text-gray-300"><span className="text-red-500 mt-0.5">-</span>{item}</div>))}</div></div>
               </div>
-              <CitationFooter citations={['Gartner Critical Capabilities for Email Security', 'Industry Analyst Reports']} />
+              <CitationFooter citations={['Google Workspace Security Assessment', 'Industry Analyst Reports']} />
             </section>
 
             <section id="outlook" className="bg-gray-900 rounded-xl border border-gray-800 p-6">
@@ -449,8 +447,8 @@ const CiscoSecureEmailProfile = () => {
                 <div><h3 className="text-sm font-semibold text-green-400 mb-3">Tailwinds</h3><div className="space-y-2">{company.outlook.tailwinds.map((item, idx) => (<div key={idx} className="flex items-start gap-2 text-sm text-gray-300"><span className="text-green-500">↑</span>{item}</div>))}</div></div>
                 <div><h3 className="text-sm font-semibold text-orange-400 mb-3">Headwinds</h3><div className="space-y-2">{company.outlook.headwinds.map((item, idx) => (<div key={idx} className="flex items-start gap-2 text-sm text-gray-300"><span className="text-orange-500">↓</span>{item}</div>))}</div></div>
               </div>
-              <div className="bg-amber-900/20 border border-amber-800/50 rounded-lg p-4"><h3 className="text-sm font-semibold text-amber-400 mb-2">Trajectory</h3><p className="text-sm text-gray-300">{company.outlook.trajectory}</p></div>
-              <CitationFooter citations={['Cisco Strategic Communications', 'Market Analyst Forecasts']} />
+              <div className="bg-green-900/20 border border-green-800/50 rounded-lg p-4"><h3 className="text-sm font-semibold text-green-400 mb-2">Trajectory</h3><p className="text-sm text-gray-300">{company.outlook.trajectory}</p></div>
+              <CitationFooter citations={['Google Cloud Strategy', 'Market Analyst Forecasts']} />
             </section>
 
             <section id="news" className="bg-gray-900 rounded-xl border border-gray-800 p-6">
@@ -481,4 +479,4 @@ const CiscoSecureEmailProfile = () => {
   );
 };
 
-export default CiscoSecureEmailProfile;
+export default GoogleWorkspaceSecurityProfile;

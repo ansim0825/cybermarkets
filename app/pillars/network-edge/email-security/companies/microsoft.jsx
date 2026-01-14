@@ -1,332 +1,523 @@
 "use client";
+
 import React, { useState } from 'react';
 
 const MicrosoftDefenderProfile = () => {
   const [activeSection, setActiveSection] = useState('overview');
 
+  const company = {
+    name: 'Microsoft Defender for Office 365',
+    product: 'Microsoft Defender for Office 365 (MDO)',
+    tagline: 'The baseline every email security vendor must beat',
+    position: 'Platform Incumbent',
+    website: 'https://www.microsoft.com/security',
+    
+    snapshot: {
+      m365Companies: '3.7M+',
+      dailySignals: '84T',
+      securityRevenue: '$28B+',
+      fortune500: '~75%',
+      gartnerPosition: 'Leader',
+    },
+
+    companyDetails: {
+      founded: '1975 (Microsoft)',
+      headquarters: 'Redmond, WA',
+      ceo: 'Satya Nadella',
+      securityRevenue: '$28B+ (2024)',
+      m365Customers: '3.7M+ companies',
+    },
+
+    marketPosition: {
+      category: 'Native Email Platform Security',
+      subCategory: 'Platform Incumbent + ICES',
+      gartnerPosition: 'Leader - Gartner MQ (2024, 2025)',
+    },
+
+    recognition: [
+      'Gartner Magic Quadrant Leader 2024, 2025',
+      '84 Trillion Daily Security Signals',
+      '~75% Fortune 500 Adoption',
+    ],
+
+    metrics: {
+      m365Companies: '3.7M+',
+      dailySignals: '84 trillion',
+      securityRevenue: '$28B+',
+      becMissRate: '88%',
+    },
+
+    marketContext: {
+      hypeCyclePosition: 'Plateau of Productivity',
+      marketReality: 'Microsoft IS the email security baseline - every vendor positions against MDO',
+      keyGap: '88% of BEC attacks bypass Defender (Osterman Research) - the pure-play opportunity',
+    },
+
+    productTiers: [
+      { name: 'Exchange Online Protection (EOP)', description: 'Basic filtering included with all M365 plans', pricing: 'Included', tier: 'Base' },
+      { name: 'Defender for Office 365 Plan 1', description: 'Safe Attachments, Safe Links, anti-phishing', pricing: '$2/user/month', tier: 'P1' },
+      { name: 'Defender for Office 365 Plan 2', description: 'Threat Explorer, AIR, Attack Simulation', pricing: '$5/user/month', tier: 'P2' },
+      { name: 'Microsoft 365 E5 Security', description: 'Full MDO + Defender XDR + Identity + Cloud Apps', pricing: '$38/user/month', tier: 'E5' },
+    ],
+
+    securityGaps: [
+      { gap: 'BEC / Social Engineering', detail: '88% of BEC attacks bypass Defender (Osterman Research). Text-based attacks without payloads evade signature detection.', severity: 'critical' },
+      { gap: 'Behavioral Analysis', detail: 'Limited mailbox-level behavioral baseline. Doesn\'t learn individual communication patterns.', severity: 'high' },
+      { gap: 'Internal Threat Detection', detail: 'Compromised internal accounts can send malicious email with implicit trust.', severity: 'high' },
+      { gap: 'Zero-Day Payloads', detail: 'Safe Attachments detonation has latency; sophisticated payloads can evade sandbox.', severity: 'medium' },
+      { gap: 'Vendor Email Compromise', detail: 'Trusted vendor domains bypass many controls - supply chain attacks increasing.', severity: 'medium' },
+    ],
+
+    stakeholders: {
+      ciso: {
+        role: 'CISO / Security Leadership',
+        jtbd: 'Close the gap between Defender and actual email risk',
+        painPoints: ['Board asking why BEC still succeeds', 'Budget pressure to use "included" security'],
+        valueProps: ['Native platform = reduced complexity', 'XDR integration story'],
+      },
+      secops: {
+        role: 'Security Operations',
+        jtbd: 'Investigate and respond to email threats efficiently',
+        painPoints: ['Alert fatigue from false positives', 'Limited forensics in lower tiers'],
+        valueProps: ['Threat Explorer (P2)', 'AIR automated investigation', 'Sentinel integration'],
+      },
+      itAdmin: {
+        role: 'IT / M365 Admin',
+        jtbd: 'Maintain email security without specialized expertise',
+        painPoints: ['Complex policy configuration', 'Feature sprawl across tiers'],
+        valueProps: ['Native integration', 'Unified admin portal', 'No MX changes'],
+      },
+    },
+
+    economics: {
+      pricing: 'EOP (included) → P1 ($2/user) → P2 ($5/user) → E5 ($38/user)',
+      roiDrivers: [
+        'Already paying for M365 - incremental security cost is low',
+        'No additional vendor management overhead',
+        'XDR platform consolidation value',
+      ],
+      competitivePricing: 'Bundled pricing makes per-seat cost appear low vs. standalone vendors',
+    },
+
+    securityCopilot: {
+      launch: '2024',
+      emailFeatures: [
+        'Phishing Triage Agent - automated email threat investigation',
+        'LLM-based BEC detection - natural language understanding',
+        'Alert summarization and response recommendations',
+      ],
+      implication: 'Microsoft using AI to close the BEC gap - threat to pure-play vendors if successful.',
+    },
+
+    differentiation: [
+      { title: 'Scale & Intelligence', description: '84 trillion daily signals. Threat intelligence from 3.7M+ M365 customers globally.', icon: '📊' },
+      { title: 'Native Integration', description: 'Zero deployment friction. No MX changes. Works immediately with M365.', icon: '🔗' },
+      { title: 'XDR Platform', description: 'Email + endpoint + identity + cloud apps in unified Defender XDR platform.', icon: '🛡️' },
+      { title: 'Security Copilot', description: 'AI-powered threat investigation and response. Potential BEC gap closer.', icon: '🤖' },
+    ],
+
+    strengths: [
+      'Native M365 integration - zero deployment friction',
+      'Massive scale (84T signals, 3.7M customers)',
+      'Bundled pricing makes it "free" relative to M365 cost',
+      'XDR platform integration (endpoint, identity, cloud)',
+      'Security Copilot AI investment',
+      'Gartner Leader recognition',
+    ],
+
+    weaknesses: [
+      '88% BEC miss rate (Osterman) - the pure-play opportunity',
+      'Limited behavioral AI for communication pattern analysis',
+      'Feature complexity across tiers confuses buyers',
+      'Best features require expensive E5 licensing',
+      'Internal/VEC threats bypass trust model',
+    ],
+
+    abnormalImplications: {
+      positioning: 'Abnormal positions as "defense-in-depth" layer that catches what Defender misses.',
+      keyStats: [
+        '88% of BEC bypasses Defender → Abnormal catches',
+        '99.6% threats auto-remediated by Abnormal',
+        '<5 seconds MTTD vs. Defender\'s reactive model',
+      ],
+      coexistence: 'Most Abnormal customers keep Defender for commodity threats; Abnormal handles advanced attacks.',
+    },
+
+    outlook: {
+      tailwinds: [
+        'M365 adoption continues growing',
+        'Security Copilot AI investment',
+        'Platform consolidation trend',
+        'E5 upsell driving security revenue',
+      ],
+      headwinds: [
+        'BEC gap validates pure-play vendors',
+        'Complexity drives customers to seek simplicity elsewhere',
+        'AI-native vendors moving faster on behavioral detection',
+      ],
+      trajectory: 'Microsoft will continue improving but architectural limitations (signature-based, reactive) create persistent gap for behavioral AI vendors.',
+    },
+
+    news: [
+      { date: '2024', title: 'Security Copilot GA', summary: 'AI-powered security assistant generally available with email threat features.', type: 'product', source: 'Microsoft Ignite 2024' },
+      { date: '2024', title: 'Gartner MQ Leader', summary: 'Named Leader in Email Security Platforms Magic Quadrant.', type: 'recognition', source: 'Gartner Magic Quadrant 2024' },
+      { date: '2024', title: '$28B Security Revenue', summary: 'Microsoft security business exceeds $28B annual revenue.', type: 'milestone', source: 'Microsoft Earnings' },
+    ],
+  };
+
   const sections = [
-    { id: 'overview', label: 'Overview', icon: '◉' },
-    { id: 'tiers', label: 'Product Tiers', icon: '◈' },
-    { id: 'gaps', label: 'Security Gaps', icon: '◆' },
-    { id: 'competitive', label: 'vs Abnormal', icon: '●' },
-    { id: 'copilot', label: 'AI Evolution', icon: '◐' }
+    { id: 'overview', name: 'Overview', icon: '📋' },
+    { id: 'market', name: 'Market Context', icon: '🌍' },
+    { id: 'product', name: 'Product', icon: '🎯' },
+    { id: 'stakeholders', name: 'Stakeholders', icon: '👥' },
+    { id: 'economics', name: 'Economics', icon: '💰' },
+    { id: 'differentiation', name: 'Differentiation', icon: '⚡' },
+    { id: 'analysis', name: 'Analysis', icon: '📊' },
+    { id: 'outlook', name: 'Outlook', icon: '🔮' },
+    { id: 'news', name: 'Recent News', icon: '📰' },
   ];
 
+  const getNewsTypeStyle = (type) => {
+    switch (type) {
+      case 'product': return 'bg-blue-900/50 text-blue-400 border-blue-700';
+      case 'recognition': return 'bg-green-900/50 text-green-400 border-green-700';
+      case 'milestone': return 'bg-purple-900/50 text-purple-400 border-purple-700';
+      default: return 'bg-gray-800 text-gray-400 border-gray-700';
+    }
+  };
+
+  const scrollToSection = (sectionId) => {
+    setActiveSection(sectionId);
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   const CitationFooter = ({ citations }) => (
-    <div className="mt-8 pt-4 border-t border-slate-700">
-      <p className="text-xs text-slate-500 uppercase tracking-wider mb-2">Sources</p>
+    <div className="mt-6 pt-4 border-t border-gray-700">
+      <p className="text-xs text-gray-500 uppercase tracking-wider mb-2">Sources</p>
       <div className="space-y-1">
         {citations.map((cite, i) => (
-          <p key={i} className="text-xs text-slate-400">[{i + 1}] {cite.text}</p>
+          <p key={i} className="text-xs text-gray-500">[{i + 1}] {cite}</p>
         ))}
       </div>
     </div>
   );
 
-  const renderOverview = () => (
-    <div className="space-y-6">
-      <div className="bg-gradient-to-br from-blue-900/30 to-slate-800/50 rounded-2xl p-8 border border-blue-800/30">
-        <div className="flex items-start justify-between">
-          <div>
-            <h2 className="text-3xl font-bold text-white mb-2">Microsoft Defender for Office 365</h2>
-            <p className="text-blue-400 text-lg">The "Good Enough" Baseline Every Vendor Competes Against</p>
-          </div>
-          <div className="text-right">
-            <p className="text-4xl font-bold text-blue-400">3.7M+</p>
-            <p className="text-slate-400 text-sm">M365 Companies</p>
-          </div>
-        </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
-          <div className="bg-slate-800/50 rounded-xl p-4 text-center">
-            <p className="text-2xl font-bold text-white">84T</p>
-            <p className="text-slate-400 text-sm">Daily Threat Signals</p>
-          </div>
-          <div className="bg-slate-800/50 rounded-xl p-4 text-center">
-            <p className="text-2xl font-bold text-white">30B+</p>
-            <p className="text-slate-400 text-sm">Phishing Blocked (2024)</p>
-          </div>
-          <div className="bg-slate-800/50 rounded-xl p-4 text-center">
-            <p className="text-2xl font-bold text-white">Leader</p>
-            <p className="text-slate-400 text-sm">Gartner MQ 2025</p>
-          </div>
-          <div className="bg-slate-800/50 rounded-xl p-4 text-center">
-            <p className="text-2xl font-bold text-red-400">88%</p>
-            <p className="text-slate-400 text-sm">BEC Miss Rate</p>
-          </div>
-        </div>
-      </div>
-
-      <div className="bg-gradient-to-r from-amber-900/30 to-slate-800/50 rounded-xl p-6 border border-amber-800/30">
-        <h3 className="text-lg font-semibold text-amber-400 mb-4">⚡ Strategic Significance</h3>
-        <p className="text-slate-300 mb-4">Microsoft Defender for Office 365 is the 800-pound gorilla in email security—not because it's the best, but because it's bundled with every M365 deployment. Every pure-play vendor is fundamentally selling against Microsoft's "good enough" baseline.</p>
-        <div className="grid md:grid-cols-2 gap-4">
-          <div className="bg-emerald-900/20 rounded-lg p-4 border border-emerald-700/30">
-            <p className="text-emerald-400 font-medium">Platform Strength</p>
-            <p className="text-slate-400 text-sm">Native integration, XDR correlation, "free" in E5 bundle, 84T daily signals</p>
-          </div>
-          <div className="bg-red-900/20 rounded-lg p-4 border border-red-700/30">
-            <p className="text-red-400 font-medium">BEC Weakness</p>
-            <p className="text-slate-400 text-sm">88% miss rate on conversation hijacking—the core opportunity for behavioral AI</p>
-          </div>
-        </div>
-      </div>
-
-      <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
-        <h3 className="text-lg font-semibold text-white mb-4">Key Insight</h3>
-        <p className="text-slate-300">Microsoft's own transparency benchmarking acknowledges that combining ICES solutions with MDO improves detection. The "layered defense" narrative is now validated by Microsoft itself, creating the primary value proposition for pure-play vendors like Abnormal.</p>
-      </div>
-
-      <CitationFooter citations={[
-        { text: "Microsoft 365 Customer Statistics - 3.7M+ companies globally" },
-        { text: "Microsoft Security Blog - 84 trillion daily threat signals" },
-        { text: "Gartner Magic Quadrant for Email Security Platforms, 2025 - Leader" },
-        { text: "SE Labs / Third-party testing - 88% conversation hijacking miss rate" }
-      ]} />
-    </div>
+  const HypeCycleSVG = () => (
+    <svg viewBox="0 0 500 200" className="w-full h-48">
+      <defs>
+        <linearGradient id="curveGradientMS" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor="#8b5cf6" stopOpacity="0.8" />
+          <stop offset="50%" stopColor="#06b6d4" stopOpacity="0.8" />
+          <stop offset="100%" stopColor="#10b981" stopOpacity="0.8" />
+        </linearGradient>
+      </defs>
+      <path d="M 30 180 Q 80 180 100 160 Q 120 140 140 60 Q 160 20 180 40 Q 200 60 220 120 Q 260 160 300 150 Q 340 140 380 130 Q 420 120 470 110" stroke="url(#curveGradientMS)" strokeWidth="3" fill="none" />
+      <circle cx="140" cy="60" r="6" fill="#f97316" stroke="#fff" strokeWidth="2" />
+      <text x="140" y="45" textAnchor="middle" fill="#f97316" fontSize="10" fontWeight="bold">Security Copilot</text>
+      <circle cx="350" cy="135" r="6" fill="#3b82f6" stroke="#fff" strokeWidth="2" />
+      <text x="350" y="120" textAnchor="middle" fill="#3b82f6" fontSize="10" fontWeight="bold">API-based ICES</text>
+      <circle cx="460" cy="110" r="8" fill="#3b82f6" stroke="#fff" strokeWidth="2" />
+      <text x="460" y="95" textAnchor="middle" fill="#3b82f6" fontSize="10" fontWeight="bold">MDO/EOP</text>
+      <text x="460" y="130" textAnchor="middle" fill="#9ca3af" fontSize="8">(Microsoft)</text>
+      <text x="60" y="195" fill="#6b7280" fontSize="8">Innovation Trigger</text>
+      <text x="160" y="195" fill="#6b7280" fontSize="8">Peak</text>
+      <text x="230" y="195" fill="#6b7280" fontSize="8">Trough</text>
+      <text x="320" y="195" fill="#6b7280" fontSize="8">Slope of Enlightenment</text>
+      <text x="440" y="195" fill="#6b7280" fontSize="8">Plateau</text>
+    </svg>
   );
-
-  const renderTiers = () => (
-    <div className="space-y-6">
-      <h2 className="text-2xl font-bold text-white mb-6">Product Tiers & Pricing</h2>
-      
-      <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
-        <h3 className="text-xl font-semibold text-white mb-4">MDO Product Tiers</h3>
-        <div className="space-y-4">
-          <div className="bg-slate-900/50 rounded-lg p-4 border border-slate-700">
-            <div className="flex justify-between items-center mb-2">
-              <h4 className="font-medium text-white">EOP (Exchange Online Protection)</h4>
-              <span className="text-xs px-2 py-1 bg-slate-700 text-slate-300 rounded">Baseline</span>
-            </div>
-            <p className="text-slate-400 text-sm">Anti-spam, anti-malware, basic filtering. Included with all Exchange Online mailboxes.</p>
-          </div>
-          <div className="bg-slate-900/50 rounded-lg p-4 border border-blue-700/30">
-            <div className="flex justify-between items-center mb-2">
-              <h4 className="font-medium text-white">MDO Plan 1</h4>
-              <span className="text-xs px-2 py-1 bg-blue-500/20 text-blue-400 rounded">~$2/user/mo</span>
-            </div>
-            <p className="text-slate-400 text-sm">Safe Links, Safe Attachments, anti-phishing, Teams/SharePoint/OneDrive protection</p>
-            <p className="text-slate-500 text-xs mt-1">Included in: Business Premium</p>
-          </div>
-          <div className="bg-slate-900/50 rounded-lg p-4 border border-purple-700/30">
-            <div className="flex justify-between items-center mb-2">
-              <h4 className="font-medium text-white">MDO Plan 2</h4>
-              <span className="text-xs px-2 py-1 bg-purple-500/20 text-purple-400 rounded">~$5/user/mo</span>
-            </div>
-            <p className="text-slate-400 text-sm">Plan 1 + Threat Explorer, AIR (Automated Investigation), Attack Simulation, XDR integration</p>
-            <p className="text-slate-500 text-xs mt-1">Included in: M365 E5/A5/G5</p>
-          </div>
-        </div>
-      </div>
-
-      <div className="bg-amber-900/20 rounded-xl p-6 border border-amber-700/30">
-        <h3 className="text-xl font-semibold text-amber-400 mb-4">The "Free" Problem</h3>
-        <p className="text-slate-300 mb-4">Most customers get MDO bundled: "It's already included in our E5 license" is the most common justification for not adding third-party email security. Pure-play vendors must overcome this with demonstrable superior value.</p>
-        <div className="bg-slate-800/50 rounded-lg p-4">
-          <p className="text-slate-300 text-sm"><strong>E5 Total Cost:</strong> ~$57/user/month includes MDO P2 + Security Copilot (400 SCUs/month per 1,000 users)</p>
-        </div>
-      </div>
-
-      <CitationFooter citations={[
-        { text: "Microsoft 365 Pricing Documentation" },
-        { text: "Microsoft Ignite 2025 - Security Copilot included in E5 announcement" }
-      ]} />
-    </div>
-  );
-
-  const renderGaps = () => (
-    <div className="space-y-6">
-      <h2 className="text-2xl font-bold text-white mb-6">Security Gaps (Pure-Play Opportunity)</h2>
-      
-      <div className="bg-red-900/20 rounded-xl p-6 border border-red-700/30">
-        <h3 className="text-xl font-semibold text-red-400 mb-4">Where Microsoft Defender Falls Short</h3>
-        <div className="grid gap-4">
-          {[
-            { gap: 'BEC/Social Engineering', detail: 'SEG architecture focuses on known threats and payloads. Struggles with text-based attacks relying on intent rather than malicious content. 88% miss rate on conversation hijacking.', severity: 'critical' },
-            { gap: 'Behavioral Analysis', detail: 'ICES solutions operate at mailbox level, learning communication patterns. MDO approach is more static/rule-based (though LLM integration is addressing this).', severity: 'high' },
-            { gap: 'Internal Threat Detection', detail: 'MDO has implicit trust of internal communications. Compromised accounts sending BEC from within the org often bypass detection.', severity: 'high' },
-            { gap: 'Testability Risk', detail: 'Publicly available, widely deployed—attackers can test campaigns specifically against MDO detection.', severity: 'medium' },
-            { gap: 'Configuration Burden', detail: 'Protection effectiveness varies significantly based on configuration. Default settings leave gaps; optimal configuration requires expertise.', severity: 'medium' },
-            { gap: 'Impersonation Limits', detail: 'Anti-phishing policies limited to 60 internal/external addresses for impersonation protection.', severity: 'low' }
-          ].map((item, i) => (
-            <div key={i} className="bg-slate-800/50 rounded-lg p-4">
-              <div className="flex justify-between items-start mb-2">
-                <h4 className="font-medium text-white">{item.gap}</h4>
-                <span className={`text-xs px-2 py-1 rounded ${item.severity === 'critical' ? 'bg-red-500/20 text-red-400' : item.severity === 'high' ? 'bg-amber-500/20 text-amber-400' : 'bg-slate-700 text-slate-400'}`}>{item.severity}</span>
-              </div>
-              <p className="text-slate-400 text-sm">{item.detail}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <CitationFooter citations={[
-        { text: "SE Labs Email Security Testing - BEC detection efficacy" },
-        { text: "Microsoft Security Documentation - Anti-phishing policy limits" },
-        { text: "Third-party security assessments - Configuration complexity analysis" }
-      ]} />
-    </div>
-  );
-
-  const renderCompetitive = () => (
-    <div className="space-y-6">
-      <h2 className="text-2xl font-bold text-white mb-6">Competitive Implications for Abnormal</h2>
-      
-      <div className="bg-cyan-900/20 rounded-xl p-6 border border-cyan-700/30">
-        <h3 className="text-xl font-semibold text-cyan-400 mb-4">The Core Pitch</h3>
-        <p className="text-slate-300 text-lg italic">"Abnormal exists because Microsoft's SEG architecture fundamentally cannot detect BEC, account takeover, and social engineering attacks that rely on intent rather than payload. MDO's 88% miss rate on conversation hijacking validates Abnormal's behavioral AI approach."</p>
-      </div>
-
-      <div className="grid md:grid-cols-2 gap-6">
-        <div className="bg-blue-900/20 rounded-xl p-6 border border-blue-700/30">
-          <h3 className="text-lg font-semibold text-blue-400 mb-4">Microsoft Strengths</h3>
-          <ul className="space-y-2 text-slate-300 text-sm">
-            <li>• <strong>Native Integration:</strong> No MX changes, seamless with Outlook/Teams/SharePoint</li>
-            <li>• <strong>XDR Correlation:</strong> Email signals correlate with endpoint, identity, cloud</li>
-            <li>• <strong>Security Copilot:</strong> AI capabilities for investigation and threat hunting</li>
-            <li>• <strong>Telemetry Scale:</strong> 84 trillion daily signals from millions of organizations</li>
-            <li>• <strong>Platform Economics:</strong> Bundled pricing makes standalone purchases hard to justify</li>
-          </ul>
-        </div>
-        <div className="bg-cyan-900/20 rounded-xl p-6 border border-cyan-700/30">
-          <h3 className="text-lg font-semibold text-cyan-400 mb-4">Abnormal Advantages</h3>
-          <ul className="space-y-2 text-slate-300 text-sm">
-            <li>• <strong>BEC Detection:</strong> Purpose-built behavioral AI for payload-less attacks</li>
-            <li>• <strong>Account Takeover:</strong> Detects compromised internal accounts Microsoft trusts</li>
-            <li>• <strong>Cross-Tenant Intel:</strong> Threat intelligence across 3,200+ organizations</li>
-            <li>• <strong>No Configuration:</strong> Works out-of-box vs. MDO's complexity</li>
-            <li>• <strong>Pure-Play Focus:</strong> 100% R&D on email vs. broad portfolio</li>
-          </ul>
-        </div>
-      </div>
-
-      <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
-        <h3 className="text-xl font-semibold text-white mb-4">Key Battlegrounds 2025-2026</h3>
-        <div className="grid md:grid-cols-2 gap-4">
-          {[
-            { battle: 'BEC Detection Efficacy', detail: 'Head-to-head detection rates on social engineering attacks. Pure-play must win decisively.' },
-            { battle: 'Account Takeover', detail: 'Detecting compromised accounts sending internal phishing. MDO weakness; Abnormal strength.' },
-            { battle: 'Time to Value', detail: 'How quickly organizations see protection improvement? MDO requires configuration; ICES promises immediate behavioral learning.' },
-            { battle: 'ROI Quantification', detail: 'With MDO "free" in bundles, pure-play must demonstrate concrete value to justify incremental spend.' }
-          ].map((item, i) => (
-            <div key={i} className="bg-slate-900/50 rounded-lg p-4">
-              <h4 className="font-medium text-amber-400">{item.battle}</h4>
-              <p className="text-slate-400 text-sm mt-1">{item.detail}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <CitationFooter citations={[
-        { text: "Microsoft Security Blog - Defense-in-Depth Benchmarking Studies" },
-        { text: "Gartner Market Guide for Email Security - Layered defense validation" },
-        { text: "FBI IC3 Report - BEC losses justify behavioral AI investment" }
-      ]} />
-    </div>
-  );
-
-  const renderCopilot = () => (
-    <div className="space-y-6">
-      <h2 className="text-2xl font-bold text-white mb-6">Microsoft's AI Evolution (The Threat)</h2>
-      
-      <div className="bg-gradient-to-br from-purple-900/30 to-slate-800/50 rounded-xl p-6 border border-purple-700/30">
-        <h3 className="text-xl font-semibold text-purple-400 mb-4">Security Copilot Integration (2025)</h3>
-        <p className="text-slate-300 mb-4">Microsoft's most significant competitive move: integrating Security Copilot agents directly into Defender workflows. M365 E5 customers now receive Security Copilot at no additional cost.</p>
-        <div className="grid md:grid-cols-2 gap-4">
-          <div className="bg-slate-800/50 rounded-lg p-4">
-            <h4 className="font-medium text-white">Phishing Triage Agent (GA Nov 2025)</h4>
-            <p className="text-slate-400 text-sm mt-1">Autonomously analyzes user-reported phishing using LLM-based reasoning. Claims 550% faster detection, 95%+ false positive auto-filtering.</p>
-          </div>
-          <div className="bg-slate-800/50 rounded-lg p-4">
-            <h4 className="font-medium text-white">LLM-Based BEC Detection</h4>
-            <p className="text-slate-400 text-sm mt-1">New LLM filters analyze email language and infer intent—direct response to MDO's BEC weakness.</p>
-          </div>
-        </div>
-      </div>
-
-      <div className="bg-amber-900/20 rounded-xl p-6 border border-amber-700/30">
-        <h3 className="text-xl font-semibold text-amber-400 mb-4">⚠️ Strategic Implication</h3>
-        <p className="text-slate-300 mb-4">Microsoft is actively addressing its email security weaknesses. Abnormal must stay ahead on detection efficacy and demonstrate measurable superiority as Microsoft's AI capabilities improve.</p>
-        <div className="bg-slate-800/50 rounded-lg p-4">
-          <p className="text-slate-300 text-sm"><strong>Key Watch:</strong> Microsoft's LLM-based BEC detection and Security Copilot represent direct competitive response. Monitor efficacy claims vs. real-world performance.</p>
-        </div>
-      </div>
-
-      <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
-        <h3 className="text-xl font-semibold text-white mb-4">Microsoft 2025-2026 Announcements</h3>
-        <div className="space-y-3">
-          {[
-            { date: 'March 2025', event: 'Security Copilot agents announced, including Phishing Triage Agent' },
-            { date: 'April 2025', event: 'Teams protection GA in MDO' },
-            { date: 'October 2025', event: 'E5 Security renamed to Microsoft Defender Suite' },
-            { date: 'November 2025', event: 'Security Copilot included in M365 E5 (Ignite announcement)' },
-            { date: 'November 2025', event: 'Phishing Triage Agent GA' },
-            { date: 'December 2025', event: 'Gartner MQ Leader recognition' }
-          ].map((item, i) => (
-            <div key={i} className="flex gap-4 items-start">
-              <div className="w-28 flex-shrink-0"><span className="text-purple-400 text-sm font-medium">{item.date}</span></div>
-              <p className="text-slate-300 text-sm">{item.event}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <CitationFooter citations={[
-        { text: "Microsoft Ignite 2025 - Security Copilot announcements" },
-        { text: "Microsoft Security Blog - Phishing Triage Agent GA, November 2025" },
-        { text: "Microsoft 365 Roadmap - Email security feature releases" }
-      ]} />
-    </div>
-  );
-
-  const renderContent = () => {
-    switch(activeSection) {
-      case 'overview': return renderOverview();
-      case 'tiers': return renderTiers();
-      case 'gaps': return renderGaps();
-      case 'competitive': return renderCompetitive();
-      case 'copilot': return renderCopilot();
-      default: return <div className="text-slate-400">Section: {activeSection}</div>;
-    }
-  };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white">
-      <header className="bg-slate-900/80 backdrop-blur-sm border-b border-slate-800 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-6 py-4">
+    <div className="min-h-screen bg-gray-950 text-gray-100">
+      <nav className="border-b border-gray-800 bg-gray-950/80 backdrop-blur-sm sticky top-0 z-50">
+        <div className="max-w-6xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-700 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">M</span>
-              </div>
-              <div>
-                <h1 className="text-xl font-bold text-white">Microsoft Defender for O365</h1>
-                <p className="text-slate-400 text-sm">Platform Incumbent Profile</p>
-              </div>
+              <a href="/" className="text-gray-400 hover:text-white">Home</a>
+              <span className="text-gray-600">/</span>
+              <a href="/pillars/network-edge/email-security" className="text-gray-400 hover:text-white">Email Security</a>
+              <span className="text-gray-600">/</span>
+              <span className="text-gray-300">Microsoft Defender</span>
             </div>
-            <div className="flex items-center gap-2">
-              <span className="px-3 py-1 bg-blue-500/20 text-blue-400 text-xs rounded-full border border-blue-500/30">Platform Incumbent</span>
-              <span className="px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs rounded-full border border-emerald-500/30">Gartner Leader</span>
-            </div>
+            <a href="/pillars/network-edge/email-security" className="text-gray-300 hover:text-white text-sm">← Back to Market</a>
           </div>
         </div>
-      </header>
-      <div className="max-w-7xl mx-auto px-6 py-8">
-        <div className="flex gap-8">
-          <nav className="w-64 flex-shrink-0">
-            <div className="bg-slate-800/50 rounded-xl p-4 sticky top-24 border border-slate-700">
-              <div className="space-y-1">
-                {sections.map(section => (
-                  <button key={section.id} onClick={() => setActiveSection(section.id)}
-                    className={`w-full text-left px-4 py-3 rounded-lg transition-all flex items-center gap-3 ${activeSection === section.id ? 'bg-blue-600/20 text-blue-400 border border-blue-500/30' : 'text-slate-400 hover:bg-slate-700/50 hover:text-white'}`}>
-                    <span className="text-lg">{section.icon}</span>
-                    <span className="text-sm font-medium">{section.label}</span>
-                  </button>
-                ))}
+      </nav>
+
+      <div className="max-w-6xl mx-auto px-6 py-8">
+        <div className="mb-8">
+          <div className="flex items-start justify-between mb-4">
+            <div>
+              <div className="flex items-center gap-3 mb-2">
+                <h1 className="text-4xl font-bold">{company.name}</h1>
+                <span className="px-3 py-1 bg-blue-900/50 text-blue-400 border border-blue-700 rounded-full text-sm">{company.position}</span>
+              </div>
+              <p className="text-xl text-gray-400 mb-2">{company.tagline}</p>
+              <p className="text-sm text-gray-500">{company.product}</p>
+            </div>
+            <a href={company.website} target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg text-sm transition-colors">Visit Website →</a>
+          </div>
+          <div className="flex items-center gap-4 text-sm text-gray-500">
+            <span>Research Status: <span className="text-yellow-400">In Progress</span></span>
+            <span>•</span>
+            <span>Last updated: January 2026</span>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8">
+          <div className="bg-gray-900 rounded-xl p-4 border border-gray-800">
+            <div className="text-2xl font-bold text-white mb-1">{company.snapshot.m365Companies}</div>
+            <div className="text-xs text-gray-400">M365 Companies</div>
+          </div>
+          <div className="bg-gray-900 rounded-xl p-4 border border-gray-800">
+            <div className="text-2xl font-bold text-blue-400 mb-1">{company.snapshot.dailySignals}</div>
+            <div className="text-xs text-gray-400">Daily Signals</div>
+          </div>
+          <div className="bg-gray-900 rounded-xl p-4 border border-gray-800">
+            <div className="text-2xl font-bold text-white mb-1">{company.snapshot.securityRevenue}</div>
+            <div className="text-xs text-gray-400">Security Revenue</div>
+          </div>
+          <div className="bg-gray-900 rounded-xl p-4 border border-gray-800">
+            <div className="text-2xl font-bold text-white mb-1">{company.snapshot.fortune500}</div>
+            <div className="text-xs text-gray-400">Fortune 500</div>
+          </div>
+          <div className="bg-gray-900 rounded-xl p-4 border border-gray-800">
+            <div className="text-2xl font-bold text-green-400 mb-1">{company.snapshot.gartnerPosition}</div>
+            <div className="text-xs text-gray-400">Gartner MQ 2024</div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+          <div className="lg:col-span-1">
+            <div className="sticky top-24">
+              <div className="bg-gray-900 rounded-xl border border-gray-800 p-4 mb-6">
+                <h3 className="text-sm font-semibold text-gray-400 mb-3">Sections</h3>
+                <div className="space-y-1">
+                  {sections.map((section) => (
+                    <button key={section.id} onClick={() => scrollToSection(section.id)}
+                      className={`w-full text-left px-3 py-2 rounded-lg text-sm flex items-center gap-2 transition-all ${activeSection === section.id ? 'bg-blue-900/50 text-blue-400 border border-blue-800' : 'text-gray-400 hover:bg-gray-800 hover:text-white'}`}>
+                      <span>{section.icon}</span>
+                      <span>{section.name}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div className="bg-gray-900 rounded-xl border border-gray-800 p-4">
+                <h3 className="text-sm font-semibold text-gray-400 mb-3">Key Metrics</h3>
+                <div className="space-y-3 text-sm">
+                  <div>
+                    <span className="text-gray-500 block">M365 Companies</span>
+                    <span className="text-blue-400">{company.metrics.m365Companies}</span>
+                  </div>
+                  <div>
+                    <span className="text-gray-500 block">Daily Signals</span>
+                    <span className="text-white">{company.metrics.dailySignals}</span>
+                  </div>
+                  <div>
+                    <span className="text-gray-500 block">Security Revenue</span>
+                    <span className="text-white">{company.metrics.securityRevenue}</span>
+                  </div>
+                  <div>
+                    <span className="text-gray-500 block">BEC Miss Rate</span>
+                    <span className="text-red-400">{company.metrics.becMissRate}</span>
+                  </div>
+                </div>
               </div>
             </div>
-          </nav>
-          <main className="flex-1 min-w-0">{renderContent()}</main>
+          </div>
+
+          <div className="lg:col-span-3 space-y-8">
+            
+            <section id="overview" className="bg-gray-900 rounded-xl border border-gray-800 p-6">
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2"><span>📋</span> Company Overview</h2>
+              <div className="grid md:grid-cols-2 gap-6 mb-6">
+                <div>
+                  <h3 className="text-sm font-semibold text-gray-400 mb-3">Company Details</h3>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex justify-between"><span className="text-gray-500">Founded</span><span className="text-gray-300">{company.companyDetails.founded}</span></div>
+                    <div className="flex justify-between"><span className="text-gray-500">CEO</span><span className="text-gray-300">{company.companyDetails.ceo}</span></div>
+                    <div className="flex justify-between"><span className="text-gray-500">Headquarters</span><span className="text-gray-300">{company.companyDetails.headquarters}</span></div>
+                    <div className="flex justify-between"><span className="text-gray-500">Security Revenue</span><span className="text-gray-300">{company.companyDetails.securityRevenue}</span></div>
+                    <div className="flex justify-between"><span className="text-gray-500">M365 Customers</span><span className="text-gray-300">{company.companyDetails.m365Customers}</span></div>
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-sm font-semibold text-gray-400 mb-3">Market Position</h3>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex justify-between"><span className="text-gray-500">Category</span><span className="text-gray-300">{company.marketPosition.category}</span></div>
+                    <div className="flex justify-between"><span className="text-gray-500">Sub-Category</span><span className="text-gray-300">{company.marketPosition.subCategory}</span></div>
+                    <div><span className="text-gray-500 block mb-1">Gartner Position</span><span className="text-green-400 text-xs">{company.marketPosition.gartnerPosition}</span></div>
+                  </div>
+                </div>
+              </div>
+              <div className="mb-4">
+                <h3 className="text-sm font-semibold text-gray-400 mb-3">Recognition</h3>
+                <div className="flex flex-wrap gap-2">
+                  {company.recognition.map((item, idx) => (
+                    <span key={idx} className="px-3 py-1 bg-gray-800 rounded-full text-xs text-gray-300 border border-gray-700">{item}</span>
+                  ))}
+                </div>
+              </div>
+              <CitationFooter citations={['Microsoft Annual Report 2024', 'Gartner Magic Quadrant for Email Security Platforms, 2024']} />
+            </section>
+
+            <section id="market" className="bg-gray-900 rounded-xl border border-gray-800 p-6">
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2"><span>🌍</span> Market Context</h2>
+              <div className="bg-gray-800 rounded-lg p-4 mb-4">
+                <h3 className="text-sm font-semibold text-gray-400 mb-3">Email Security Hype Cycle Position</h3>
+                <HypeCycleSVG />
+                <p className="text-xs text-gray-500 text-center mt-2">[1] Gartner Hype Cycle for Security Operations, 2024</p>
+              </div>
+              <div className="grid md:grid-cols-2 gap-4 mb-4">
+                <div className="bg-blue-900/20 border border-blue-800/50 rounded-lg p-4">
+                  <h3 className="text-sm font-semibold text-blue-400 mb-2">Market Reality</h3>
+                  <p className="text-xs text-gray-400">{company.marketContext.marketReality}</p>
+                </div>
+                <div className="bg-red-900/20 border border-red-800/50 rounded-lg p-4">
+                  <h3 className="text-sm font-semibold text-red-400 mb-2">Key Gap</h3>
+                  <p className="text-xs text-gray-400">{company.marketContext.keyGap}</p>
+                </div>
+              </div>
+              <div className="bg-amber-900/20 border border-amber-800/50 rounded-lg p-4">
+                <h3 className="text-sm font-semibold text-amber-400 mb-2">⚠️ Security Gaps (Pure-Play Opportunity)</h3>
+                <div className="space-y-2 mt-2">
+                  {company.securityGaps.map((item, idx) => (
+                    <div key={idx} className="flex justify-between items-start text-xs">
+                      <div className="flex-1">
+                        <span className="text-gray-300 font-medium">{item.gap}</span>
+                        <p className="text-gray-500 mt-0.5">{item.detail}</p>
+                      </div>
+                      <span className={`px-2 py-0.5 rounded ml-2 ${item.severity === 'critical' ? 'bg-red-900/50 text-red-400' : item.severity === 'high' ? 'bg-amber-900/50 text-amber-400' : 'bg-gray-700 text-gray-400'}`}>{item.severity}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <CitationFooter citations={['Gartner Hype Cycle for Security Operations, 2024', 'Osterman Research - Email Security Efficacy Study']} />
+            </section>
+
+            <section id="product" className="bg-gray-900 rounded-xl border border-gray-800 p-6">
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2"><span>🎯</span> Product Tiers</h2>
+              <div className="space-y-3 mb-4">
+                {company.productTiers.map((tier, idx) => (
+                  <div key={idx} className={`rounded-lg p-4 border ${tier.tier === 'E5' ? 'bg-blue-900/20 border-blue-800/50' : 'bg-gray-800 border-gray-700'}`}>
+                    <div className="flex justify-between items-start">
+                      <div>
+                        <h3 className="font-medium text-white">{tier.name}</h3>
+                        <p className="text-sm text-gray-400">{tier.description}</p>
+                      </div>
+                      <span className={`text-sm font-bold ${tier.pricing === 'Included' ? 'text-green-400' : 'text-blue-400'}`}>{tier.pricing}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="bg-purple-900/20 border border-purple-800/50 rounded-lg p-4">
+                <h3 className="text-sm font-semibold text-purple-400 mb-2">🤖 Security Copilot ({company.securityCopilot.launch})</h3>
+                <div className="space-y-1">
+                  {company.securityCopilot.emailFeatures.map((feature, idx) => (
+                    <p key={idx} className="text-xs text-gray-300">• {feature}</p>
+                  ))}
+                </div>
+                <p className="text-xs text-amber-400 mt-2">{company.securityCopilot.implication}</p>
+              </div>
+              <CitationFooter citations={['Microsoft 365 Licensing Documentation', 'Microsoft Ignite 2024 - Security Copilot Announcements']} />
+            </section>
+
+            <section id="stakeholders" className="bg-gray-900 rounded-xl border border-gray-800 p-6">
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2"><span>👥</span> Stakeholders</h2>
+              <div className="space-y-4">
+                {Object.values(company.stakeholders).map((stakeholder, idx) => (
+                  <div key={idx} className="bg-gray-800 rounded-lg p-4">
+                    <h3 className="font-medium text-white mb-2">{stakeholder.role}</h3>
+                    <p className="text-sm text-blue-400 mb-3">JTBD: {stakeholder.jtbd}</p>
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div><span className="text-xs text-gray-500 uppercase">Pain Points</span>{stakeholder.painPoints.map((pain, i) => (<p key={i} className="text-xs text-gray-400 mt-1">• {pain}</p>))}</div>
+                      <div><span className="text-xs text-gray-500 uppercase">Value Props</span>{stakeholder.valueProps.map((prop, i) => (<p key={i} className="text-xs text-gray-300 mt-1">• {prop}</p>))}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <CitationFooter citations={['Microsoft Customer Case Studies', 'Gartner Voice of the Customer']} />
+            </section>
+
+            <section id="economics" className="bg-gray-900 rounded-xl border border-gray-800 p-6">
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2"><span>💰</span> Economics</h2>
+              <div className="grid md:grid-cols-2 gap-4 mb-4">
+                <div className="bg-gray-800 rounded-lg p-4"><h3 className="text-sm font-semibold text-gray-400 mb-2">Pricing Model</h3><p className="text-sm text-white">{company.economics.pricing}</p></div>
+                <div className="bg-gray-800 rounded-lg p-4"><h3 className="text-sm font-semibold text-gray-400 mb-2">Market Position</h3><p className="text-sm text-white">{company.economics.competitivePricing}</p></div>
+              </div>
+              <div className="bg-green-900/20 border border-green-800/50 rounded-lg p-4">
+                <h3 className="text-sm font-semibold text-green-400 mb-2">ROI Drivers</h3>
+                {company.economics.roiDrivers.map((driver, idx) => (<p key={idx} className="text-xs text-gray-300 mt-1">• {driver}</p>))}
+              </div>
+              <CitationFooter citations={['Microsoft 365 Pricing', 'Industry ROI Analysis']} />
+            </section>
+
+            <section id="differentiation" className="bg-gray-900 rounded-xl border border-gray-800 p-6">
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2"><span>⚡</span> Differentiation</h2>
+              <div className="grid md:grid-cols-2 gap-4 mb-4">
+                {company.differentiation.map((diff, idx) => (
+                  <div key={idx} className="bg-gray-800 rounded-lg p-4 border-l-2 border-blue-500">
+                    <div className="flex items-center gap-2 mb-2"><span className="text-xl">{diff.icon}</span><h3 className="font-medium text-white">{diff.title}</h3></div>
+                    <p className="text-sm text-gray-400">{diff.description}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="bg-purple-900/20 border border-purple-800/50 rounded-lg p-4">
+                <h3 className="text-sm font-semibold text-purple-400 mb-2">Implications for Abnormal Security</h3>
+                <p className="text-xs text-gray-300 mb-2">{company.abnormalImplications.positioning}</p>
+                <div className="space-y-1">
+                  {company.abnormalImplications.keyStats.map((stat, idx) => (
+                    <p key={idx} className="text-xs text-gray-400">• {stat}</p>
+                  ))}
+                </div>
+                <p className="text-xs text-gray-500 mt-2">{company.abnormalImplications.coexistence}</p>
+              </div>
+              <CitationFooter citations={['Microsoft Security Documentation', 'Abnormal Security Efficacy Reports']} />
+            </section>
+
+            <section id="analysis" className="bg-gray-900 rounded-xl border border-gray-800 p-6">
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2"><span>📊</span> Analysis</h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div><h3 className="text-sm font-semibold text-green-400 mb-3 flex items-center gap-2"><span>💪</span> Strengths</h3><div className="space-y-2">{company.strengths.map((item, idx) => (<div key={idx} className="flex items-start gap-2 text-sm text-gray-300"><span className="text-green-500 mt-0.5">+</span>{item}</div>))}</div></div>
+                <div><h3 className="text-sm font-semibold text-red-400 mb-3 flex items-center gap-2"><span>⚠️</span> Weaknesses</h3><div className="space-y-2">{company.weaknesses.map((item, idx) => (<div key={idx} className="flex items-start gap-2 text-sm text-gray-300"><span className="text-red-500 mt-0.5">-</span>{item}</div>))}</div></div>
+              </div>
+              <CitationFooter citations={['Gartner Critical Capabilities for Email Security', 'Osterman Research Reports']} />
+            </section>
+
+            <section id="outlook" className="bg-gray-900 rounded-xl border border-gray-800 p-6">
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2"><span>🔮</span> Outlook</h2>
+              <div className="grid md:grid-cols-2 gap-6 mb-6">
+                <div><h3 className="text-sm font-semibold text-green-400 mb-3">Tailwinds</h3><div className="space-y-2">{company.outlook.tailwinds.map((item, idx) => (<div key={idx} className="flex items-start gap-2 text-sm text-gray-300"><span className="text-green-500">↑</span>{item}</div>))}</div></div>
+                <div><h3 className="text-sm font-semibold text-orange-400 mb-3">Headwinds</h3><div className="space-y-2">{company.outlook.headwinds.map((item, idx) => (<div key={idx} className="flex items-start gap-2 text-sm text-gray-300"><span className="text-orange-500">↓</span>{item}</div>))}</div></div>
+              </div>
+              <div className="bg-blue-900/20 border border-blue-800/50 rounded-lg p-4"><h3 className="text-sm font-semibold text-blue-400 mb-2">Trajectory</h3><p className="text-sm text-gray-300">{company.outlook.trajectory}</p></div>
+              <CitationFooter citations={['Microsoft Strategic Communications', 'Market Analyst Forecasts']} />
+            </section>
+
+            <section id="news" className="bg-gray-900 rounded-xl border border-gray-800 p-6">
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2"><span>📰</span> Recent News</h2>
+              <div className="space-y-4">
+                {company.news.map((item, idx) => (
+                  <div key={idx} className="flex items-start gap-4 p-4 bg-gray-800 rounded-lg">
+                    <div className="text-sm text-gray-500 whitespace-nowrap">{item.date}</div>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-1"><h3 className="font-medium text-white">{item.title}</h3><span className={`text-xs px-2 py-0.5 rounded border ${getNewsTypeStyle(item.type)}`}>{item.type}</span></div>
+                      <p className="text-sm text-gray-400">{item.summary}</p>
+                      {item.source && <p className="text-xs text-gray-500 mt-1">Source: {item.source}</p>}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+          </div>
         </div>
+
+        <footer className="mt-12 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
+          <p>Research compiled January 2026 • Andy Simko • Email Security Market Analysis</p>
+          <p className="mt-1 text-gray-600">Independent research • Not affiliated with {company.name}</p>
+        </footer>
       </div>
     </div>
   );

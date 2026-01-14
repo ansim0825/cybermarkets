@@ -1,315 +1,498 @@
 "use client";
+
 import React, { useState } from 'react';
 
 const KnowBe4Profile = () => {
   const [activeSection, setActiveSection] = useState('overview');
 
+  const company = {
+    name: 'KnowBe4',
+    product: 'Defend (Egress) + KSAT',
+    tagline: 'SAT leader transformed into Human Risk Management platform',
+    position: 'Human Risk Management',
+    website: 'https://www.knowbe4.com',
+    
+    snapshot: {
+      vistaValuation: '$4.6B',
+      satCustomers: '70,000+',
+      trainingModules: '1,300+',
+      employees: '2,000+',
+      gartnerPosition: 'Leader',
+    },
+
+    companyDetails: {
+      founded: '2010 by Stu Sjouwerman',
+      ceo: 'Bryan Palma (May 2025)',
+      headquarters: 'Clearwater, FL',
+      ownership: 'Vista Equity Partners ($4.6B, Feb 2023)',
+      employees: '2,000+',
+    },
+
+    marketPosition: {
+      category: 'Human Risk Management (HRM)',
+      subCategory: 'SAT + Email Security Platform',
+      gartnerPosition: 'Leader - Gartner MQ (2024, 2025)',
+    },
+
+    recognition: [
+      'Gartner Magic Quadrant Leader 2024, 2025',
+      '70,000+ SAT Customers Worldwide',
+      'First ICES Vendor in Microsoft Ecosystem (June 2025)',
+    ],
+
+    metrics: {
+      satCustomers: '70,000+',
+      trainingModules: '1,300+',
+      employees: '2,000+',
+      vistaValuation: '$4.6B',
+    },
+
+    marketContext: {
+      hypeCyclePosition: 'Slope of Enlightenment',
+      strategicShift: 'SAT leader acquiring email security to become Human Risk Management platform',
+      keyDifferentiator: 'Closed-loop: real email threats automatically inform personalized training',
+    },
+
+    egressAcquisition: {
+      date: 'April 2024',
+      target: 'Egress',
+      egressFounding: '2007 (London)',
+      egressFounder: 'Tony Pepper (ex-Check Point)',
+      rationale: 'Add email security to SAT platform for unified Human Risk Management.',
+    },
+
+    products: [
+      { name: 'KnowBe4 Defend', description: 'AI-powered inbound email threat protection (formerly Egress Defend)', type: 'Inbound', isPrimary: true },
+      { name: 'KnowBe4 Prevent', description: 'Behavioral DLP for misdirected email and data loss prevention', type: 'Outbound DLP', isPrimary: false },
+      { name: 'KnowBe4 Protect', description: 'Email encryption and secure messaging', type: 'Encryption', isPrimary: false },
+      { name: 'KSAT', description: 'Security Awareness Training with 1,300+ modules', type: 'SAT', isPrimary: false },
+    ],
+
+    stakeholders: {
+      ciso: {
+        role: 'CISO / Security Leadership',
+        jtbd: 'Reduce human risk with unified platform',
+        painPoints: ['Disconnected SAT and email security', 'Measuring actual risk reduction'],
+        valueProps: ['Closed-loop training from real threats', 'Unified human risk scoring'],
+      },
+      secops: {
+        role: 'Security Operations',
+        jtbd: 'Automate response to human-targeted threats',
+        painPoints: ['Manual correlation of email threats and training needs', 'Separate vendor workflows'],
+        valueProps: ['Automated training triggers from incidents', 'Single pane of glass'],
+      },
+      trainingAdmin: {
+        role: 'Security Awareness Manager',
+        jtbd: 'Deliver relevant, engaging training at scale',
+        painPoints: ['Generic training content', 'Measuring effectiveness'],
+        valueProps: ['1,300+ training modules', 'Real threat data drives relevance'],
+      },
+    },
+
+    economics: {
+      pricing: 'Platform bundle pricing (SAT + email security)',
+      roiDrivers: [
+        '70,000 SAT customers for cross-sell',
+        'Closed-loop value: threats inform training',
+        'Platform consolidation savings vs. separate vendors',
+      ],
+      competitivePricing: 'Bundle pricing competitive vs. separate SAT + email security vendors',
+    },
+
+    strategicRationale: [
+      { point: 'Closed-Loop Training', detail: 'Real email threats automatically inform personalized training recommendations.' },
+      { point: 'Unified Human Risk', detail: 'Combined risk scoring across phishing simulation, training, and email threats.' },
+      { point: 'Platform Cross-Sell', detail: '70,000 SAT customers represent massive email security expansion opportunity.' },
+      { point: 'Outbound DLP', detail: 'Egress adds misdirected email and data loss prevention - complements inbound focus.' },
+    ],
+
+    differentiation: [
+      { title: '70K Customer Base', description: 'Massive SAT customer base for email security cross-sell. Built-in distribution.', icon: '👥' },
+      { title: 'Closed-Loop Platform', description: 'Real email threats automatically trigger relevant training. Unique feedback loop.', icon: '🔄' },
+      { title: 'Microsoft Partnership', description: 'First ICES vendor in Microsoft security ecosystem program (June 2025).', icon: '🤝' },
+      { title: 'Outbound DLP', description: 'Egress adds misdirected email protection - most ICES vendors ignore outbound.', icon: '📤' },
+    ],
+
+    strengths: [
+      '70,000+ SAT customers for cross-sell',
+      'Integrated platform: SAT + email + coaching',
+      'Closed-loop value: threats inform training',
+      'Vista Equity backing and resources',
+      'Gartner Leader recognition',
+      'First ICES vendor in Microsoft ecosystem (June 2025)',
+    ],
+
+    weaknesses: [
+      'Email security via acquisition, not native',
+      'Egress integration still maturing',
+      'Email is add-on, not core focus',
+      'Less email-specific innovation than pure-play',
+      'M365 focus - weaker on Google Workspace',
+    ],
+
+    outlook: {
+      tailwinds: [
+        'SAT + email consolidation trend',
+        'Human Risk Management narrative gaining traction',
+        'Microsoft partnership momentum',
+      ],
+      headwinds: [
+        'Pure-play email vendors winning email-specific deals',
+        'Integration complexity post-acquisition',
+        'Premium pricing when bundled',
+      ],
+      trajectory: 'Platform play succeeds if integration matures. Risk: email becomes "good enough" add-on vs. best-of-breed.',
+    },
+
+    news: [
+      { date: 'Apr 2024', title: 'Egress Acquisition', summary: 'Acquired Egress to add cloud email security capabilities.', type: 'acquisition', source: 'KnowBe4 Press Release' },
+      { date: 'Jun 2025', title: 'Microsoft Ecosystem Program', summary: 'First ICES vendor in Microsoft security ecosystem program.', type: 'partnership', source: 'Microsoft Security Blog' },
+      { date: 'May 2025', title: 'New CEO Bryan Palma', summary: 'Bryan Palma appointed CEO, founder Stu Sjouwerman to Chairman.', type: 'leadership', source: 'KnowBe4 Press Release' },
+    ],
+  };
+
   const sections = [
-    { id: 'overview', label: 'Overview', icon: '◉' },
-    { id: 'egress', label: 'Egress Acquisition', icon: '◈' },
-    { id: 'products', label: 'HRM+ Platform', icon: '◆' },
-    { id: 'competitive', label: 'vs Abnormal', icon: '●' }
+    { id: 'overview', name: 'Overview', icon: '📋' },
+    { id: 'market', name: 'Market Context', icon: '🌍' },
+    { id: 'product', name: 'Product', icon: '🎯' },
+    { id: 'stakeholders', name: 'Stakeholders', icon: '👥' },
+    { id: 'economics', name: 'Economics', icon: '💰' },
+    { id: 'differentiation', name: 'Differentiation', icon: '⚡' },
+    { id: 'analysis', name: 'Analysis', icon: '📊' },
+    { id: 'outlook', name: 'Outlook', icon: '🔮' },
+    { id: 'news', name: 'Recent News', icon: '📰' },
   ];
 
+  const getNewsTypeStyle = (type) => {
+    switch (type) {
+      case 'acquisition': return 'bg-purple-900/50 text-purple-400 border-purple-700';
+      case 'partnership': return 'bg-blue-900/50 text-blue-400 border-blue-700';
+      case 'leadership': return 'bg-amber-900/50 text-amber-400 border-amber-700';
+      default: return 'bg-gray-800 text-gray-400 border-gray-700';
+    }
+  };
+
+  const scrollToSection = (sectionId) => {
+    setActiveSection(sectionId);
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   const CitationFooter = ({ citations }) => (
-    <div className="mt-8 pt-4 border-t border-slate-700">
-      <p className="text-xs text-slate-500 uppercase tracking-wider mb-2">Sources</p>
+    <div className="mt-6 pt-4 border-t border-gray-700">
+      <p className="text-xs text-gray-500 uppercase tracking-wider mb-2">Sources</p>
       <div className="space-y-1">
         {citations.map((cite, i) => (
-          <p key={i} className="text-xs text-slate-400">[{i + 1}] {cite.text}</p>
+          <p key={i} className="text-xs text-gray-500">[{i + 1}] {cite}</p>
         ))}
       </div>
     </div>
   );
 
-  const renderOverview = () => (
-    <div className="space-y-6">
-      <div className="bg-gradient-to-br from-amber-900/30 to-slate-800/50 rounded-2xl p-8 border border-amber-800/30">
-        <div className="flex items-start justify-between">
-          <div>
-            <h2 className="text-3xl font-bold text-white mb-2">KnowBe4</h2>
-            <p className="text-amber-400 text-lg">SAT Leader → Human Risk Management Platform</p>
-          </div>
-          <div className="text-right">
-            <p className="text-4xl font-bold text-amber-400">$4.6B</p>
-            <p className="text-slate-400 text-sm">Vista Acquisition (Feb 2023)</p>
-          </div>
-        </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
-          <div className="bg-slate-800/50 rounded-xl p-4 text-center">
-            <p className="text-2xl font-bold text-white">70K+</p>
-            <p className="text-slate-400 text-sm">SAT Customers</p>
-          </div>
-          <div className="bg-slate-800/50 rounded-xl p-4 text-center">
-            <p className="text-2xl font-bold text-white">2,000+</p>
-            <p className="text-slate-400 text-sm">Employees</p>
-          </div>
-          <div className="bg-slate-800/50 rounded-xl p-4 text-center">
-            <p className="text-2xl font-bold text-white">Leader</p>
-            <p className="text-slate-400 text-sm">Gartner MQ 2024/25</p>
-          </div>
-          <div className="bg-slate-800/50 rounded-xl p-4 text-center">
-            <p className="text-2xl font-bold text-white">1,300+</p>
-            <p className="text-slate-400 text-sm">Training Modules</p>
-          </div>
-        </div>
-      </div>
-
-      <div className="bg-gradient-to-r from-red-900/30 to-slate-800/50 rounded-xl p-6 border border-red-800/30">
-        <h3 className="text-lg font-semibold text-red-400 mb-4">⚡ Strategic Transformation (2024)</h3>
-        <p className="text-slate-300 mb-4">KnowBe4 acquired Egress in April 2024, transforming from security awareness training provider to comprehensive Human Risk Management (HRM) platform with email security capabilities. This is a fundamentally different competitive dynamic than pure-play email vendors.</p>
-        <div className="grid md:grid-cols-2 gap-4">
-          <div className="bg-slate-800/50 rounded-lg p-4">
-            <p className="text-slate-400 text-sm"><strong>Before:</strong> World's largest SAT platform (training + phishing simulation)</p>
-          </div>
-          <div className="bg-slate-800/50 rounded-lg p-4">
-            <p className="text-slate-400 text-sm"><strong>After:</strong> HRM+ platform (SAT + email security + real-time coaching + risk scoring)</p>
-          </div>
-        </div>
-      </div>
-
-      <div className="grid md:grid-cols-2 gap-6">
-        <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
-          <h3 className="text-lg font-semibold text-amber-400 mb-4">Company Profile</h3>
-          <div className="space-y-3">
-            <div className="flex justify-between"><span className="text-slate-400">Founded</span><span className="text-white">2010 by Stu Sjouwerman</span></div>
-            <div className="flex justify-between"><span className="text-slate-400">Headquarters</span><span className="text-white">Clearwater, FL</span></div>
-            <div className="flex justify-between"><span className="text-slate-400">CEO</span><span className="text-white">Bryan Palma (May 2025)</span></div>
-            <div className="flex justify-between"><span className="text-slate-400">Ownership</span><span className="text-white">Vista Equity Partners</span></div>
-          </div>
-        </div>
-        <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
-          <h3 className="text-lg font-semibold text-amber-400 mb-4">Recognition</h3>
-          <div className="space-y-3 text-sm">
-            <div className="flex justify-between"><span className="text-slate-400">Email Security MQ</span><span className="text-emerald-400">Gartner Leader 2024/25</span></div>
-            <div className="flex justify-between"><span className="text-slate-400">SAT G2 Ranking</span><span className="text-emerald-400">#1 (20+ quarters)</span></div>
-            <div className="flex justify-between"><span className="text-slate-400">Inc. 5000</span><span className="text-white">5 consecutive years</span></div>
-            <div className="flex justify-between"><span className="text-slate-400">Kevin Mitnick</span><span className="text-white">Chief Hacking Officer (d. 2023)</span></div>
-          </div>
-        </div>
-      </div>
-
-      <CitationFooter citations={[
-        { text: "Vista Equity Partners - KnowBe4 Acquisition $4.6B, February 2023" },
-        { text: "KnowBe4 Egress Acquisition Announcement, April 2024" },
-        { text: "Gartner Magic Quadrant for Email Security Platforms, 2024 & 2025 - Leader" },
-        { text: "G2 - KnowBe4 #1 Security Awareness Training, 20+ consecutive quarters" }
-      ]} />
-    </div>
+  const HypeCycleSVG = () => (
+    <svg viewBox="0 0 500 200" className="w-full h-48">
+      <defs>
+        <linearGradient id="curveGradientKB4" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor="#8b5cf6" stopOpacity="0.8" />
+          <stop offset="50%" stopColor="#06b6d4" stopOpacity="0.8" />
+          <stop offset="100%" stopColor="#10b981" stopOpacity="0.8" />
+        </linearGradient>
+      </defs>
+      <path d="M 30 180 Q 80 180 100 160 Q 120 140 140 60 Q 160 20 180 40 Q 200 60 220 120 Q 260 160 300 150 Q 340 140 380 130 Q 420 120 470 110" stroke="url(#curveGradientKB4)" strokeWidth="3" fill="none" />
+      <circle cx="140" cy="60" r="6" fill="#f97316" stroke="#fff" strokeWidth="2" />
+      <text x="140" y="45" textAnchor="middle" fill="#f97316" fontSize="10" fontWeight="bold">GenAI Email</text>
+      <circle cx="340" cy="140" r="8" fill="#f59e0b" stroke="#fff" strokeWidth="2" />
+      <text x="340" y="125" textAnchor="middle" fill="#f59e0b" fontSize="10" fontWeight="bold">HRM Platform</text>
+      <text x="340" y="165" textAnchor="middle" fill="#9ca3af" fontSize="8">(KnowBe4)</text>
+      <circle cx="450" cy="110" r="6" fill="#10b981" stroke="#fff" strokeWidth="2" />
+      <text x="450" y="95" textAnchor="middle" fill="#10b981" fontSize="10" fontWeight="bold">SEG</text>
+      <text x="60" y="195" fill="#6b7280" fontSize="8">Innovation Trigger</text>
+      <text x="160" y="195" fill="#6b7280" fontSize="8">Peak</text>
+      <text x="230" y="195" fill="#6b7280" fontSize="8">Trough</text>
+      <text x="320" y="195" fill="#6b7280" fontSize="8">Slope of Enlightenment</text>
+      <text x="440" y="195" fill="#6b7280" fontSize="8">Plateau</text>
+    </svg>
   );
-
-  const renderEgress = () => (
-    <div className="space-y-6">
-      <h2 className="text-2xl font-bold text-white mb-6">Egress Acquisition - The Transformation</h2>
-      
-      <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
-        <h3 className="text-xl font-semibold text-white mb-4">Egress Background</h3>
-        <div className="grid md:grid-cols-2 gap-4">
-          <div className="space-y-3">
-            <div className="flex justify-between text-sm"><span className="text-slate-400">Founded</span><span className="text-white">2007 (London)</span></div>
-            <div className="flex justify-between text-sm"><span className="text-slate-400">Founder</span><span className="text-white">Tony Pepper (ex-Check Point)</span></div>
-            <div className="flex justify-between text-sm"><span className="text-slate-400">Funding Raised</span><span className="text-white">$40M+</span></div>
-            <div className="flex justify-between text-sm"><span className="text-slate-400">Employees</span><span className="text-white">~329 at acquisition</span></div>
-          </div>
-          <div className="space-y-3">
-            <div className="flex justify-between text-sm"><span className="text-slate-400">Focus</span><span className="text-white">Cloud email security</span></div>
-            <div className="flex justify-between text-sm"><span className="text-slate-400">Strength</span><span className="text-white">Inbound + Outbound DLP</span></div>
-            <div className="flex justify-between text-sm"><span className="text-slate-400">Technology</span><span className="text-white">Behavioral AI, NLP/NLU</span></div>
-            <div className="flex justify-between text-sm"><span className="text-slate-400">Gartner Status</span><span className="text-emerald-400">Leader (pre-acquisition)</span></div>
-          </div>
-        </div>
-      </div>
-
-      <div className="bg-gradient-to-br from-emerald-900/20 to-slate-800/50 rounded-xl p-6 border border-emerald-700/30">
-        <h3 className="text-xl font-semibold text-emerald-400 mb-4">Strategic Rationale</h3>
-        <div className="grid md:grid-cols-2 gap-4">
-          {[
-            { point: 'Closed-Loop Training', detail: 'Real email threats automatically inform personalized training recommendations' },
-            { point: 'Unified Human Risk', detail: 'Combined risk scoring across phishing simulation, training completion, and email threats' },
-            { point: 'Platform Cross-Sell', detail: '70,000 SAT customers represent massive email security expansion opportunity' },
-            { point: 'Outbound DLP', detail: 'Egress adds misdirected email and data loss prevention—complements inbound focus' }
-          ].map((item, i) => (
-            <div key={i} className="bg-slate-800/50 rounded-lg p-4">
-              <h4 className="font-medium text-white">{item.point}</h4>
-              <p className="text-slate-400 text-sm mt-1">{item.detail}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
-        <h3 className="text-xl font-semibold text-white mb-4">Egress Products (Rebranded)</h3>
-        <div className="space-y-3">
-          <div className="bg-slate-900/50 rounded-lg p-4">
-            <div className="flex justify-between items-center">
-              <span className="font-medium text-white">KnowBe4 Defend</span>
-              <span className="text-xs px-2 py-1 bg-cyan-500/20 text-cyan-400 rounded">Inbound</span>
-            </div>
-            <p className="text-slate-400 text-sm mt-1">AI-powered inbound email threat protection (formerly Egress Defend)</p>
-          </div>
-          <div className="bg-slate-900/50 rounded-lg p-4">
-            <div className="flex justify-between items-center">
-              <span className="font-medium text-white">KnowBe4 Prevent</span>
-              <span className="text-xs px-2 py-1 bg-amber-500/20 text-amber-400 rounded">Outbound DLP</span>
-            </div>
-            <p className="text-slate-400 text-sm mt-1">Behavioral DLP for misdirected email and data loss prevention</p>
-          </div>
-          <div className="bg-slate-900/50 rounded-lg p-4">
-            <div className="flex justify-between items-center">
-              <span className="font-medium text-white">KnowBe4 Protect</span>
-              <span className="text-xs px-2 py-1 bg-purple-500/20 text-purple-400 rounded">Encryption</span>
-            </div>
-            <p className="text-slate-400 text-sm mt-1">Email encryption and secure messaging</p>
-          </div>
-        </div>
-      </div>
-
-      <CitationFooter citations={[
-        { text: "KnowBe4 Egress Acquisition Press Release, April 2024" },
-        { text: "Egress Company Background and Funding History" },
-        { text: "KnowBe4 Product Rebranding Documentation" }
-      ]} />
-    </div>
-  );
-
-  const renderCompetitive = () => (
-    <div className="space-y-6">
-      <h2 className="text-2xl font-bold text-white mb-6">KnowBe4 vs Abnormal Security</h2>
-      
-      <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
-        <h3 className="text-xl font-semibold text-white mb-4">Different Competitive Dynamic</h3>
-        <p className="text-slate-300 mb-4">KnowBe4's strength lies not in email security innovation but in platform integration and installed base leverage. They compete differently than pure-play email vendors.</p>
-        <div className="overflow-x-auto">
-          <table className="w-full text-sm">
-            <thead>
-              <tr className="border-b border-slate-700">
-                <th className="text-left py-3 text-slate-400">Dimension</th>
-                <th className="text-left py-3 text-amber-400">KnowBe4</th>
-                <th className="text-left py-3 text-cyan-400">Abnormal</th>
-              </tr>
-            </thead>
-            <tbody className="text-slate-300">
-              <tr className="border-b border-slate-800">
-                <td className="py-3">Primary Focus</td>
-                <td className="py-3">Human Risk Management (SAT + email)</td>
-                <td className="py-3 text-cyan-300">Email security specialist</td>
-              </tr>
-              <tr className="border-b border-slate-800">
-                <td className="py-3">Email Approach</td>
-                <td className="py-3">ICES via Egress acquisition</td>
-                <td className="py-3 text-cyan-300">Purpose-built behavioral AI</td>
-              </tr>
-              <tr className="border-b border-slate-800">
-                <td className="py-3">Customer Base</td>
-                <td className="py-3">70,000+ orgs (HRM); growing email</td>
-                <td className="py-3 text-cyan-300">3,200+ enterprise customers</td>
-              </tr>
-              <tr>
-                <td className="py-3">Gartner MQ</td>
-                <td className="py-3">Leader (2024, 2025)</td>
-                <td className="py-3 text-cyan-300">Leader (2024, 2025)</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <div className="grid md:grid-cols-2 gap-6">
-        <div className="bg-amber-900/20 rounded-xl p-6 border border-amber-700/30">
-          <h3 className="text-lg font-semibold text-amber-400 mb-4">KnowBe4 Competitive Strengths</h3>
-          <ul className="space-y-2 text-slate-300 text-sm">
-            <li>• <strong>Installed Base:</strong> 70K+ customers for cross-sell opportunity</li>
-            <li>• <strong>Integrated Platform:</strong> SAT + email + coaching creates stickier relationships</li>
-            <li>• <strong>Closed-Loop Value:</strong> Real threats inform personalized training</li>
-            <li>• <strong>Bundle Pricing:</strong> Compelling discounts when bundling SAT + email</li>
-            <li>• <strong>Microsoft Relationship:</strong> First ICES vendor in Microsoft's ecosystem (June 2025)</li>
-          </ul>
-        </div>
-        <div className="bg-cyan-900/20 rounded-xl p-6 border border-cyan-700/30">
-          <h3 className="text-lg font-semibold text-cyan-400 mb-4">Abnormal Competitive Advantages</h3>
-          <ul className="space-y-2 text-slate-300 text-sm">
-            <li>• <strong>Email-Native:</strong> Purpose-built for email vs. bolted-on acquisition</li>
-            <li>• <strong>Behavioral AI Depth:</strong> Deeper email-specific innovation</li>
-            <li>• <strong>Integration Maturity:</strong> Egress integration still evolving; potential friction</li>
-            <li>• <strong>Enterprise Focus:</strong> Concentrated expertise in large enterprise</li>
-            <li>• <strong>Google Workspace:</strong> Strong GWS support vs. KnowBe4's M365 focus</li>
-          </ul>
-        </div>
-      </div>
-
-      <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
-        <h3 className="text-xl font-semibold text-white mb-4">Positioning for Abnormal</h3>
-        <div className="space-y-4">
-          <div className="bg-slate-900/50 rounded-lg p-4">
-            <h4 className="font-medium text-amber-400 mb-2">Against Platform Narrative</h4>
-            <p className="text-slate-300 text-sm italic">"Email security is too critical for good-enough bundled solutions. We're the specialist that catches what bundled tools miss."</p>
-          </div>
-          <div className="bg-slate-900/50 rounded-lg p-4">
-            <h4 className="font-medium text-amber-400 mb-2">For Existing KnowBe4 SAT Customers</h4>
-            <p className="text-slate-300 text-sm italic">"We complement your KnowBe4 training investment with deeper email protection. Best-of-breed email + KnowBe4 training beats their bundled approach."</p>
-          </div>
-          <div className="bg-slate-900/50 rounded-lg p-4">
-            <h4 className="font-medium text-amber-400 mb-2">Enterprise Differentiation</h4>
-            <p className="text-slate-300 text-sm italic">"KnowBe4's all-segment approach may dilute enterprise focus. We're purpose-built for Fortune 500 security requirements."</p>
-          </div>
-        </div>
-      </div>
-
-      <CitationFooter citations={[
-        { text: "Gartner Magic Quadrant for Email Security Platforms, 2024 & 2025" },
-        { text: "KnowBe4 Customer Count - 70,000+ organizations" },
-        { text: "KnowBe4 Microsoft Ecosystem Partnership, June 2025" }
-      ]} />
-    </div>
-  );
-
-  const renderContent = () => {
-    switch(activeSection) {
-      case 'overview': return renderOverview();
-      case 'egress': return renderEgress();
-      case 'competitive': return renderCompetitive();
-      default: return <div className="text-slate-400">Section: {activeSection}</div>;
-    }
-  };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white">
-      <header className="bg-slate-900/80 backdrop-blur-sm border-b border-slate-800 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-6 py-4">
+    <div className="min-h-screen bg-gray-950 text-gray-100">
+      <nav className="border-b border-gray-800 bg-gray-950/80 backdrop-blur-sm sticky top-0 z-50">
+        <div className="max-w-6xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-amber-500 to-amber-700 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">K</span>
-              </div>
-              <div>
-                <h1 className="text-xl font-bold text-white">KnowBe4</h1>
-                <p className="text-slate-400 text-sm">Competitive Intelligence Profile</p>
-              </div>
+              <a href="/" className="text-gray-400 hover:text-white">Home</a>
+              <span className="text-gray-600">/</span>
+              <a href="/pillars/network-edge/email-security" className="text-gray-400 hover:text-white">Email Security</a>
+              <span className="text-gray-600">/</span>
+              <span className="text-gray-300">KnowBe4</span>
             </div>
-            <div className="flex items-center gap-2">
-              <span className="px-3 py-1 bg-amber-500/20 text-amber-400 text-xs rounded-full border border-amber-500/30">HRM Platform</span>
-              <span className="px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs rounded-full border border-emerald-500/30">Gartner Leader</span>
-            </div>
+            <a href="/pillars/network-edge/email-security" className="text-gray-300 hover:text-white text-sm">← Back to Market</a>
           </div>
         </div>
-      </header>
-      <div className="max-w-7xl mx-auto px-6 py-8">
-        <div className="flex gap-8">
-          <nav className="w-64 flex-shrink-0">
-            <div className="bg-slate-800/50 rounded-xl p-4 sticky top-24 border border-slate-700">
-              <div className="space-y-1">
-                {sections.map(section => (
-                  <button key={section.id} onClick={() => setActiveSection(section.id)}
-                    className={`w-full text-left px-4 py-3 rounded-lg transition-all flex items-center gap-3 ${activeSection === section.id ? 'bg-amber-600/20 text-amber-400 border border-amber-500/30' : 'text-slate-400 hover:bg-slate-700/50 hover:text-white'}`}>
-                    <span className="text-lg">{section.icon}</span>
-                    <span className="text-sm font-medium">{section.label}</span>
-                  </button>
-                ))}
+      </nav>
+
+      <div className="max-w-6xl mx-auto px-6 py-8">
+        <div className="mb-8">
+          <div className="flex items-start justify-between mb-4">
+            <div>
+              <div className="flex items-center gap-3 mb-2">
+                <h1 className="text-4xl font-bold">{company.name}</h1>
+                <span className="px-3 py-1 bg-amber-900/50 text-amber-400 border border-amber-700 rounded-full text-sm">{company.position}</span>
+              </div>
+              <p className="text-xl text-gray-400 mb-2">{company.tagline}</p>
+              <p className="text-sm text-gray-500">{company.product}</p>
+            </div>
+            <a href={company.website} target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg text-sm transition-colors">Visit Website →</a>
+          </div>
+          <div className="flex items-center gap-4 text-sm text-gray-500">
+            <span>Research Status: <span className="text-yellow-400">In Progress</span></span>
+            <span>•</span>
+            <span>Last updated: January 2026</span>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8">
+          <div className="bg-gray-900 rounded-xl p-4 border border-gray-800">
+            <div className="text-2xl font-bold text-white mb-1">{company.snapshot.vistaValuation}</div>
+            <div className="text-xs text-gray-400">Vista Acquisition</div>
+          </div>
+          <div className="bg-gray-900 rounded-xl p-4 border border-gray-800">
+            <div className="text-2xl font-bold text-amber-400 mb-1">{company.snapshot.satCustomers}</div>
+            <div className="text-xs text-gray-400">SAT Customers</div>
+          </div>
+          <div className="bg-gray-900 rounded-xl p-4 border border-gray-800">
+            <div className="text-2xl font-bold text-white mb-1">{company.snapshot.trainingModules}</div>
+            <div className="text-xs text-gray-400">Training Modules</div>
+          </div>
+          <div className="bg-gray-900 rounded-xl p-4 border border-gray-800">
+            <div className="text-2xl font-bold text-white mb-1">{company.snapshot.employees}</div>
+            <div className="text-xs text-gray-400">Employees</div>
+          </div>
+          <div className="bg-gray-900 rounded-xl p-4 border border-gray-800">
+            <div className="text-2xl font-bold text-green-400 mb-1">{company.snapshot.gartnerPosition}</div>
+            <div className="text-xs text-gray-400">Gartner MQ 2024/25</div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+          <div className="lg:col-span-1">
+            <div className="sticky top-24">
+              <div className="bg-gray-900 rounded-xl border border-gray-800 p-4 mb-6">
+                <h3 className="text-sm font-semibold text-gray-400 mb-3">Sections</h3>
+                <div className="space-y-1">
+                  {sections.map((section) => (
+                    <button key={section.id} onClick={() => scrollToSection(section.id)}
+                      className={`w-full text-left px-3 py-2 rounded-lg text-sm flex items-center gap-2 transition-all ${activeSection === section.id ? 'bg-amber-900/50 text-amber-400 border border-amber-800' : 'text-gray-400 hover:bg-gray-800 hover:text-white'}`}>
+                      <span>{section.icon}</span>
+                      <span>{section.name}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div className="bg-gray-900 rounded-xl border border-gray-800 p-4">
+                <h3 className="text-sm font-semibold text-gray-400 mb-3">Key Metrics</h3>
+                <div className="space-y-3 text-sm">
+                  <div>
+                    <span className="text-gray-500 block">SAT Customers</span>
+                    <span className="text-amber-400">{company.metrics.satCustomers}</span>
+                  </div>
+                  <div>
+                    <span className="text-gray-500 block">Training Modules</span>
+                    <span className="text-white">{company.metrics.trainingModules}</span>
+                  </div>
+                  <div>
+                    <span className="text-gray-500 block">Employees</span>
+                    <span className="text-white">{company.metrics.employees}</span>
+                  </div>
+                  <div>
+                    <span className="text-gray-500 block">Vista Valuation</span>
+                    <span className="text-white">{company.metrics.vistaValuation}</span>
+                  </div>
+                </div>
               </div>
             </div>
-          </nav>
-          <main className="flex-1 min-w-0">{renderContent()}</main>
+          </div>
+
+          <div className="lg:col-span-3 space-y-8">
+            
+            <section id="overview" className="bg-gray-900 rounded-xl border border-gray-800 p-6">
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2"><span>📋</span> Company Overview</h2>
+              <div className="grid md:grid-cols-2 gap-6 mb-6">
+                <div>
+                  <h3 className="text-sm font-semibold text-gray-400 mb-3">Company Details</h3>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex justify-between"><span className="text-gray-500">Founded</span><span className="text-gray-300">{company.companyDetails.founded}</span></div>
+                    <div className="flex justify-between"><span className="text-gray-500">CEO</span><span className="text-gray-300">{company.companyDetails.ceo}</span></div>
+                    <div className="flex justify-between"><span className="text-gray-500">Headquarters</span><span className="text-gray-300">{company.companyDetails.headquarters}</span></div>
+                    <div className="flex justify-between"><span className="text-gray-500">Ownership</span><span className="text-gray-300">{company.companyDetails.ownership}</span></div>
+                    <div className="flex justify-between"><span className="text-gray-500">Employees</span><span className="text-gray-300">{company.companyDetails.employees}</span></div>
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-sm font-semibold text-gray-400 mb-3">Market Position</h3>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex justify-between"><span className="text-gray-500">Category</span><span className="text-gray-300">{company.marketPosition.category}</span></div>
+                    <div className="flex justify-between"><span className="text-gray-500">Sub-Category</span><span className="text-gray-300">{company.marketPosition.subCategory}</span></div>
+                    <div><span className="text-gray-500 block mb-1">Gartner Position</span><span className="text-green-400 text-xs">{company.marketPosition.gartnerPosition}</span></div>
+                  </div>
+                </div>
+              </div>
+              <div className="mb-4">
+                <h3 className="text-sm font-semibold text-gray-400 mb-3">Recognition</h3>
+                <div className="flex flex-wrap gap-2">
+                  {company.recognition.map((item, idx) => (
+                    <span key={idx} className="px-3 py-1 bg-gray-800 rounded-full text-xs text-gray-300 border border-gray-700">{item}</span>
+                  ))}
+                </div>
+              </div>
+              <CitationFooter citations={['Vista Equity Partners Acquisition Announcement, Feb 2023', 'KnowBe4 Company Information', 'Gartner Magic Quadrant 2024']} />
+            </section>
+
+            <section id="market" className="bg-gray-900 rounded-xl border border-gray-800 p-6">
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2"><span>🌍</span> Market Context</h2>
+              <div className="bg-gray-800 rounded-lg p-4 mb-4">
+                <h3 className="text-sm font-semibold text-gray-400 mb-3">Email Security Hype Cycle Position</h3>
+                <HypeCycleSVG />
+                <p className="text-xs text-gray-500 text-center mt-2">[1] Gartner Hype Cycle for Security Operations, 2024</p>
+              </div>
+              <div className="grid md:grid-cols-2 gap-4 mb-4">
+                <div className="bg-amber-900/20 border border-amber-800/50 rounded-lg p-4">
+                  <h3 className="text-sm font-semibold text-amber-400 mb-2">Strategic Shift</h3>
+                  <p className="text-xs text-gray-400">{company.marketContext.strategicShift}</p>
+                </div>
+                <div className="bg-gray-800 rounded-lg p-4">
+                  <h3 className="text-sm font-semibold text-white mb-2">Key Differentiator</h3>
+                  <p className="text-xs text-gray-400">{company.marketContext.keyDifferentiator}</p>
+                </div>
+              </div>
+              <div className="bg-purple-900/20 border border-purple-800/50 rounded-lg p-4">
+                <h3 className="text-sm font-semibold text-purple-400 mb-3">Egress Acquisition ({company.egressAcquisition.date})</h3>
+                <div className="grid md:grid-cols-2 gap-4 text-xs">
+                  <div>
+                    <p className="text-gray-400"><span className="text-gray-500">Target:</span> {company.egressAcquisition.target}</p>
+                    <p className="text-gray-400"><span className="text-gray-500">Founded:</span> {company.egressAcquisition.egressFounding}</p>
+                    <p className="text-gray-400"><span className="text-gray-500">Founder:</span> {company.egressAcquisition.egressFounder}</p>
+                  </div>
+                  <div>
+                    <p className="text-gray-300">{company.egressAcquisition.rationale}</p>
+                  </div>
+                </div>
+              </div>
+              <CitationFooter citations={['Gartner Hype Cycle for Security Operations, 2024', 'KnowBe4 Egress Acquisition Press Release, April 2024']} />
+            </section>
+
+            <section id="product" className="bg-gray-900 rounded-xl border border-gray-800 p-6">
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2"><span>🎯</span> Product (Egress + KSAT)</h2>
+              <div className="grid md:grid-cols-2 gap-3 mb-4">
+                {company.products.map((product, idx) => (
+                  <div key={idx} className={`rounded-lg p-4 border ${product.isPrimary ? 'bg-amber-900/20 border-amber-800/50' : 'bg-gray-800 border-gray-700'}`}>
+                    <div className="flex justify-between items-start">
+                      <h3 className="font-medium text-white text-sm">{product.name}</h3>
+                      <span className={`text-xs px-2 py-0.5 rounded ${product.type === 'Inbound' ? 'bg-cyan-900/50 text-cyan-400' : product.type === 'SAT' ? 'bg-amber-900/50 text-amber-400' : 'bg-gray-700 text-gray-400'}`}>{product.type}</span>
+                    </div>
+                    <p className="text-xs text-gray-400 mt-1">{product.description}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="bg-green-900/20 border border-green-800/50 rounded-lg p-4">
+                <h3 className="text-sm font-semibold text-green-400 mb-3">Strategic Rationale</h3>
+                <div className="grid md:grid-cols-2 gap-3">
+                  {company.strategicRationale.map((item, idx) => (
+                    <div key={idx} className="text-xs">
+                      <span className="text-white font-medium">{item.point}:</span>
+                      <p className="text-gray-400 mt-1">{item.detail}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <CitationFooter citations={['KnowBe4 Product Documentation', 'KnowBe4 Strategic Communications']} />
+            </section>
+
+            <section id="stakeholders" className="bg-gray-900 rounded-xl border border-gray-800 p-6">
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2"><span>👥</span> Stakeholders</h2>
+              <div className="space-y-4">
+                {Object.values(company.stakeholders).map((stakeholder, idx) => (
+                  <div key={idx} className="bg-gray-800 rounded-lg p-4">
+                    <h3 className="font-medium text-white mb-2">{stakeholder.role}</h3>
+                    <p className="text-sm text-amber-400 mb-3">JTBD: {stakeholder.jtbd}</p>
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div><span className="text-xs text-gray-500 uppercase">Pain Points</span>{stakeholder.painPoints.map((pain, i) => (<p key={i} className="text-xs text-gray-400 mt-1">• {pain}</p>))}</div>
+                      <div><span className="text-xs text-gray-500 uppercase">Value Props</span>{stakeholder.valueProps.map((prop, i) => (<p key={i} className="text-xs text-gray-300 mt-1">• {prop}</p>))}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <CitationFooter citations={['KnowBe4 Customer Case Studies', 'Gartner Voice of the Customer']} />
+            </section>
+
+            <section id="economics" className="bg-gray-900 rounded-xl border border-gray-800 p-6">
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2"><span>💰</span> Economics</h2>
+              <div className="grid md:grid-cols-2 gap-4 mb-4">
+                <div className="bg-gray-800 rounded-lg p-4"><h3 className="text-sm font-semibold text-gray-400 mb-2">Pricing Model</h3><p className="text-sm text-white">{company.economics.pricing}</p></div>
+                <div className="bg-gray-800 rounded-lg p-4"><h3 className="text-sm font-semibold text-gray-400 mb-2">Market Position</h3><p className="text-sm text-white">{company.economics.competitivePricing}</p></div>
+              </div>
+              <div className="bg-green-900/20 border border-green-800/50 rounded-lg p-4">
+                <h3 className="text-sm font-semibold text-green-400 mb-2">ROI Drivers</h3>
+                {company.economics.roiDrivers.map((driver, idx) => (<p key={idx} className="text-xs text-gray-300 mt-1">• {driver}</p>))}
+              </div>
+              <CitationFooter citations={['KnowBe4 Pricing Information', 'Industry ROI Analysis']} />
+            </section>
+
+            <section id="differentiation" className="bg-gray-900 rounded-xl border border-gray-800 p-6">
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2"><span>⚡</span> Differentiation</h2>
+              <div className="grid md:grid-cols-2 gap-4">
+                {company.differentiation.map((diff, idx) => (
+                  <div key={idx} className="bg-gray-800 rounded-lg p-4 border-l-2 border-amber-500">
+                    <div className="flex items-center gap-2 mb-2"><span className="text-xl">{diff.icon}</span><h3 className="font-medium text-white">{diff.title}</h3></div>
+                    <p className="text-sm text-gray-400">{diff.description}</p>
+                  </div>
+                ))}
+              </div>
+              <CitationFooter citations={['KnowBe4 Product Documentation', 'Microsoft Security Blog, June 2025']} />
+            </section>
+
+            <section id="analysis" className="bg-gray-900 rounded-xl border border-gray-800 p-6">
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2"><span>📊</span> Analysis</h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div><h3 className="text-sm font-semibold text-green-400 mb-3 flex items-center gap-2"><span>💪</span> Strengths</h3><div className="space-y-2">{company.strengths.map((item, idx) => (<div key={idx} className="flex items-start gap-2 text-sm text-gray-300"><span className="text-green-500 mt-0.5">+</span>{item}</div>))}</div></div>
+                <div><h3 className="text-sm font-semibold text-red-400 mb-3 flex items-center gap-2"><span>⚠️</span> Weaknesses</h3><div className="space-y-2">{company.weaknesses.map((item, idx) => (<div key={idx} className="flex items-start gap-2 text-sm text-gray-300"><span className="text-red-500 mt-0.5">-</span>{item}</div>))}</div></div>
+              </div>
+              <CitationFooter citations={['Gartner Critical Capabilities for Email Security', 'Industry Analyst Reports']} />
+            </section>
+
+            <section id="outlook" className="bg-gray-900 rounded-xl border border-gray-800 p-6">
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2"><span>🔮</span> Outlook</h2>
+              <div className="grid md:grid-cols-2 gap-6 mb-6">
+                <div><h3 className="text-sm font-semibold text-green-400 mb-3">Tailwinds</h3><div className="space-y-2">{company.outlook.tailwinds.map((item, idx) => (<div key={idx} className="flex items-start gap-2 text-sm text-gray-300"><span className="text-green-500">↑</span>{item}</div>))}</div></div>
+                <div><h3 className="text-sm font-semibold text-orange-400 mb-3">Headwinds</h3><div className="space-y-2">{company.outlook.headwinds.map((item, idx) => (<div key={idx} className="flex items-start gap-2 text-sm text-gray-300"><span className="text-orange-500">↓</span>{item}</div>))}</div></div>
+              </div>
+              <div className="bg-amber-900/20 border border-amber-800/50 rounded-lg p-4"><h3 className="text-sm font-semibold text-amber-400 mb-2">Trajectory</h3><p className="text-sm text-gray-300">{company.outlook.trajectory}</p></div>
+              <CitationFooter citations={['Market Analyst Forecasts', 'Industry Trends Analysis']} />
+            </section>
+
+            <section id="news" className="bg-gray-900 rounded-xl border border-gray-800 p-6">
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2"><span>📰</span> Recent News</h2>
+              <div className="space-y-4">
+                {company.news.map((item, idx) => (
+                  <div key={idx} className="flex items-start gap-4 p-4 bg-gray-800 rounded-lg">
+                    <div className="text-sm text-gray-500 whitespace-nowrap">{item.date}</div>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-1"><h3 className="font-medium text-white">{item.title}</h3><span className={`text-xs px-2 py-0.5 rounded border ${getNewsTypeStyle(item.type)}`}>{item.type}</span></div>
+                      <p className="text-sm text-gray-400">{item.summary}</p>
+                      {item.source && <p className="text-xs text-gray-500 mt-1">Source: {item.source}</p>}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+          </div>
         </div>
+
+        <footer className="mt-12 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
+          <p>Research compiled January 2026 • Andy Simko • Email Security Market Analysis</p>
+          <p className="mt-1 text-gray-600">Independent research • Not affiliated with {company.name}</p>
+        </footer>
       </div>
     </div>
   );
