@@ -416,23 +416,23 @@ const EmailSecurityPage = () => {
                 </div>
               </div>
 
-              {/* CTA to Platform Vision */}
-              <div className="bg-gradient-to-br from-purple-900/50 to-blue-900/50 rounded-xl border border-purple-800 p-4">
-                <div className="text-sm font-semibold mb-2 flex items-center gap-2">
-                  <span>🚀</span> See It In Action
-                </div>
-                <p className="text-xs text-gray-400 mb-3">
-                  Interactive prototype showing the convergence of email security, identity, and employee risk.
-                </p>
-                <a 
-                  href="https://hologramai.tech/platform" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block w-full text-center px-4 py-2 bg-purple-600 hover:bg-purple-500 rounded-lg text-sm font-medium transition-colors"
-                >
-                  View Platform Vision →
-                </a>
+            {/* CTA to Platform Vision */}
+            {/* <div className="bg-gradient-to-br from-purple-900/50 to-blue-900/50 rounded-xl border border-purple-800 p-4">
+              <div className="text-sm font-semibold mb-2 flex items-center gap-2">
+                <span>🚀</span> See It In Action
               </div>
+              <p className="text-xs text-gray-400 mb-3">
+                Interactive prototype showing the convergence of email security, identity, and employee risk.
+              </p>
+              <a 
+                href="https://hologramai.tech/platform" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full text-center px-4 py-2 bg-purple-600 hover:bg-purple-500 rounded-lg text-sm font-medium transition-colors"
+              >
+                View Platform Vision →
+              </a>
+            </div> */}
             </div>
           </div>
 
