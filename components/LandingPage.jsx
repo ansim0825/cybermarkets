@@ -193,7 +193,7 @@ const LandingPage = () => {
       name: 'GRC & TIC', 
       icon: '🎯', 
       active: true,
-      href: '/pillars/grc/ctem',
+      href: '/pillars/grc-tic/ctem',
       description: 'CTEM, Threat Intel, Compliance'
     },
   ];
@@ -215,7 +215,7 @@ const LandingPage = () => {
       id: 'ctem',
       title: 'Continuous Threat Exposure Management',
       pillar: 'GRC & TIC',
-      href: '/pillars/grc/ctem',
+      href: '/pillars/grc-tic/ctem',
     },
   ];
 
