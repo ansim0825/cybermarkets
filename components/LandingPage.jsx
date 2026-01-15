@@ -486,6 +486,14 @@ const LandingPage = () => {
               © 2025 WonWithData
             </p>
           </div>
+          {/* Disclaimer */}
+          <div className="mt-6 pt-6 border-t border-gray-800/30 text-center">
+            <p className="text-gray-600 text-xs leading-relaxed max-w-3xl mx-auto">
+              Personal research and opinions based on publicly available information. Author is employed by Barracuda Networks; 
+              views expressed are personal and do not represent my employer. Not affiliated with other vendors discussed. 
+              Not investment, legal, or professional advice. Information may be outdated or inaccurate.
+            </p>
+          </div>
         </div>
       </footer>
     </div>
