@@ -31,8 +31,8 @@ const LandingPage = () => {
       id: 'identity',
       name: 'Identity', 
       icon: '🔐', 
-      active: false,
-      href: '#',
+      active: true,
+      href: '/pillars/identity/itdr',
       description: 'IAM, PAM, ITDR'
     },
     { 
@@ -95,14 +95,6 @@ const LandingPage = () => {
             <br />
             <span className="text-gray-500">Structure → Dynamics → Strategy</span>
           </p>
-          
-          <a 
-            href="/pillars/network-edge/email-security"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-red-600 via-purple-600 to-blue-600 hover:from-red-500 hover:via-purple-500 hover:to-blue-500 rounded-lg font-medium transition-all shadow-lg hover:shadow-purple-500/20"
-          >
-            Explore Email Security Research
-            <span>→</span>
-          </a>
         </div>
       </section>
 
@@ -115,7 +107,7 @@ const LandingPage = () => {
           </div>
           
           {/* 6-column grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mb-8">
             {pillars.map((pillar) => (
               <a
                 key={pillar.id}
@@ -146,6 +138,24 @@ const LandingPage = () => {
                 )}
               </a>
             ))}
+          </div>
+
+          {/* CTA Buttons - Now below pillars */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a 
+              href="/pillars/network-edge/email-security"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-red-600 via-purple-600 to-blue-600 hover:from-red-500 hover:via-purple-500 hover:to-blue-500 rounded-lg font-medium transition-all shadow-lg hover:shadow-purple-500/20"
+            >
+              Explore Email Security Research
+              <span>→</span>
+            </a>
+            <a 
+              href="/pillars/identity/itdr"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 via-indigo-600 to-cyan-600 hover:from-purple-500 hover:via-indigo-500 hover:to-cyan-500 rounded-lg font-medium transition-all shadow-lg hover:shadow-indigo-500/20"
+            >
+              Explore Identity Threat Detection & Response
+              <span>→</span>
+            </a>
           </div>
         </div>
       </section>
