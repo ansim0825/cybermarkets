@@ -184,7 +184,7 @@ const LandingPage = () => {
       id: 'secops',
       name: 'SecOps', 
       icon: '📊', 
-      active: false,
+      active: true,
       href: '#',
       description: 'SIEM, SOAR, XDR'
     },
@@ -216,6 +216,12 @@ const LandingPage = () => {
       title: 'Continuous Threat Exposure Management',
       pillar: 'GRC & TIC',
       href: '/pillars/grc-tic/ctem',
+    },
+    {
+      id: 'threat-intelligence',
+      title: 'Threat Intelligence',
+      pillar: 'GRC & TIC',
+      href: '/pillars/grc-tic/threat-intelligence',
     },
   ];
 
@@ -251,12 +257,6 @@ const LandingPage = () => {
       {/* Hero Section - Mission & Vision */}
       <section className={`relative z-10 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
         <div className="max-w-5xl mx-auto px-6 py-20 text-center">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-500/10 border border-purple-500/30 rounded-full text-purple-400 text-sm mb-8">
-            <span className="w-2 h-2 bg-purple-400 rounded-full animate-pulse" />
-            Cybersecurity Market Intelligence
-          </div>
-          
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
             <span className="text-white">Connecting the dots</span>
             <br />
@@ -275,16 +275,6 @@ const LandingPage = () => {
             Built for product managers, investors, and security leaders who make decisions 
             that shape the future of cybersecurity.
           </p>
-          
-          {/* Scroll indicator */}
-          <div className="mt-12 animate-bounce">
-            <div className="flex flex-col items-center gap-2 text-gray-600">
-              <span className="text-xs">Explore research</span>
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-              </svg>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -296,7 +286,7 @@ const LandingPage = () => {
             <p className="text-gray-500">Deep-dive market analyses currently available</p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-4">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
             {activeResearch.map((research) => (
               <a
                 key={research.id}
