@@ -1238,7 +1238,7 @@ const SOARPage = () => {
                   <ul className="space-y-2 text-sm text-gray-300">
                     <li>• <strong>First question:</strong> Does my SIEM/XDR platform already include this capability?</li>
                     <li>• Evaluate standalone only if you need multi-vendor orchestration or platform lacks depth</li>
-                    <li>• Time-to-value > feature completeness for most use cases</li>
+                    <li>• Time-to-value &gt; feature completeness for most use cases</li>
                     <li>• Budget for SOAR engineer role (full or partial FTE)</li>
                     <li>• Assess vendor acquisition risk—many will be absorbed or obsoleted</li>
                   </ul>
