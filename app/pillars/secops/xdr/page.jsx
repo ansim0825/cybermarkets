@@ -7,11 +7,12 @@ const XDRPage = () => {
 
   // SecOps & Analytics sub-segments
   const subSegments = [
-    { id: 'siem', name: 'SIEM', active: false, href: '/pillars/secops/siem' },
-    { id: 'soar', name: 'SOAR', active: false, href: '/pillars/secops/soar' },
+    { id: 'siem', name: 'SIEM', active: true, href: '/pillars/secops/siem' },
+    { id: 'soar', name: 'SOAR', active: true, href: '/pillars/secops/soar' },
     { id: 'xdr', name: 'XDR', active: true, href: '/pillars/secops/xdr' },
-    { id: 'mdr', name: 'MDR/MXDR', active: false, href: '#' },
-    { id: 'ndr', name: 'NDR', active: false, href: '#' },
+    { id: 'mdr', name: 'MDR/MXDR', active: true, href: '/pillars/secops/mdr' },
+    { id: 'ndr', name: 'NDR', active: true, href: '/pillars/secops/ndr' },
+    { id: 'aidr', name: 'NDR', active: true, href: '/pillars/secops/aidr' },
   ];
 
   const srpSections = [

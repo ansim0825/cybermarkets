@@ -185,16 +185,8 @@ const LandingPage = () => {
       name: 'SecOps', 
       icon: '📊', 
       active: true,
-      href: '#',
-      description: 'SIEM, SOAR, XDR'
-    },
-    { 
-      id: 'grc',
-      name: 'GRC & TIC', 
-      icon: '🎯', 
-      active: true,
-      href: '/pillars/grc-tic/ctem',
-      description: 'CTEM, Threat Intel, Compliance'
+      href: '/pillars/secops/xdr',
+      description: 'SIEM, SOAR, XDR, AIDR'
     },
   ];
 
