@@ -188,6 +188,14 @@ const LandingPage = () => {
       href: '/pillars/secops/xdr',
       description: 'SIEM, SOAR, XDR, AIDR'
     },
+    { 
+      id: 'grc',
+      name: 'GRC & TIC', 
+      icon: '🎯', 
+      active: true,
+      href: '/pillars/grc-tic/ctem',
+      description: 'CTEM, Threat Intel, Compliance'
+    },
   ];
 
   const activeResearch = [
