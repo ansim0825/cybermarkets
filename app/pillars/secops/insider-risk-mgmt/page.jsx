@@ -1026,7 +1026,7 @@ const UEBAPage = () => {
                     <span className="text-purple-400">AI/LLM battleground</span> → enables → <span className="text-blue-400">intent detection beyond anomaly</span> → accelerates → <span className="text-orange-400">prevention capabilities</span>
                   </p>
                   <p className="text-gray-400">
-                    <span className="text-orange-400">Prevention > detection</span> → differentiates → <span className="text-blue-400">~20% of vendors</span> → creates → <span className="text-green-400">acquisition premium</span>
+                    <span className="text-orange-400">Prevention &gt detection</span> → differentiates → <span className="text-blue-400">~20% of vendors</span> → creates → <span className="text-green-400">acquisition premium</span>
                   </p>
                 </div>
               </div>
