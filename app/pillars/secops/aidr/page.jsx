@@ -1115,7 +1115,7 @@ const AIDRPage = () => {
                 </div>
                 <div className="bg-red-900/20 border border-red-800/50 rounded-lg p-3 mt-4">
                   <p className="text-sm text-red-300">
-                    <span className="font-medium">Critical:</span> Plan for 3-5x advertised costs. 85% of organizations underestimate AI project costs by >10%. 
+                    <span className="font-medium">Critical:</span> Plan for 3-5x advertised costs. 85% of organizations underestimate AI project costs by &gt;10%. 
                     95% of AI pilots fail due to integration issues and poor operational readiness.
                   </p>
                 </div>
@@ -1153,7 +1153,7 @@ const AIDRPage = () => {
                     <div className="text-xs text-gray-500">ROI</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-blue-400"><6 mo</div>
+                    <div className="text-2xl font-bold text-blue-400">&lt;6 months</div>
                     <div className="text-xs text-gray-500">Payback Period</div>
                   </div>
                   <div className="text-center">
@@ -1376,7 +1376,7 @@ const AIDRPage = () => {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-blue-400">•</span>
-                      <span>Time-to-value <90 days; SIEM-agnostic architecture is competitive advantage</span>
+                      <span>Time-to-value &lt;90 days; SIEM-agnostic architecture is competitive advantage</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-blue-400">•</span>

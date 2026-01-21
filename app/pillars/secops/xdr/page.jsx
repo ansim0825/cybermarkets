@@ -155,7 +155,7 @@ const XDRPage = () => {
   ];
 
   // Helper function for research status styling
-  const getStatusStyle = (status: string) => {
+  const getStatusStyle = (status) => {
     switch (status) {
       case 'complete':
         return { bg: 'bg-green-900/50', text: 'text-green-400', dot: 'bg-green-400', label: 'Complete' };
@@ -337,7 +337,7 @@ const XDRPage = () => {
     },
   ];
 
-  const getConfidenceColor = (confidence: string) => {
+  const getConfidenceColor = (confidence) => {
     switch (confidence) {
       case 'High': return 'bg-green-900/50 text-green-400 border-green-700';
       case 'Medium-High': return 'bg-blue-900/50 text-blue-400 border-blue-700';
@@ -346,7 +346,7 @@ const XDRPage = () => {
     }
   };
 
-  const getThesisAccent = (color: string) => {
+  const getThesisAccent = (color) => {
     switch (color) {
       case 'green': return 'border-l-green-500';
       case 'purple': return 'border-l-purple-500';
@@ -355,7 +355,7 @@ const XDRPage = () => {
     }
   };
 
-  const scrollToSection = (sectionId: string) => {
+  const scrollToSection = (sectionId) => {
     setActiveSection(sectionId);
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
   };
