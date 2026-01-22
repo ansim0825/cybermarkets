@@ -5,15 +5,15 @@ import { Logo } from '@/components/Logo';
 const SOARPage = () => {
   const [activeSection, setActiveSection] = useState('overview');
 
-  // SecOps & Analytics sub-segments
-  const subSegments = [
-    { id: 'siem', name: 'SIEM', active: false, href: '#' },
-    { id: 'xdr', name: 'XDR', active: false, href: '/pillars/secops/xdr' },
-    { id: 'soar', name: 'SOAR', active: true, href: '/pillars/secops/soar' },
-    { id: 'aidr', name: 'AIDR', active: false, href: '/pillars/secops/aidr' },
-    { id: 'mdr', name: 'MDR', active: false, href: '#' },
-    { id: 'insider-risk', name: 'Insider Risk Management', active: false, href: '/pillars/secops/insider-risk-management' },
-  ];
+    // SecOps & Analytics sub-segments
+    const subSegments = [
+      { id: 'siem', name: 'SIEM', active: true, href: '/pillars/secops/siem' },
+      { id: 'soar', name: 'SOAR', active: true, href: '/pillars/secops/soar' },
+      { id: 'xdr', name: 'XDR', active: true, href: '/pillars/secops/xdr' },
+      { id: 'mdr', name: 'MDR/MXDR', active: true, href: '/pillars/secops/mdr' },
+      { id: 'ndr', name: 'NDR', active: true, href: '/pillars/secops/ndr' },
+      { id: 'aidr', name: 'NDR', active: true, href: '/pillars/secops/aidr' },
+    ];
 
   const srpSections = [
     { id: 'overview', name: 'Overview', icon: '📋' },

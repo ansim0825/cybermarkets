@@ -5,13 +5,14 @@ import { Logo } from '@/components/Logo';
 const SIEMPage = () => {
   const [activeSection, setActiveSection] = useState('overview');
 
-  // SecOps & Analytics sub-segments
-  const subSegments = [
+   // SecOps & Analytics sub-segments
+   const subSegments = [
     { id: 'siem', name: 'SIEM', active: true, href: '/pillars/secops/siem' },
-    { id: 'xdr', name: 'XDR', active: false, href: '/pillars/secops/xdr' },
-    { id: 'aidr', name: 'AIDR', active: false, href: '/pillars/secops/aidr' },
-    { id: 'insider-risk', name: 'Insider Risk', active: false, href: '/pillars/secops/insider-risk' },
-    { id: 'mdr', name: 'MDR', active: false, href: '#' },
+    { id: 'soar', name: 'SOAR', active: true, href: '/pillars/secops/soar' },
+    { id: 'xdr', name: 'XDR', active: true, href: '/pillars/secops/xdr' },
+    { id: 'mdr', name: 'MDR/MXDR', active: true, href: '/pillars/secops/mdr' },
+    { id: 'ndr', name: 'NDR', active: true, href: '/pillars/secops/ndr' },
+    { id: 'aidr', name: 'NDR', active: true, href: '/pillars/secops/aidr' },
   ];
 
   const srpSections = [
